@@ -1,55 +1,97 @@
-# 👚 PiliFit – Smart Outfit Generator App
+# 👗 Pilifit: Complete Layout and Features Overview (Updated)
 
-**PiliFit** (from the Filipino word _“Pili”_ meaning “Choose”) is a smart, intuitive outfit generator app that helps users mix and match their wardrobe effortlessly. Whether you're planning your OOTD, organizing your closet, or exploring new styles—**PiliFit helps you pili your porma**.
-
-## 🎯 Project Objective
-
-To develop a Java-based desktop application using **JavaFX** and **SceneBuilder** that allows users to:
-- Upload images of their clothes
-- Generate and customize outfit combinations
-- Sort clothing by type, color, or category
-- Save and manage favorite outfits
-- Style and color palette recommendations
+**Pilifit** is a wardrobe and outfit planner designed to simplify clothing management, style exploration, and outfit coordination.
 
 ---
 
-## 🛠️ Features
+## 🔷 Main Navigation (Top-Level Tabs)
 
-### 🏠 Home
-- Displays all uploaded clothes
-- Allows uploading, deleting, and sorting clothes
-- Categories include: Hats, Tops, Bottoms, Shoes, Accessories, Colors
-- Sidebar that randomly generates outfits from the wardrobe
-- Customize outfit creation 
-- Individual items can be clicked to view/edit description or add to favorites
+Accessible via the main navigation bar:
 
-### ⭐ Favorites
-- View all favorited clothing and saved fits
-- Edit saved fits (rename, swap clothes, or delete)
-
-### 🧥 Fits
-- Displays only saved fits
-- Users can rename, modify, or delete the outfits
-
-### 🎨 Recommendations
-- Developer-added suggestions: style inspirations (e.g., Y2K, minimalist, grunge)
-- Color palette matching and seasonal outfit ideas
+- **Home**
+- **About Us**
+- **Contact Us**
 
 ---
 
-## 🧩 Technologies Used
+## 🔷 Home Page (Main Interface)
 
-- **Java 17**
-- **JavaFX + SceneBuilder** – UI Design
-- **SQLite** – Local database for storing clothes and fits
-- **MVC Architecture** – Modular structure for maintainability
+Within the Home tab, there are three **in-page sub-navigation tabs**:
+
+### 1. 🧥 Closet
+
+#### Main Features
+- Displays a grid or list of all clothing items in the user's wardrobe.
+
+#### 🖼️ Image Upload Instructions
+- An info icon provides a popup guide on:
+    - Recommended image backgrounds
+    - Lighting tips
+    - Centering the clothing item
+- Clicking "OK" opens the image upload dialog.
+
+#### 📝 Clothing Item Actions
+- **View & Edit:**
+    - Editable fields: Item name, category, color, style, and size.
+    - Changes prompt a confirmation: _“Save Changes” or “Discard Changes”_
+- **Delete:**
+    - Prompts: _“Confirm Delete” or “Cancel”_
+
+#### 🔍 Filtering System
+Users can filter clothing by:
+- Style (casual, formal, minimalist, sport, etc.)
+- Color (red, white, black, yellow, etc.)
+- Category (top, bottom, shoes, etc.)
+- Favorites
+
+#### ❤️ Favorites
+Displays:
+- Clothing marked as favorite
+- Saved fits marked as favorite from the Generate tab
 
 ---
-## 👥 Authors & Conrtibutors
 
-- Clarence [BSCS | Lead Developer]
-- Cyralin  [BSCS | Project Lead ]
-- Ysabelle [BSCS | UI/UX Developer]
-- Michelle [BSCS | Reseacher & Documentation]
+### 2. 🎲 Generate
+
+Opened as a popup modal.
+
+#### Fit Generation Features
+- Category checkboxes to include specific item types (e.g., tops, bottoms, shoes)
+- Random outfit generation based on selected types
+- Item switch (left/right arrows) to browse options per category
+- **Save Fit:**
+    - Option to save the outfit
+    - Add it to a collection album
+
 ---
-All rights reserved © 2025.
+
+### 3. 📚 Collections
+
+- View saved outfits grouped in albums (similar to Pinterest boards)
+- Features include:
+    - View and manage fits in each album
+    - Edit or update saved outfits
+    - Add or remove outfits from albums
+
+---
+
+## 🔷 About Us
+
+Includes:
+- Project description
+- Purpose and vision overview
+- Developer names and their respective roles
+
+---
+
+## 🔷 Contact Us
+
+Contains:
+- Developer contact info (email, social media)
+- Links to Pilifit’s social platforms or communication channels
+
+---
+
+### 📌 Note
+This document reflects the latest structure and functionality of the Pilifit app. Future updates may enhance or add features based on user feedback and development goals.
+
