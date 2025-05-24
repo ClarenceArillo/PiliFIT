@@ -1,6 +1,7 @@
 module com.example.pilifitproject {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.sql;
 
 
     opens com.example.pilifitproject to javafx.fxml;
