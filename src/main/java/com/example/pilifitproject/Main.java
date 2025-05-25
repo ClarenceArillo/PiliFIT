@@ -27,21 +27,37 @@ public class Main extends Application {
         DBConnection.testConnection();
 
         ClothingItem item = new ClothingItem(
-                0,
-                "layered sweater",
+                4,
+                "Black Layered Sweater",
                 "/images/tops/T1.png",
                 1,
-                "black",
+                "Black",
                 "Casual",
                 "M",
-                0
+                1
         );
 
         ClothingItemDAO dao = new ClothingItemDAO();
-        try{
-            dao.addClothingItem(item);
-            System.out.println("items added succesfully");
-        } catch (SQLiteException e){
+        try {
+            //dao.addClothingItem(item);
+            //System.out.println("items added succesfully");
+            //dao.deleteClothingItem(2);
+            //dao.deleteClothingItem(3);
+            dao.updateClothingItem(item);
+            System.out.println("items updated successfully");
+
+            for(ClothingItem c: dao.getAllClothingItem()){
+                System.out.println("ID : " + c.getId() +
+                                    "\nName: " + c.getName() +
+                                    "\nImagePath : " + c.getImagePath() +
+                                    "\nCategoryID :" + c.getCategoryId() +
+                                    "\nColor : " + c.getColor() +
+                                    "\nStyle : " + c.getStyle() +
+                                    "\nSize : " + c.getSize() +
+                                    "\nIsFavorite : " + c.getIsFavorite()
+                );
+            }
+        } catch (SQLiteException e) {
             System.out.println("item not added successfully");
             e.printStackTrace();
         } catch (SQLException e) {
@@ -49,7 +65,8 @@ public class Main extends Application {
             e.printStackTrace();
         }
 
-        launch();
+        //launch();
+
 
     }
 }

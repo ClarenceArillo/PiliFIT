@@ -50,6 +50,26 @@ public class ClothingItemDAO {
         }
     }
 
+    public void updateClothingItem(ClothingItem item) throws SQLException {
+        String sql = "UPDATE clothing_item SET name = ?, category_id = ?, color = ?, " +
+                "style = ?, size = ?, is_favorite = ? WHERE id = ?";
+
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)){
+
+             pstmt.setString(1, item.getName());
+             pstmt.setInt(2, item.getCategoryId());
+             pstmt.setString(3, item.getColor());
+             pstmt.setString(4, item.getStyle());
+             pstmt.setString(5, item.getSize());
+             pstmt.setInt(6, item.getIsFavorite());
+             pstmt.setInt(7, item.getId());
+             pstmt.executeUpdate();
+
+        }
+
+    }
+
     public void deleteClothingItem(int id) throws SQLException{
         String sql = "DELETE FROM clothing_item WHERE id = ?";
 
