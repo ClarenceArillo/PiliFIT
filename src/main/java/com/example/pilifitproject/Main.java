@@ -27,24 +27,24 @@ public class Main extends Application {
         DBConnection.testConnection();
 
         ClothingItem item = new ClothingItem(
-                4,
-                "Black Layered Sweater",
-                "/images/tops/T1.png",
+                5,
+                "Black Leather Jacket",
+                "/images/tops/T3.png",
                 1,
                 "Black",
                 "Casual",
-                "M",
+                "L",
                 1
         );
 
         ClothingItemDAO dao = new ClothingItemDAO();
         try {
-            //dao.addClothingItem(item);
-            //System.out.println("items added succesfully");
+            dao.addClothingItem(item);
+            System.out.println("items added succesfully");
             //dao.deleteClothingItem(2);
             //dao.deleteClothingItem(3);
-            dao.updateClothingItem(item);
-            System.out.println("items updated successfully");
+            //dao.updateClothingItem(item);
+            //System.out.println("items updated successfully");
 
             for(ClothingItem c: dao.getAllClothingItem()){
                 System.out.println("ID : " + c.getId() +
@@ -65,7 +65,7 @@ public class Main extends Application {
             e.printStackTrace();
         }
 
-        //launch();
+        launch();
 
 
     }

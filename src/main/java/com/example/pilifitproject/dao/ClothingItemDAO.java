@@ -81,4 +81,11 @@ public class ClothingItemDAO {
         }
     }
 
+//    public List<ClothingItem> getAllClothingItemsByCategory(int categoryId)throws SQLException{
+//        List<ClothingItem> items = new ArrayList<>();
+//
+//
+//    }
+
+
 }
