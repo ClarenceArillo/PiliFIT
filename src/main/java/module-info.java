@@ -3,6 +3,7 @@ module com.example.pilifitproject {
     requires javafx.fxml;
     requires java.sql;
     requires org.xerial.sqlitejdbc;
+    requires java.desktop;
 
 
     opens com.example.pilifitproject to javafx.fxml;

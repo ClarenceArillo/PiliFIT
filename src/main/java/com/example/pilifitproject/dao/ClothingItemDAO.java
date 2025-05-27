@@ -21,8 +21,8 @@ public class ClothingItemDAO {
                         rs.getString("name"),
                         rs.getString("image_path"),
                         rs.getInt("category_id"),
-                        rs.getString("color"),
-                        rs.getString("style"),
+                        rs.getInt("color_id"),
+                        rs.getInt("style_id"),
                         rs.getString("size"),
                         rs.getInt("is_favorite")
                 );
@@ -33,7 +33,7 @@ public class ClothingItemDAO {
     }
 
     public void addClothingItem(ClothingItem item) throws SQLException {
-        String sql = "INSERT INTO clothing_item (name, image_path, category_id, color, style, size, is_favorite)" + "VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO clothing_item (name, image_path, category_id, color_id, style_id, size, is_favorite)" + "VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -41,8 +41,8 @@ public class ClothingItemDAO {
             pstmt.setString(1, item.getName());
             pstmt.setString(2, item.getImagePath());
             pstmt.setInt(3, item.getCategoryId());
-            pstmt.setString(4, item.getColor());
-            pstmt.setString(5, item.getStyle());
+            pstmt.setInt(4, item.getColorId());
+            pstmt.setInt(5, item.getStyleId());
             pstmt.setString(6, item.getSize());
             pstmt.setInt(7, item.getIsFavorite());
             pstmt.executeUpdate();
@@ -51,16 +51,16 @@ public class ClothingItemDAO {
     }
 
     public void updateClothingItem(ClothingItem item) throws SQLException {
-        String sql = "UPDATE clothing_item SET name = ?, category_id = ?, color = ?, " +
-                "style = ?, size = ?, is_favorite = ? WHERE id = ?";
+        String sql = "UPDATE clothing_item SET name = ?, category_id = ?, color_id = ?, " +
+                "style_id = ?, size = ?, is_favorite = ? WHERE id = ?";
 
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setString(1, item.getName());
             pstmt.setInt(2, item.getCategoryId());
-            pstmt.setString(3, item.getColor());
-            pstmt.setString(4, item.getStyle());
+            pstmt.setInt(3, item.getColorId());
+            pstmt.setInt(4, item.getStyleId());
             pstmt.setString(5, item.getSize());
             pstmt.setInt(6, item.getIsFavorite());
             pstmt.setInt(7, item.getId());
@@ -81,7 +81,7 @@ public class ClothingItemDAO {
         }
     }
 
-    public List<ClothingItem> getAllClothingItemsByCategory(int categoryId) throws SQLException {
+    public static List<ClothingItem> getAllClothingItemsByCategory(int categoryId) throws SQLException {
         List<ClothingItem> items = new ArrayList<>();
         String sql = "SELECT * FROM clothing_item WHERE category_id = ?";
 
@@ -97,8 +97,8 @@ public class ClothingItemDAO {
                             rs.getString("name"),
                             rs.getString("image_path"),
                             rs.getInt("category_id"),
-                            rs.getString("color"),
-                            rs.getString("style"),
+                            rs.getInt("color_id"),
+                            rs.getInt("style_id"),
                             rs.getString("size"),
                             rs.getInt("is_Favorite")
                     );
@@ -112,9 +112,117 @@ public class ClothingItemDAO {
 
     }
 
+    //    Colors:
+//    Red
+//    Orange
+//    Yellow
+//    Green
+//    Violet
+//    Blue
+//    White
+//    Black
+//    Others
+
     //getAllItemsByColor Method
+    public static List<ClothingItem> getAllClothingItemsByColor(int colorId) throws SQLException {
+        List<ClothingItem> items = new ArrayList<>();
+        String sql = "SELECT * FROM clothing_item WHERE color_id = ?";
+
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setInt(1, colorId);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+
+                    ClothingItem item = new ClothingItem(
+                            rs.getInt("id"),
+                            rs.getString("name"),
+                            rs.getString("image_path"),
+                            rs.getInt("category_id"),
+                            rs.getInt("color_id"),
+                            rs.getInt("style_id"),
+                            rs.getString("size"),
+                            rs.getInt("is_Favorite")
+                    );
+                    items.add(item);
+                }
+            }
+
+            return items;
+        }
+
+
+    }
+
+
+//Style
+//    Formal
+//    Casual
+//    Semi-Formal
+//    Others
 
     //getAllItemsByStyle Method
+    public static List<ClothingItem> getAllClothingItemsByStyleId(int styleId) throws SQLException {
+        List<ClothingItem> items = new ArrayList<>();
+        String sql = "SELECT * FROM clothing_item WHERE style_id = ?";
 
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setInt(1, styleId);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+
+                    ClothingItem item = new ClothingItem(
+                            rs.getInt("id"),
+                            rs.getString("name"),
+                            rs.getString("image_path"),
+                            rs.getInt("category_id"),
+                            rs.getInt("color_id"),
+                            rs.getInt("style_id"),
+                            rs.getString("size"),
+                            rs.getInt("is_Favorite")
+                    );
+                    items.add(item);
+                }
+            }
+
+            return items;
+        }
+
+
+    }
+
+    public static List<ClothingItem> getAllClothingItemsByIsFavorite(int is_favorite) throws SQLException {
+        List<ClothingItem> items = new ArrayList<>();
+        String sql = "SELECT * FROM clothing_item WHERE is_favorite = ?";
+
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setInt(1, is_favorite);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+
+                    ClothingItem item = new ClothingItem(
+                            rs.getInt("id"),
+                            rs.getString("name"),
+                            rs.getString("image_path"),
+                            rs.getInt("category_id"),
+                            rs.getInt("color_id"),
+                            rs.getInt("style_id"),
+                            rs.getString("size"),
+                            rs.getInt("is_favorite")
+                    );
+                    items.add(item);
+                }
+            }
+
+            return items;
+        }
+
+
+    }
 
 }

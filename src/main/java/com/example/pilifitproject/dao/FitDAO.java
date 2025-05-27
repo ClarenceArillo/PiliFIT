@@ -51,13 +51,13 @@ public class FitDAO {
                         rs.getString("name"),
 
                         new ClothingItem(rs.getInt("top_id"), rs.getString("top_name"),
-                                rs.getString("top_image"), 0, "", "", "", 0),
+                                rs.getString("top_image"), 0, 0, 0, "", 0),
 
                         new ClothingItem(rs.getInt("bottom_id"), rs.getString("bottom_name"),
-                                rs.getString("top_image"), 0, "", "", "", 0),
+                                rs.getString("top_image"), 0, 0, 0, "", 0),
 
                         new ClothingItem(rs.getInt("accessories_id"), rs.getString("accessories_name"),
-                                rs.getString("accessories_image"), 0, "", "", "", 0),
+                                rs.getString("accessories_image"), 0, 0, 0, "", 0),
 
                         rs.getInt("is_favorite")
                 );
@@ -72,5 +72,6 @@ public class FitDAO {
     //deletefit method
     //add to favorite fit
 
-    
+
+
 }

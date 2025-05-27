@@ -5,18 +5,18 @@ public class ClothingItem {
     private String name;
     private String ImagePath;
     private int categoryId;
-    private String color;
-    private String style;
+    private int colorId;
+    private int styleId;
     private String size;
     private int isFavorite;
 
-    public ClothingItem(int id, String name, String ImagePath, int categoryId, String color, String style, String size, int isFavorite){
+    public ClothingItem(int id, String name, String ImagePath, int categoryId, int colorId, int styleId, String size, int isFavorite){
         this.id = id;
         this.name = name;
         this.ImagePath = ImagePath;
         this.categoryId = categoryId;
-        this.color = color;
-        this.style = style;
+        this.colorId = colorId;
+        this.styleId = styleId;
         this.size = size;
         this.isFavorite = isFavorite;
     }
@@ -25,8 +25,8 @@ public class ClothingItem {
     public String getName(){return name;}
     public String getImagePath() {return ImagePath;}
     public int getCategoryId(){return categoryId;}
-    public String getColor(){return color;}
-    public String getStyle(){return style;}
+    public int getColorId(){return colorId;}
+    public int getStyleId(){return styleId;}
     public String getSize(){return size;}
     public int getIsFavorite(){return isFavorite;}
 
@@ -35,8 +35,8 @@ public class ClothingItem {
     public void setName(String name){this.name = name;}
     public void setImagePath(String ImagePath){this.ImagePath = ImagePath;}
     public void setCategoryId(int categoryId){this.categoryId = categoryId;}
-    public void setColor(String color){this.color = color;}
-    public void setStyle(String style){this.style = style;}
+    public void setColorId(int colorId){this.colorId = colorId;}
+    public void setStyleId(int styleId){this.styleId = styleId;}
     public void setSize(String size){this.size = size;}
     public void setIsFavorite(int isFavorite){this.isFavorite = isFavorite;}
 
