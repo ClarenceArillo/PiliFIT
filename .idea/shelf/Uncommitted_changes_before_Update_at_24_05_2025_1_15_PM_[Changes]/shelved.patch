@@ -1,0 +1,21 @@
+Index: src/main/java/com/example/pilifitproject/dao/ClothingItemDAO.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/pilifitproject/dao/ClothingItemDAO.java b/src/main/java/com/example/pilifitproject/dao/ClothingItemDAO.java
+new file mode 100644
+--- /dev/null	(date 1748063086895)
++++ b/src/main/java/com/example/pilifitproject/dao/ClothingItemDAO.java	(date 1748063086895)
+@@ -0,0 +1,11 @@
++package com.example.pilifitproject.dao;
++
++import java.sql.SQLException;
++import java.util.List;
++
++public class ClothingItemDAO {
++    public List<ClothingItem> getAllClothingItem() throws SQLException{
++
++    }
++
++}
