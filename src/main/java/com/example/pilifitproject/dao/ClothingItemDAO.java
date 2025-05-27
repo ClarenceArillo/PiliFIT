@@ -111,4 +111,10 @@ public class ClothingItemDAO {
 
 
     }
+
+    //getAllItemsByColor Method
+
+    //getAllItemsByStyle Method
+
+
 }
