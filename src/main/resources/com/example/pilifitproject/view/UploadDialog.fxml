@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="73.6" layoutY="210.6" mnemonicParsing="false" opacity="0.8" text="UPLOAD FILE" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" AnchorPane.bottomAnchor="13.400000000000006" AnchorPane.leftAnchor="73.6" AnchorPane.rightAnchor="74.4" AnchorPane.topAnchor="210.6">
+         <font>
+            <Font name="System Bold" size="6.0" />
+         </font>
+      </Button>
+      <Text layoutX="27.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <TextFlow layoutX="21.6" layoutY="153.0" prefHeight="54.0" prefWidth="164.0" AnchorPane.leftAnchor="21.6" AnchorPane.rightAnchor="14.400000000000006">
+         <children>
+            <Text layoutX="10.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="• Lay flat on a clean floor or hang on a wall">
+               <font>
+                  <Font size="8.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="          • Prepare your clothes neatly (iron if needed)" wrappingWidth="172.13125610351562">
+               <font>
+                  <Font size="8.0" />
+               </font>
+            </Text>
+            <Text layoutX="10.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="     • Use natural light (like near a window)." wrappingWidth="179.6953125">
+               <font>
+                  <Font size="8.0" />
+               </font>
+            </Text>
+            <Text layoutX="10.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="                • Take a clear front photo with your phone." wrappingWidth="179.6953125">
+               <font>
+                  <Font size="8.0" />
+               </font>
+            </Text>
+            <Text layoutX="10.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="             • Make sure the whole item is in the frame." wrappingWidth="179.6953125">
+               <font>
+                  <Font size="8.0" />
+               </font>
+            </Text>
+         </children>
+      </TextFlow>
+      <AnchorPane layoutX="21.0" layoutY="37.0" prefHeight="94.0" prefWidth="163.0" style="-fx-background-color: #CCCCCC;" />
+      <Button layoutX="177.0" layoutY="11.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" text="X">
+         <font>
+            <Font name="System Bold" size="4.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
