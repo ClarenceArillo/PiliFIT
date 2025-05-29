@@ -1,6 +1,7 @@
 package com.example.pilifitproject.dao;
 
 import com.example.pilifitproject.model.ClothingItem;
+import com.example.pilifitproject.utils.Constants;
 import org.sqlite.core.DB;
 import java.sql.*;
 import java.util.ArrayList;
@@ -81,6 +82,38 @@ public class ClothingItemDAO {
         }
     }
 
+    //add and remove clothing item from favorites
+    //add to favorite fit
+    public void addClothingItemToFavorite(int FitID)throws SQLException {
+        String sql = "UPDATE fit SET is_favorite = ? WHERE id = ?";
+
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setInt(1, Constants.FAVORITE);
+            pstmt.setInt(2,FitID);
+            pstmt.executeUpdate();
+
+        }
+
+    }
+
+    //remove from favorite fit
+    public void removeClothingItemFromFavorite(int FitID)throws SQLException {
+        String sql = "UPDATE fit SET is_favorite = ? WHERE id = ?";
+
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setInt(1, Constants.NOT_FAVORITE);
+            pstmt.setInt(2,FitID);
+            pstmt.executeUpdate();
+
+        }
+
+    }
+
+    //Filter by Category
     public static List<ClothingItem> getAllClothingItemsByCategory(int categoryId) throws SQLException {
         List<ClothingItem> items = new ArrayList<>();
         String sql = "SELECT * FROM clothing_item WHERE category_id = ?";
@@ -123,7 +156,7 @@ public class ClothingItemDAO {
 //    Black
 //    Others
 
-    //getAllItemsByColor Method
+    //Color Filter
     public static List<ClothingItem> getAllClothingItemsByColor(int colorId) throws SQLException {
         List<ClothingItem> items = new ArrayList<>();
         String sql = "SELECT * FROM clothing_item WHERE color_id = ?";
@@ -162,7 +195,7 @@ public class ClothingItemDAO {
 //    Semi-Formal
 //    Others
 
-    //getAllItemsByStyle Method
+    //Style Filter
     public static List<ClothingItem> getAllClothingItemsByStyleId(int styleId) throws SQLException {
         List<ClothingItem> items = new ArrayList<>();
         String sql = "SELECT * FROM clothing_item WHERE style_id = ?";
@@ -194,6 +227,7 @@ public class ClothingItemDAO {
 
     }
 
+    // favorite filter
     public static List<ClothingItem> getAllClothingItemsByIsFavorite(int is_favorite) throws SQLException {
         List<ClothingItem> items = new ArrayList<>();
         String sql = "SELECT * FROM clothing_item WHERE is_favorite = ?";
