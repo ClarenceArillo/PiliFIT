@@ -1,0 +1,57 @@
+
+.upload-button {
+    -fx-background-color: white;
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+    -fx-text-fill: black;
+    -fx-font-size: 10px;
+    -fx-font-family: "Berlin Sans FB Bold";
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-padding: 5 20;
+
+}
+
+
+.close-button {
+    -fx-background-color: #f5f5f5;
+    -fx-text-fill: black;
+    -fx-font-size: 12px;
+    -fx-font-family: "System Bold";
+    -fx-background-radius: 100%;
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+    -fx-border-radius: 100%;
+    -fx-pref-width: 20px;
+    -fx-pref-height: 20px;
+}
+
+.soft-tab {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+    -fx-padding: 10;
+}
+
+/* Rectangle frame around image */
+.preview-border {
+    -fx-fill: #c3c9cf;
+    -fx-stroke: black;
+    -fx-stroke-type: inside;
+}
+
+/* Title above the guideline instructions */
+.guidelines-title {
+    -fx-font-size: 10px;
+    -fx-font-family: "System Bold";
+    -fx-text-fill: black;
+}
+
+/* Text inside TextFlow for instructions */
+.guidelines-text {
+    -fx-font-size: 10px;
+    -fx-font-family: "Berlin Sans FB";
+    -fx-opacity: 0.6;
+}
