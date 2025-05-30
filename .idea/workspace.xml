@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="635ec7d8-d374-4bf4-977d-6b60cb30ac35" name="Changes" comment="">
+    <list default="true" id="635ec7d8-d374-4bf4-977d-6b60cb30ac35" name="Changes" comment="workspace.xml commit">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/Home.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +49,7 @@
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2xderoEwte8Sd4oMrx7Qd4P7r8x" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -62,6 +63,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "#3 on HomeCloUpDia",
+    "kotlin-language-version-configured": "true",
     "last_directory_selection": "C:/Users/cyy/IdeaProjects/kkkk/src/main/java/com",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
@@ -95,6 +97,7 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="635ec7d8-d374-4bf4-977d-6b60cb30ac35" name="Changes" comment="" />
@@ -165,7 +168,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="HomeCloUpDia" />
                       </list>
                     </value>
                   </entry>
