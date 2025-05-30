@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="440.0" prefWidth="660.0" stylesheets="@../styles/Closet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pilifitproject.view.Closet">
+   <children>
+
+      <!-- Container with rounded corners -->
+      <VBox layoutX="20.0" layoutY="20.0" spacing="20" prefWidth="620.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #ccc; -fx-padding: 20;">
+         <children>
+
+            <!-- Image & Form Details Row -->
+            <HBox spacing="30">
+               <children>
+
+                  <!-- Image Container -->
+                  <AnchorPane prefHeight="250" prefWidth="220" style="-fx-background-color: #CCCCCC; -fx-background-radius: 15;">
+                     <children>
+                        <ImageView fx:id="clothingImage" fitHeight="230" fitWidth="200" layoutX="10" layoutY="10" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </AnchorPane>
+
+                  <!-- Details Column -->
+                  <VBox spacing="10">
+                     <children>
+                        <Text text="CLOTHES DETAILS" style="-fx-font-weight: bold; -fx-font-size: 14px;" />
+
+                        <!-- Category -->
+                        <HBox spacing="10">
+                           <Text text="CATEGORY:" />
+                           <MenuButton text="Select Category" fx:id="categoryDropdown" style="-fx-background-radius: 10;" />
+                        </HBox>
+
+                        <!-- Style -->
+                        <HBox spacing="10">
+                           <Text text="STYLE:" />
+                           <MenuButton text="Select Style" fx:id="styleDropdown" style="-fx-background-radius: 10;" />
+                        </HBox>
+
+                        <!-- Color -->
+                        <HBox spacing="10">
+                           <Text text="COLOR:" />
+                           <TextField fx:id="colorInput" promptText="Enter color" style="-fx-background-radius: 10;" />
+                        </HBox>
+
+                        <!-- Size -->
+                        <HBox spacing="10">
+                           <Text text="SIZE:" />
+                           <TextField fx:id="sizeInput" promptText="Enter size" style="-fx-background-radius: 10;" />
+                        </HBox>
+
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+
+            <!-- Bottom Bar -->
+            <HBox spacing="10" alignment="CENTER_LEFT">
+               <children>
+                  <Button fx:id="editNameBtn" text="✎" styleClass="icon-button" />
+                  <TextField fx:id="nameInput" promptText="Name" />
+                  <Button fx:id="favoriteBtn" text="❤" styleClass="icon-button" />
+                  <Button fx:id="deleteBtn" text="🗑" styleClass="icon-button" />
+               </children>
+            </HBox>
+
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
