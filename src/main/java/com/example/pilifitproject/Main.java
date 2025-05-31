@@ -27,132 +27,64 @@ public class Main extends Application {
 
     public static void main(String[] args) {
 
-
-
         DBConnection.testConnection();
 
-        //item testing CRUD
-//        ClothingItem item = new ClothingItem(
-//                7,
-//                "Layered Sweater Polo",
-//                "/images/tops/T1.png",
-//                1,
-//                1,
-//                3,
-//                "L",
-//                0
-//        );
+        ClothingItemDAO dao = new ClothingItemDAO();
+        ClothingItem item = new ClothingItem(
+                9,
+                "Black Heels",
+                "/images/footwear/F2.png",
+                3,
+                9,
+                3,
+                "8",
+                0
+        );
 
-       // ClothingItemDAO dao = new ClothingItemDAO();
         try {
+            /* ========== TEST 1: BASIC CRUD OPERATIONS ========== */
+
+            // Add item
 //            dao.addClothingItem(item);
-//            System.out.println("items added succesfully");
+//            System.out.println("Item added successfully");
+
+            // Update item
+//            dao.updateClothingItem(item);
+//            System.out.println("Item updated successfully");
+
+            // Delete item
 //            dao.deleteClothingItem(4);
 //            dao.deleteClothingItem(5);
-//            dao.updateClothingItem(item);
-//            System.out.println("items updated successfully");
+//            System.out.println("Items deleted successfully");
+
+            // Get all items
+            for(ClothingItem c: dao.getAllClothingItem()){
+                System.out.println( "ID          : " + c.getId() +
+                                    "\nName       : " + c.getName() +
+                                    "\nImagePath  : " + c.getImagePath() +
+                                    "\nCategoryID : " + c.getCategoryId() +
+                                    "\nColorID    : " + c.getColorId() +
+                                    "\nStyleID    : " + c.getStyleId() +
+                                    "\nSize       : " + c.getSize() +
+                                    "\nIsFavorite : " + c.getIsFavorite()
+                );
+                System.out.println();
+            }
 
 
-//            for(ClothingItem c: dao.getAllClothingItem()){
-//                System.out.println( "ID          : " + c.getId() +
-//                                    "\nName       : " + c.getName() +
-//                                    "\nImagePath  : " + c.getImagePath() +
-//                                    "\nCategoryID : " + c.getCategoryId() +
-//                                    "\nColorID    : " + c.getColorId() +
-//                                    "\nStyleID    : " + c.getStyleId() +
-//                                    "\nSize       : " + c.getSize() +
-//                                    "\nIsFavorite : " + c.getIsFavorite()
-//                );
-//            }
-//            System.out.println();
 
+            /* ========== TEST 2: GET ITEMS BY CATEGORY ========== */
+            /*
+            int categoryIdTest = 1;
+            System.out.println("Test categoryItems filter");
 
-
-            //getAllItemsByCategory test
-
-//            int categoryIdTest = 1;
-//
-//            System.out.println("test categoryItems filter");
-//
-//            List<ClothingItem> items = ClothingItemDAO.getAllClothingItemsByCategory(categoryIdTest);
-//
-//            if(items.isEmpty()){
-//                System.out.println("no items found");
-//            }else{
-//                System.out.println("found: " + items.size() + " items");
-//                for(ClothingItem item : items ){
-//                    System.out.println("ID: " + item.getId());
-//                    System.out.println("Name: " + item.getName());
-//                    System.out.println("CategoryId: " + item.getCategoryId());
-//                    System.out.println("ColorId: " + item.getColorId());
-//                    System.out.println("StyleId: " + item.getStyleId());
-//                    System.out.println("Size: " + item.getSize());
-//                    System.out.println("Is favorite: " + item.getIsFavorite());
-//
-//                }
-//            }
-
-
-            //getAllItemsByColor test
-//            int colorIdTest = 1;
-//
-//            System.out.println("test categoryItems filter");
-//
-//            List<ClothingItem> items = ClothingItemDAO.getAllClothingItemsByColor(colorIdTest);
-//
-//            if(items.isEmpty()){
-//                System.out.println("no items found");
-//            }else{
-//                System.out.println("found: " + items.size() + " items");
-//                for(ClothingItem item : items ){
-//                    System.out.println("ID: " + item.getId());
-//                    System.out.println("Name: " + item.getName());
-//                    System.out.println("CategoryId: " + item.getCategoryId());
-//                    System.out.println("ColorId: " + item.getColorId());
-//                    System.out.println("StyleId: " + item.getStyleId());
-//                    System.out.println("Size: " + item.getSize());
-//                    System.out.println("Is favorite: " + item.getIsFavorite());
-//
-//                }
-//            }
-
-
-            //getAllItemsByStyle test
-//            int styleIDTest = 1;
-//
-//            System.out.println("test categoryItems filter");
-//
-//            List<ClothingItem> items = ClothingItemDAO.getAllClothingItemsByStyleId(styleIDTest);
-//
-//            if(items.isEmpty()){
-//                System.out.println("no items found");
-//            }else{
-//                System.out.println("found: " + items.size() + " items");
-//                for(ClothingItem item : items ){
-//                    System.out.println("ID: " + item.getId());
-//                    System.out.println("Name: " + item.getName());
-//                    System.out.println("CategoryId: " + item.getCategoryId());
-//                    System.out.println("ColorId: " + item.getColorId());
-//                    System.out.println("StyleId: " + item.getStyleId());
-//                    System.out.println("Size: " + item.getSize());
-//                    System.out.println("Is favorite: " + item.getIsFavorite());
-//
-//                }
-//            }
-
-
-            //getAllClothingItemsByIsFavorite
-            // int is_favoriteTest = 1;
-
-            System.out.println("test categoryItems filter");
-
-            List<ClothingItem> items = ClothingItemDAO.getAllClothingItemsByIsFavorite(Constants.FAVORITE);
+            List<ClothingItem> items = ClothingItemDAO.getAllClothingItemsByCategory(categoryIdTest);
 
             if(items.isEmpty()){
-                System.out.println("no items found");
+                System.out.println("No items found");
             }else{
-                System.out.println("found: " + items.size() + " items");
-                for(ClothingItem item : items ){
+                System.out.println("Found: " + items.size() + " items");
+                for(ClothingItem item : items){
                     System.out.println("ID: " + item.getId());
                     System.out.println("Name: " + item.getName());
                     System.out.println("CategoryId: " + item.getCategoryId());
@@ -160,19 +92,106 @@ public class Main extends Application {
                     System.out.println("StyleId: " + item.getStyleId());
                     System.out.println("Size: " + item.getSize());
                     System.out.println("Is favorite: " + item.getIsFavorite());
-
                 }
             }
+            */
+
+            /* ========== TEST 3: GET ITEMS BY COLOR ========== */
+            /*
+            int colorIdTest = 1;
+            System.out.println("Test colorItems filter");
+
+            List<ClothingItem> items = ClothingItemDAO.getAllClothingItemsByColor(colorIdTest);
+
+            if(items.isEmpty()){
+                System.out.println("No items found");
+            }else{
+                System.out.println("Found: " + items.size() + " items");
+                for(ClothingItem item : items){
+                    System.out.println("ID: " + item.getId());
+                    System.out.println("Name: " + item.getName());
+                    System.out.println("CategoryId: " + item.getCategoryId());
+                    System.out.println("ColorId: " + item.getColorId());
+                    System.out.println("StyleId: " + item.getStyleId());
+                    System.out.println("Size: " + item.getSize());
+                    System.out.println("Is favorite: " + item.getIsFavorite());
+                }
+            }
+            */
+
+            /* ========== TEST 4: GET ITEMS BY STYLE ========== */
+            /*
+            int styleIDTest = 1;
+            System.out.println("Test styleItems filter");
+
+            List<ClothingItem> items = ClothingItemDAO.getAllClothingItemsByStyleId(styleIDTest);
+
+            if(items.isEmpty()){
+                System.out.println("No items found");
+            }else{
+                System.out.println("Found: " + items.size() + " items");
+                for(ClothingItem item : items){
+                    System.out.println("ID: " + item.getId());
+                    System.out.println("Name: " + item.getName());
+                    System.out.println("CategoryId: " + item.getCategoryId());
+                    System.out.println("ColorId: " + item.getColorId());
+                    System.out.println("StyleId: " + item.getStyleId());
+                    System.out.println("Size: " + item.getSize());
+                    System.out.println("Is favorite: " + item.getIsFavorite());
+                }
+            }
+            */
+
+            /* ========== TEST 5: GET FAVORITE ITEMS ========== */
+            /*
+            System.out.println("Test ClothingItems Favorites Filter");
+            List<ClothingItem> items = ClothingItemDAO.getAllClothingItemsByIsFavorite(Constants.FAVORITE);
+
+            if(items.isEmpty()){
+                System.out.println("No favorite items found");
+            }else{
+                System.out.println("Found: " + items.size() + " favorite items");
+                for(ClothingItem item : items){
+                    System.out.println("ID: " + item.getId());
+                    System.out.println("Name: " + item.getName());
+                    System.out.println("CategoryId: " + item.getCategoryId());
+                    System.out.println("ColorId: " + item.getColorId());
+                    System.out.println("StyleId: " + item.getStyleId());
+                    System.out.println("Size: " + item.getSize());
+                    System.out.println("Is favorite: " + item.getIsFavorite());
+                }
+            }
+            */
+
+            /* ========== TEST 6: GET NON-FAVORITE ITEMS ========== */
+            /*
+            System.out.println("Test ClothingItems NotFavorites Filter");
+            List<ClothingItem> items = ClothingItemDAO.getAllClothingItemsByIsFavorite(Constants.NOT_FAVORITE);
+
+            if(items.isEmpty()){
+                System.out.println("No non-favorite items found");
+            }else{
+                System.out.println("Found: " + items.size() + " non-favorite items");
+                for(ClothingItem item : items){
+                    System.out.println("ID: " + item.getId());
+                    System.out.println("Name: " + item.getName());
+                    System.out.println("CategoryId: " + item.getCategoryId());
+                    System.out.println("ColorId: " + item.getColorId());
+                    System.out.println("StyleId: " + item.getStyleId());
+                    System.out.println("Size: " + item.getSize());
+                    System.out.println("Is favorite: " + item.getIsFavorite());
+                }
+            }
+            */
 
         } catch (SQLiteException e) {
-            System.out.println("failed");
+            System.out.println("Database operation failed");
             e.printStackTrace();
         } catch (SQLException e) {
-
             e.printStackTrace();
         }
 
-        //launch();
+        launch();
 
 
     }
