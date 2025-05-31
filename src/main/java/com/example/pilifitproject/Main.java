@@ -45,8 +45,8 @@ public class Main extends Application {
             /* ========== TEST 1: BASIC CRUD OPERATIONS ========== */
 
             // Add item
-            dao.addClothingItem(item);
-            System.out.println("Item added successfully");
+//            dao.addClothingItem(item);
+//            System.out.println("Item added successfully");
 
             // Update item
 //            dao.updateClothingItem(item);
@@ -68,8 +68,9 @@ public class Main extends Application {
                                     "\nSize       : " + c.getSize() +
                                     "\nIsFavorite : " + c.getIsFavorite()
                 );
+                System.out.println();
             }
-            System.out.println();
+
 
 
             /* ========== TEST 2: GET ITEMS BY CATEGORY ========== */
