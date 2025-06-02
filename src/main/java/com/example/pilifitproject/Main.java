@@ -3,7 +3,9 @@ package com.example.pilifitproject;
 import com.example.pilifitproject.controller.HomeController;
 import com.example.pilifitproject.dao.ClothingItemDAO;
 import com.example.pilifitproject.dao.DBConnection;
+import com.example.pilifitproject.dao.FitDAO;
 import com.example.pilifitproject.model.ClothingItem;
+import com.example.pilifitproject.model.Fit;
 import com.example.pilifitproject.utils.Constants;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -21,23 +23,24 @@ public class Main extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/pilifitproject/view/Home.fxml"));
         Parent root = fxmlLoader.load();
 
-        HomeController controller = fxmlLoader.getController();
-
-        ClothingItem testItem = new ClothingItem(
-                1,
-                "test item",
-                "/com/example/pilifitproject/images/top/T1.png",
-                1,3,3, "M", 0
-        );
-
-        List<ClothingItem> items = new ClothingItemDAO().getAllClothingItem();
-        if (!items.isEmpty()) {
-            // Fix the path by adding the full package path
-            items.get(0).setImagePath("/com/example/pilifitproject" + items.get(0).getImagePath());
-            controller.displayItem(items.get(0));
-        }
-
-        controller.displayItem(testItem);
+        //image display test
+//        HomeController controller = fxmlLoader.getController();
+//
+//        ClothingItem testItem = new ClothingItem(
+//                1,
+//                "test item",
+//                "/com/example/pilifitproject/images/top/T1.png",
+//                1,3,3, "M", 0
+//        );
+//
+//        List<ClothingItem> items = new ClothingItemDAO().getAllClothingItem();
+//        if (!items.isEmpty()) {
+//            // Fix the path by adding the full package path
+//            items.get(0).setImagePath("/com/example/pilifitproject" + items.get(0).getImagePath());
+//            controller.displayItem(items.get(0));
+//        }
+//
+//        controller.displayItem(testItem);
 
         Scene scene = new Scene(root, 320, 240);
         stage.setTitle("Hello!");
@@ -50,6 +53,8 @@ public class Main extends Application {
         DBConnection.testConnection();
 
         ClothingItemDAO dao = new ClothingItemDAO();
+        FitDAO fitDao = new FitDAO();
+
         ClothingItem item = new ClothingItem(
                 9,
                 "Black Heels",
@@ -61,7 +66,7 @@ public class Main extends Application {
                 0
         );
 
-        //image loading test
+
 
 
 
@@ -207,6 +212,113 @@ public class Main extends Application {
                 }
             }
             */
+
+            /* ========== FIT DAO TESTING ========== */
+            List<ClothingItem> allItems = dao.getAllClothingItem();
+            if (allItems.isEmpty()) {
+                System.out.println("No clothing items found - please add some first");
+                return;
+            }
+
+            // Get sample items for top, bottom, shoes
+            ClothingItem top = allItems.stream()
+                    .filter(i -> i.getCategoryId() == 1) // Assuming 1 is tops
+                    .findFirst()
+                    .orElse(allItems.get(0));
+
+            ClothingItem bottom = allItems.stream()
+                    .filter(i -> i.getCategoryId() == 2) // Assuming 2 is bottoms
+                    .findFirst()
+                    .orElse(allItems.get(0));
+
+            ClothingItem shoes = allItems.stream()
+                    .filter(i -> i.getCategoryId() == 3) // Assuming 3 is footwear
+                    .findFirst()
+                    .orElse(allItems.get(0));
+
+            /* ========== FIT DAO TESTING ========== */
+
+            // TEST 1: Add a new fit
+            System.out.println("\n=== TEST 1: Adding a new fit ===");
+            Fit newFit = new Fit(0, "Casual Outfit", top, bottom, shoes, Constants.NOT_FAVORITE);
+            fitDao.addFit(newFit);
+            System.out.println("Added fit with ID: " + newFit.getId());
+
+            // TEST 2: Get all fits
+            System.out.println("\n=== TEST 2: Getting all fits ===");
+            List<Fit> allFits = fitDao.getAllFits();
+            if (allFits.isEmpty()) {
+                System.out.println("No fits found");
+            } else {
+                System.out.println("Found " + allFits.size() + " fits:");
+                for (Fit fit : allFits) {
+                    System.out.println(
+                            "ID: " + fit.getId() + "\n" +
+                                    "Name: " + fit.getName() + "\n" +
+                                    "Top: " + fit.getTop().getName() + "\n" +
+                                    "Bottom: " + fit.getBottom().getName() + "\n" +
+                                    "Shoes: " + (fit.getShoes() != null ? fit.getShoes().getName() : "None") + "\n" +
+                                    "Favorite: " + fit.getIs_Favorite() + "\n"
+                    );
+                }
+            }
+
+            // TEST 3: Add fit to favorites
+
+            if (!allFits.isEmpty()) {
+                System.out.println("\n=== TEST 3: Adding fit to favorites ===");
+                Fit fitToFavorite = allFits.get(0);
+                System.out.println("Before favorite status: " + fitToFavorite.getIs_Favorite());
+                fitDao.addFitToFavorite(fitToFavorite.getId());
+
+                // Verify update
+                Fit updatedFit = fitDao.getAllFits().stream()
+                        .filter(f -> f.getId() == fitToFavorite.getId())
+                        .findFirst()
+                        .orElse(null);
+                System.out.println("After favorite status: " +
+                        (updatedFit != null ? updatedFit.getIs_Favorite() : "Not found"));
+            }
+
+
+
+            // TEST 4: Remove fit from favorites
+            /*
+            if (!allFits.isEmpty()) {
+                System.out.println("\n=== TEST 4: Removing fit from favorites ===");
+                Fit fitToUnfavorite = allFits.get(0);
+                System.out.println("Before favorite status: " + fitToUnfavorite.getIs_Favorite());
+                fitDao.removeFitFromFavorite(fitToUnfavorite.getId());
+
+                // Verify update
+                Fit updatedFit = fitDao.getAllFits().stream()
+                        .filter(f -> f.getId() == fitToUnfavorite.getId())
+                        .findFirst()
+                        .orElse(null);
+                System.out.println("After favorite status: " +
+                        (updatedFit != null ? updatedFit.getIs_Favorite() : "Not found"));
+            }
+
+             */
+
+            // TEST 5: Delete a fit
+            /*
+            if (!allFits.isEmpty()) {
+                System.out.println("\n=== TEST 5: Deleting a fit ===");
+                Fit fitToDelete = allFits.get(0);
+                int beforeCount = fitDao.getAllFits().size();
+                System.out.println("Fits before deletion: " + beforeCount);
+
+                fitDao.deleteFit(fitToDelete.getId());
+
+                int afterCount = fitDao.getAllFits().size();
+                System.out.println("Fits after deletion: " + afterCount);
+                System.out.println("Deletion " + (afterCount < beforeCount ? "successful" : "failed"));
+
+
+             */
+
+
 
         } catch (SQLiteException e) {
             System.out.println("Database operation failed");

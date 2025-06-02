@@ -36,7 +36,7 @@ public class HomeController {
     }
 
 
-
+// images display test
     public void displayItem(ClothingItem item){
         try {
             Image image = loadImageFromPath(item.getImagePath());
