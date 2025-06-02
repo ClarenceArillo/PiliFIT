@@ -113,6 +113,32 @@ public class ClothingItemDAO {
 
     }
 
+    //this method returns category id
+    public ClothingItem getClothingItemById(int id) throws SQLException {
+        String sql = "SELECT * FROM clothing_item WHERE id = ?";
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setInt(1, id);
+            ResultSet rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                return new ClothingItem(
+                        rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getString("image_path"),
+                        rs.getInt("category_id"),
+                        rs.getInt("color_id"),
+                        rs.getInt("style_id"),
+                        rs.getString("size"),
+                        rs.getInt("is_favorite")
+                );
+            }
+        }
+
+        return null;
+    }
+
     //Filter by Category
     public static List<ClothingItem> getAllClothingItemsByCategory(int categoryId) throws SQLException {
         List<ClothingItem> items = new ArrayList<>();

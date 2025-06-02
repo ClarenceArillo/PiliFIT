@@ -16,6 +16,8 @@ import org.sqlite.SQLiteException;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class Main extends Application {
     @Override
@@ -23,7 +25,7 @@ public class Main extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/pilifitproject/view/Home.fxml"));
         Parent root = fxmlLoader.load();
 
-        //image display test
+        /* =============image display test  =========*/
 //        HomeController controller = fxmlLoader.getController();
 //
 //        ClothingItem testItem = new ClothingItem(
@@ -221,28 +223,32 @@ public class Main extends Application {
             }
 
             // Get sample items for top, bottom, shoes
-            ClothingItem top = allItems.stream()
-                    .filter(i -> i.getCategoryId() == 1) // Assuming 1 is tops
-                    .findFirst()
-                    .orElse(allItems.get(0));
+            List <ClothingItem> top = allItems.stream()
+                    .filter(i -> i.getCategoryId() == 1) //  1 is tops
+                    .collect(Collectors.toList());
 
-            ClothingItem bottom = allItems.stream()
-                    .filter(i -> i.getCategoryId() == 2) // Assuming 2 is bottoms
-                    .findFirst()
-                    .orElse(allItems.get(0));
 
-            ClothingItem shoes = allItems.stream()
-                    .filter(i -> i.getCategoryId() == 3) // Assuming 3 is footwear
-                    .findFirst()
-                    .orElse(allItems.get(0));
+            List <ClothingItem> bottom = allItems.stream()
+                    .filter(i -> i.getCategoryId() == 2) //  2 is bottom
+                    .collect(Collectors.toList());
+
+            List <ClothingItem> shoes = allItems.stream()
+                    .filter(i -> i.getCategoryId() == 3) //  3 is shoes
+                    .collect(Collectors.toList());
+
+
+
+            int topIndexID = 6;
+            int bottomIndexID = 8;
+            int shoeIndexID = 9;
 
             /* ========== FIT DAO TESTING ========== */
 
             // TEST 1: Add a new fit
-            System.out.println("\n=== TEST 1: Adding a new fit ===");
-            Fit newFit = new Fit(0, "Casual Outfit", top, bottom, shoes, Constants.NOT_FAVORITE);
-            fitDao.addFit(newFit);
-            System.out.println("Added fit with ID: " + newFit.getId());
+//            System.out.println("\n=== TEST 1: Adding a new fit ===");
+//            Fit newFit = new Fit(2, "Casual Outfit test", topIndexID, bottomIndexID, shoeIndexID, Constants.NOT_FAVORITE);
+//            fitDao.addFit(newFit);
+//            System.out.println("Added fit with ID: " + newFit.getId());
 
             // TEST 2: Get all fits
             System.out.println("\n=== TEST 2: Getting all fits ===");
@@ -252,72 +258,136 @@ public class Main extends Application {
             } else {
                 System.out.println("Found " + allFits.size() + " fits:");
                 for (Fit fit : allFits) {
+                    ClothingItem topItem = dao.getClothingItemById(fit.getTopId());
+                    ClothingItem bottomItem = dao.getClothingItemById(fit.getBottomId());
+                    ClothingItem shoesItem = dao.getClothingItemById(fit.getShoesId());
+
                     System.out.println(
                             "ID: " + fit.getId() + "\n" +
                                     "Name: " + fit.getName() + "\n" +
-                                    "Top: " + fit.getTop().getName() + "\n" +
-                                    "Bottom: " + fit.getBottom().getName() + "\n" +
-                                    "Shoes: " + (fit.getShoes() != null ? fit.getShoes().getName() : "None") + "\n" +
-                                    "Favorite: " + fit.getIs_Favorite() + "\n"
+                                    "Top: " + (topItem != null ? topItem.getName() : "Unknown") + "\n" +
+                                    "Bottom: " + (bottomItem != null ? bottomItem.getName() : "Unknown") + "\n" +
+                                    "Shoes: " + (shoesItem != null ? shoesItem.getName() : "None") + "\n" +
+                                    "Favorite: " + (fit.getIs_Favorite() == Constants.FAVORITE ? "Yes" : "No") + "\n"
                     );
                 }
             }
 
             // TEST 3: Add fit to favorites
+/*
+            int idToFavorite = 1; // Change this to any valid ID dynamically
+            System.out.println("\n=== TEST: Adding Fit ID " + idToFavorite + " to Favorites ===");
 
-            if (!allFits.isEmpty()) {
-                System.out.println("\n=== TEST 3: Adding fit to favorites ===");
-                Fit fitToFavorite = allFits.get(0);
-                System.out.println("Before favorite status: " + fitToFavorite.getIs_Favorite());
-                fitDao.addFitToFavorite(fitToFavorite.getId());
+            boolean fitExists = fitDao.getAllFits().stream()
+                    .anyMatch(f -> f.getId() == idToFavorite);
+
+            if (fitExists) {
+                fitDao.addFitToFavorite(idToFavorite);
 
                 // Verify update
                 Fit updatedFit = fitDao.getAllFits().stream()
-                        .filter(f -> f.getId() == fitToFavorite.getId())
+                        .filter(f -> f.getId() == idToFavorite)
                         .findFirst()
                         .orElse(null);
-                System.out.println("After favorite status: " +
-                        (updatedFit != null ? updatedFit.getIs_Favorite() : "Not found"));
+
+                if (updatedFit != null && updatedFit.getIs_Favorite() == Constants.FAVORITE) {
+                    System.out.println("Successfully added to favorites.");
+                } else {
+                    System.out.println("Failed to update favorite status.");
+                }
+            } else {
+                System.out.println("Fit with ID " + idToFavorite + " does not exist.");
             }
 
+ */
 
 
             // TEST 4: Remove fit from favorites
-            /*
-            if (!allFits.isEmpty()) {
-                System.out.println("\n=== TEST 4: Removing fit from favorites ===");
-                Fit fitToUnfavorite = allFits.get(0);
-                System.out.println("Before favorite status: " + fitToUnfavorite.getIs_Favorite());
-                fitDao.removeFitFromFavorite(fitToUnfavorite.getId());
+/*
+
+            int idToUnfavorite = 1; // Change this as needed
+            System.out.println("\n=== TEST: Removing Fit ID " + idToUnfavorite + " from Favorites ===");
+
+            boolean fitExists = fitDao.getAllFits().stream()
+                    .anyMatch(f -> f.getId() == idToUnfavorite);
+
+            if (fitExists) {
+                fitDao.removeFitFromFavorite(idToUnfavorite);
 
                 // Verify update
                 Fit updatedFit = fitDao.getAllFits().stream()
-                        .filter(f -> f.getId() == fitToUnfavorite.getId())
+                        .filter(f -> f.getId() == idToUnfavorite)
                         .findFirst()
                         .orElse(null);
-                System.out.println("After favorite status: " +
-                        (updatedFit != null ? updatedFit.getIs_Favorite() : "Not found"));
+
+                if (updatedFit != null && updatedFit.getIs_Favorite() == Constants.NOT_FAVORITE) {
+                    System.out.println("Successfully removed from favorites.");
+                } else {
+                    System.out.println("Failed to update favorite status.");
+                }
+            } else {
+                System.out.println("Fit with ID " + idToUnfavorite + " does not exist.");
+            }
+
+ */
+
+            //TEST 5 : UPDATE FIT
+            /*
+            int idToUpdate = 1; // Change this as needed
+            System.out.println("\n=== TEST: Updating Fit ID " + idToUpdate + " ===");
+
+            // Check if fit exists
+            Optional<Fit> optionalFit = fitDao.getAllFits().stream().filter(f -> f.getId() == idToUpdate).findFirst();
+
+            if (optionalFit.isPresent()) {
+                Fit fitToUpdate = optionalFit.get();
+
+                // Modify fields as needed
+                fitToUpdate.setName("Updated Fit Name");
+                fitToUpdate.setTop(6);       // new topId
+                fitToUpdate.setBottom(8);    // new bottomId
+                fitToUpdate.setShoes(9);     // new shoesId
+                // leave favorite status unchanged or update if needed
+
+                fitDao.updateFit(fitToUpdate);
+
+                // Verify update
+                Fit updatedFit = fitDao.getAllFits().stream().filter(f -> f.getId() == idToUpdate).findFirst().orElse(null);
+
+                if (updatedFit != null && updatedFit.getName().equals("Updated Fit Name") && updatedFit.getTopId() == 6 && updatedFit.getBottomId() == 8 && updatedFit.getShoesId() == 9) {
+                    System.out.println("Fit update successful.");
+                } else {
+                    System.out.println("Fit update failed.");
+                }
+            } else {
+                System.out.println("Fit with ID " + idToUpdate + " does not exist.");
             }
 
              */
 
-            // TEST 5: Delete a fit
-            /*
-            if (!allFits.isEmpty()) {
-                System.out.println("\n=== TEST 5: Deleting a fit ===");
-                Fit fitToDelete = allFits.get(0);
-                int beforeCount = fitDao.getAllFits().size();
-                System.out.println("Fits before deletion: " + beforeCount);
+            // TEST 6: Delete a fit
+/*
+            int idToDelete = 1;
+            System.out.println("\n=== TEST: Deleting Fit with ID " + idToDelete + " ===");
 
-                fitDao.deleteFit(fitToDelete.getId());
+            //List<Fit> allFits = fitDao.getAllFits();
+            boolean fitExists = allFits.stream()
+                    .anyMatch(f -> f.getId() == idToDelete);
 
-                int afterCount = fitDao.getAllFits().size();
-                System.out.println("Fits after deletion: " + afterCount);
-                System.out.println("Deletion " + (afterCount < beforeCount ? "successful" : "failed"));
+            if (fitExists) {
+                fitDao.deleteFit(idToDelete);
+
+                // Verify deletion
+                boolean stillExists = fitDao.getAllFits().stream()
+                        .anyMatch(f -> f.getId() == idToDelete);
+
+                System.out.println("Deletion of fit ID " + idToDelete + (stillExists ? " failed." : " successful."));
+            } else {
+                System.out.println("Fit with ID " + idToDelete + " does not exist.");
+            }
 
 
-             */
-
+ */
 
 
         } catch (SQLiteException e) {
@@ -327,7 +397,7 @@ public class Main extends Application {
             e.printStackTrace();
         }
 
-        launch();
+        //launch();
 
 
     }
