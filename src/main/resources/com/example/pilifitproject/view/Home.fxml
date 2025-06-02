@@ -1,16 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.layout.VBox?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.pilifitproject.controller.HomeController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pilifitproject.controller.HomeController"
+>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+    <!-- HEADER -->
+    <top>
+        <VBox>
+            <!-- Navigation Bar -->
+            <HBox alignment="CENTER_LEFT" spacing="30" style="-fx-padding: 10; -fx-background-color: #000000;">
+                <Label style="-fx-text-fill: white; -fx-font-size: 14;" text="HOME" />
+                <Label style="-fx-text-fill: white; -fx-font-size: 14;" text="ABOUT" />
+                <Label style="-fx-text-fill: white; -fx-font-size: 14;" text="CONTACT" />
+            </HBox>
+
+            <!-- Banner Section -->
+            <StackPane>
+                <ImageView fitHeight="200" fitWidth="800" preserveRatio="false">
+                    <image>
+                        <Image url="@../images/banner.jpg" />
+                    </image>
+
+
+                </ImageView>
+                <ImageView fx:id="itemImageView" />
+                <VBox alignment="CENTER" prefHeight="130.0" prefWidth="800.0" spacing="10">
+                    <Label style="-fx-font-size: 32; -fx-font-weight: bold;" text="PILIFITS" textAlignment="CENTER" textFill="#2e2e2e" translateY="15.0" />
+               <Button mnemonicParsing="false" text="&gt;">
+                  <VBox.margin>
+                     <Insets bottom="-50.0" right="-700.0" />
+                  </VBox.margin>
+               </Button>
+               <Button mnemonicParsing="false" text="&lt;">
+                  <VBox.margin>
+                     <Insets bottom="28.0" right="700.0" />
+                  </VBox.margin>
+               </Button>
+                    <Button fx:id="generateFitBtn" style="-fx-background-color: white; -fx-text-fill: black;" text="✨ GENERATE FIT" translateY="-30.0" />
+
+                    <!-- Tab Navigation -->
+                    <HBox alignment="CENTER" spacing="40">
+                        <ToggleButton fx:id="closetTabBtn" selected="true" text="CLOSET" translateY="-20.0" />
+                        <ToggleButton fx:id="collectionsTabBtn" text="COLLECTIONS" translateY="-20.0" />
+                    </HBox>
+               <padding>
+                  <Insets bottom="13.0" top="12.0" />
+               </padding>
+                </VBox>
+            </StackPane>
+        </VBox>
+    </top>
+
+    <!-- MAIN CONTENT AREA -->
+    <center>
+        <TabPane fx:id="mainTabPane" tabClosingPolicy="UNAVAILABLE">
+            <!-- Closet Tab -->
+            <Tab text="Closet">
+                <VBox alignment="TOP_CENTER" spacing="20" style="-fx-padding: 20;">
+                    <!-- Filters -->
+                    <HBox spacing="15">
+                        <Button style="-fx-background-radius: 20; -fx-background-color: #333; -fx-text-fill: white;" text="CATEGORY" />
+                        <Button style="-fx-background-radius: 20; -fx-background-color: #333; -fx-text-fill: white;" text="STYLE" />
+                        <Button style="-fx-background-radius: 20; -fx-background-color: #333; -fx-text-fill: white;" text="COLOR" />
+                        <Button style="-fx-background-radius: 20; -fx-background-color: #333; -fx-text-fill: white;" text="FAVORITES" />
+                    </HBox>
+
+                    <!-- Item Grid Placeholder -->
+                    <TilePane alignment="CENTER" hgap="20" prefColumns="3" vgap="20">
+                  <ScrollBar orientation="VERTICAL" translateX="-300.0">
+                     <TilePane.margin>
+                        <Insets />
+                     </TilePane.margin>
+                  </ScrollBar>
+                        <VBox alignment="CENTER" spacing="10" style="-fx-background-color: #1e1e1e; -fx-padding: 20;" translateX="-300.0">
+                            <ImageView fitHeight="60" fitWidth="60">
+                                <image>
+                                    <Image url="@../images/add_icon.png" />
+                                </image>
+                            </ImageView>
+                            <Label style="-fx-text-fill: white;" text="ADD NEW PIECE" />
+                        </VBox>
+                    </TilePane>
+                </VBox>
+            </Tab>
+
+            <!-- Generate Tab -->
+            <Tab text="Style">
+                <AnchorPane>
+                    <Label layoutX="30" layoutY="30" text="Generate Tab Content Here" />
+                </AnchorPane>
+            </Tab>
+            <!-- Generate Tab -->
+            <Tab text="Favorites">
+                <AnchorPane>
+                    <Label layoutX="30" layoutY="30" text="Generate Tab Content Here" />
+                </AnchorPane>
+            </Tab>
+
+            <!-- Collections Tab -->
+            <Tab text="Color">
+                <AnchorPane>
+                    <Label layoutX="30" layoutY="30" text="Collections Tab Content Here" />
+                </AnchorPane>
+            </Tab>
+        </TabPane>
+    </center>
+
+
+
+    <!-- FOOTER -->
+    <bottom>
+        <HBox alignment="CENTER" style="-fx-background-color: #2c2c2c; -fx-padding: 10;">
+            <Label style="-fx-text-fill: white;" text="© 2025 PiliFits" />
+        </HBox>
+    </bottom>
+</BorderPane>

@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e37fed0a-9b1e-4e37-b52e-de5b42ed3ed4" name="Changes" comment="Filters Category, Color, Style, isFavorites test done!" />
+    <list default="true" id="635ec7d8-d374-4bf4-977d-6b60cb30ac35" name="Changes" comment="deleted txt.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/ClosetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_05_2025_1_15_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_05_2025_1_15_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/Home.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,36 +27,48 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="HomeCloUpDia" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="JavaFX-GUI" />
+        <entry key="$PROJECT_DIR$" value="AboutUsFeature2" />
       </map>
     </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
     &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;ClarenceArillo&quot;
+    &quot;assignee&quot;: &quot;cyraulo&quot;
   }
 }</component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="fcffe777-0ad5-4147-b62c-10c7f71ae64f" />
+  </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/ClarenceArillo/PiliFIT&quot;,
-    &quot;accountId&quot;: &quot;83d71b3b-b778-44f4-a1a4-330aca8a8ed4&quot;
+    &quot;url&quot;: &quot;https://github.com/ClarenceArillo/PiliFIT.git&quot;,
+    &quot;accountId&quot;: &quot;004dbcd4-a7d4-41be-aef2-95116c987b73&quot;
   }
 }</component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
-      </MavenGeneralSettings>
-    </option>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 0
+  &quot;associatedIndex&quot;: 2
 }</component>
-  <component name="ProjectId" id="2xOzJiTBYl3x47dYGyU1UwRO6qX" />
+  <component name="ProjectId" id="2xderoEwte8Sd4oMrx7Qd4P7r8x" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -56,30 +76,31 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main .executor&quot;: &quot;Run&quot;,
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;#3 on HomeCloUpDia&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/CLARENCE/IdeaProjects/OOP Class/PiliFitProject&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/cyy/IdeaProjects/kkkk/src/main/java/com&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/CLARENCE/IdeaProjects/OOP Class/PiliFItProjectJDK24&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\CLARENCE\IdeaProjects\OOP Class\PiliFitProject\src\main\resources\com\example\pilifitproject\view" />
-    </key>
-  </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.pilifitproject.Main" />
       <module name="PiliFitProject" />
+      <option name="VM_PARAMETERS" value="--enable-native-access=ALL-UNNAMED --enable-native-access=ALL-UNNAMED,javafx.graphics,org.xerial.sqlitejdbc --add-exports=javafx.graphics/com.sun.marlin=ALL-UNNAMED" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.pilifitproject.controller.*" />
+          <option name="PATTERN" value="com.example.pilifitproject.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -87,82 +108,90 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main" />
-      </list>
-    </recent_temporary>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e37fed0a-9b1e-4e37-b52e-de5b42ed3ed4" name="Changes" comment="" />
-      <created>1747823840317</created>
+      <changelist id="635ec7d8-d374-4bf4-977d-6b60cb30ac35" name="Changes" comment="" />
+      <created>1748272578317</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1747823840317</updated>
+      <updated>1748272578317</updated>
     </task>
-    <task id="LOCAL-00001" summary="added DBConnection and test method &quot;testConnection&quot;">
+    <task id="LOCAL-00001" summary="okok yan">
       <option name="closed" value="true" />
-      <created>1748063686888</created>
+      <created>1748272945167</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1748063686888</updated>
+      <updated>1748272945167</updated>
     </task>
-    <task id="LOCAL-00002" summary="testing clothingitem adding in DB">
+    <task id="LOCAL-00002" summary="deleted">
       <option name="closed" value="true" />
-      <created>1748113291385</created>
+      <created>1748219565353</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1748113291385</updated>
+      <updated>1748219565353</updated>
     </task>
-    <task id="LOCAL-00003" summary="perform CRUD operations test">
+    <task id="LOCAL-00003" summary="try lang">
       <option name="closed" value="true" />
-      <created>1748168241379</created>
+      <created>1748399661417</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1748168241379</updated>
+      <updated>1748399661417</updated>
     </task>
-    <task id="LOCAL-00004" summary="fit initial changes">
+    <task id="LOCAL-00004" summary="Closet, item information viewer Layout. Upload Dialog, direction info Layout">
       <option name="closed" value="true" />
-      <created>1748218606920</created>
+      <created>1748416645079</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1748218606920</updated>
+      <updated>1748416645079</updated>
     </task>
-    <task id="LOCAL-00005" summary="Unchecked ClothingItemDAO &amp; FitDAO">
+    <task id="LOCAL-00005" summary="closet and about in HomeCloUpDia branch">
       <option name="closed" value="true" />
-      <created>1748269844346</created>
+      <created>1748420705360</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1748269844346</updated>
+      <updated>1748420705360</updated>
     </task>
-    <task id="LOCAL-00006" summary="remove accessories and headwear features + addFit and getAllFits">
+    <task id="LOCAL-00006" summary="merge iml changes">
       <option name="closed" value="true" />
-      <created>1748318973255</created>
+      <created>1748420984493</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1748318973255</updated>
+      <updated>1748420984493</updated>
     </task>
-    <task id="LOCAL-00007" summary="Filters Category, Color, Style, isFavorites test done!">
+    <task id="LOCAL-00007" summary="Clean CRUD testing on Main">
       <option name="closed" value="true" />
-      <created>1748354911717</created>
+      <created>1748596878140</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1748354911717</updated>
+      <updated>1748596878140</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="deleted txt.">
+      <option name="closed" value="true" />
+      <created>1748663452981</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1748663452981</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -176,7 +205,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="HomeCloUpDia" />
                       </list>
                     </value>
                   </entry>
@@ -189,13 +218,14 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added DBConnection and test method &quot;testConnection&quot;" />
-    <MESSAGE value="testing clothingitem adding in DB" />
-    <MESSAGE value="perform CRUD operations test" />
-    <MESSAGE value="fit initial changes" />
-    <MESSAGE value="Unchecked ClothingItemDAO &amp; FitDAO" />
-    <MESSAGE value="remove accessories and headwear features + addFit and getAllFits" />
-    <MESSAGE value="Filters Category, Color, Style, isFavorites test done!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Filters Category, Color, Style, isFavorites test done!" />
+    <MESSAGE value="okok yan" />
+    <MESSAGE value="deleted" />
+    <MESSAGE value="try lang" />
+    <MESSAGE value="Closet, item information viewer Layout. Upload Dialog, direction info Layout" />
+    <MESSAGE value="closet and about in HomeCloUpDia branch" />
+    <MESSAGE value="merge iml changes" />
+    <MESSAGE value="Clean CRUD testing on Main" />
+    <MESSAGE value="deleted txt." />
+    <option name="LAST_COMMIT_MESSAGE" value="deleted txt." />
   </component>
 </project>
