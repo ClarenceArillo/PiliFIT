@@ -1,25 +1,45 @@
 package com.example.pilifitproject;
 
+import com.example.pilifitproject.controller.HomeController;
 import com.example.pilifitproject.dao.ClothingItemDAO;
 import com.example.pilifitproject.dao.DBConnection;
 import com.example.pilifitproject.model.ClothingItem;
 import com.example.pilifitproject.utils.Constants;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.sqlite.SQLiteException;
-
-import java.awt.*;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
 public class Main extends Application {
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage) throws IOException, SQLException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/pilifitproject/view/Home.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        Parent root = fxmlLoader.load();
+
+        HomeController controller = fxmlLoader.getController();
+
+        ClothingItem testItem = new ClothingItem(
+                1,
+                "test item",
+                "/com/example/pilifitproject/images/top/T1.png",
+                1,3,3, "M", 0
+        );
+
+        List<ClothingItem> items = new ClothingItemDAO().getAllClothingItem();
+        if (!items.isEmpty()) {
+            // Fix the path by adding the full package path
+            items.get(0).setImagePath("/com/example/pilifitproject" + items.get(0).getImagePath());
+            controller.displayItem(items.get(0));
+        }
+
+        controller.displayItem(testItem);
+
+        Scene scene = new Scene(root, 320, 240);
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
@@ -40,6 +60,10 @@ public class Main extends Application {
                 "8",
                 0
         );
+
+        //image loading test
+
+
 
         try {
             /* ========== TEST 1: BASIC CRUD OPERATIONS ========== */
