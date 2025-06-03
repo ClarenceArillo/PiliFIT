@@ -1,14 +1,11 @@
 package com.example.pilifitproject.controller;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 
-public class HomeController {
-    @FXML
-    private Label welcomeText;
+//public class MainController {
+    //@FXML
+    //private AnchorPane canvasPane;
 
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
+    // Optional: add logic to respond to window resize, etc.
 }
