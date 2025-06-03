@@ -42,9 +42,9 @@
         </Pane>
         <HBox prefHeight="26.0" prefWidth="730.0" style="-fx-background-color: black;">
             <children>
-                <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: black;" text="HOME" textFill="#c6c2c2" />
-                <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: black;" text="ABOUT" textFill="#c6c2c2" />
-                <Button layoutX="82.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: black;" text="CONTACT" textFill="#c6c2c2" />
+                <Button mnemonicParsing="false" onAction="#goHome" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: black;" text="HOME" textFill="#c6c2c2" />
+                <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#goAbout" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: black;" text="ABOUT" textFill="#c6c2c2" />
+                <Button layoutX="82.0" layoutY="10.0" mnemonicParsing="false" onAction="#goContact" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: black;" text="CONTACT" textFill="#c6c2c2" />
             </children>
         </HBox>
         <GridPane layoutY="26.0" prefHeight="164.0" prefWidth="730.0">
