@@ -285,4 +285,29 @@ public class ClothingItemDAO {
 
     }
 
+    public ClothingItem getRandomClothingItemByCategory(int categoryId) throws SQLException {
+        String sql = "SELECT * FROM clothing_item WHERE category_id = ? ORDER BY RANDOM() LIMIT 1";
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setInt(1, categoryId);
+            ResultSet rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                return new ClothingItem(
+                        rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getString("image_path"),
+                        rs.getInt("category_id"),
+                        rs.getInt("color_id"),
+                        rs.getInt("style_id"),
+                        rs.getString("size"),
+                        rs.getInt("is_favorite")
+                );
+            }
+        }
+        return null;
+    }
+
+
 }
