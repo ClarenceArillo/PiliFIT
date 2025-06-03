@@ -14,8 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Pane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -34,9 +33,9 @@
                            <children>
                               <StackPane prefHeight="150.0" prefWidth="600.0">
                                  <children>
-                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;">
+                                    <AnchorPane prefHeight="137.0" prefWidth="600.0" style="-fx-background-color: grey;">
                                        <children>
-                                          <GridPane prefHeight="151.0" prefWidth="600.0">
+                                          <GridPane layoutY="6.0" prefHeight="121.0" prefWidth="600.0">
                                             <columnConstraints>
                                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
