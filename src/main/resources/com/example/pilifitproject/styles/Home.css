@@ -9,7 +9,14 @@
     -fx-text-fill: white;
 }
 
+.scene-switch {
+    -fx-background-color: transparent;
+}
 
+.scene-switch:hover {
+    -fx-background-color: lightgray;
+
+}
 .preview-border {
     -fx-fill: #c3c9cf;
     -fx-stroke: black;

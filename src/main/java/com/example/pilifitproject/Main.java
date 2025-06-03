@@ -17,13 +17,30 @@ import java.util.List;
 
 public class Main extends Application {
     @Override
+    //public void start(Stage stage) throws IOException {
+        //FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/pilifitproject/view/Home.fxml"));
+        //Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        //stage.setTitle("Hello!");
+        //stage.setScene(scene);
+        //stage.show();
+    //}
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/pilifitproject/view/Home.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
+        Scene scene = new Scene(fxmlLoader.load());
+
+        stage.setTitle("PiliFit");
+
+
+        stage.setWidth(1200);
+        stage.setHeight(800);
+
+
+        stage.setMaximized(true);
+
         stage.setScene(scene);
         stage.show();
     }
+
 
     public static void main(String[] args) {
 
