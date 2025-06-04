@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="635ec7d8-d374-4bf4-977d-6b60cb30ac35" name="Changes" comment="Connect Home and UploadDialog. With file explorer viewer">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/DeleteConfirmation.fxml" afterDir="false" />
+    <list default="true" id="635ec7d8-d374-4bf4-977d-6b60cb30ac35" name="Changes" comment="deleteconfirmation fxml and css">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/images/others/DeleteBin.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/UploadDialog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/UploadDialog.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/styles/UploadDialog.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/styles/UploadDialog.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/DeleteConfirmation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/DeleteConfirmation.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +89,11 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\cyy\IdeaProjects\kkkk\src\main\resources\com\example\pilifitproject\images\others" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.pilifitproject.Main" />
@@ -194,7 +200,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749032718175</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="deleteconfirmation fxml and css">
+      <option name="closed" value="true" />
+      <created>1749033745704</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1749033745704</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -231,6 +245,7 @@
     <MESSAGE value="deleted txt." />
     <MESSAGE value="Filters Category, Color, Style, isFavorites test done!" />
     <MESSAGE value="Connect Home and UploadDialog. With file explorer viewer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Connect Home and UploadDialog. With file explorer viewer" />
+    <MESSAGE value="deleteconfirmation fxml and css" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleteconfirmation fxml and css" />
   </component>
 </project>

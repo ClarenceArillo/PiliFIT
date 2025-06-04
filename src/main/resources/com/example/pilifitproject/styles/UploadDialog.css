@@ -22,8 +22,8 @@
     -fx-border-color: black;
     -fx-border-width: 2px;
     -fx-border-radius: 100%;
-    -fx-pref-width: 20px;
-    -fx-pref-height: 20px;
+    -fx-pref-width: 5px;
+    -fx-pref-height: 5px;
 }
 
 .soft-tab {
@@ -54,4 +54,17 @@
     -fx-font-size: 10px;
     -fx-font-family: "Berlin Sans FB";
     -fx-opacity: 0.6;
+}
+
+.delete-button {
+    -fx-background-color: #F75D59;
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+    -fx-text-fill: black;
+    -fx-font-size: 10px;
+    -fx-font-family: "Berlin Sans FB Bold";
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-padding: 5 20;
+
 }
