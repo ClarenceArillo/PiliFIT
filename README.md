@@ -1,6 +1,4 @@
-# 👗 Pilifit: Complete Layout and Features Overview (Updated)
-
-**Pilifit** is a wardrobe and outfit planner designed to simplify clothing management, style exploration, and outfit coordination.
+# 🧩 Pilifit: Complete Layout and Features Overview 
 
 ---
 
@@ -17,82 +15,85 @@ Accessible via the main navigation bar:
 
 ## 🔷 Home Page (Main Interface)
 
-Within the Home tab, there are three **in-page sub-navigation tabs**:
+Within the **Home** tab, there are three sub-navigation tabs (in-page tabs):
 
-### 1. 🧥 Closet
+---
 
-#### Main Features
-- Displays a grid or list of all clothing items in the user's wardrobe.
+### 1. Closet
+
+#### 🧥 Main Features
+
+- Displays a list/grid of all clothing items.
 
 #### 🖼️ Image Upload Instructions
-- An info icon provides a popup guide on:
-    - Recommended image backgrounds
-    - Lighting tips
-    - Centering the clothing item
-- Clicking "OK" opens the image upload dialog.
+
+- An info icon is displayed in the Closet.
+- When clicked, a popup instruction guide appears, explaining:
+  - Image guidelines for good visual appearance (e.g., plain background, proper lighting, centered clothes, etc.).
+- After clicking **OK**, a file upload dialog opens to allow the user to upload images of clothing items.
 
 #### 📝 Clothing Item Actions
+
+When a clothing item is clicked, a detailed tab opens, allowing:
+
 - **View & Edit:**
-    - Editable fields: Item name, category, color, style, and size.
-    - Changes prompt a confirmation: _“Save Changes” or “Discard Changes”_
+  - Cloth name: Users can assign a name to each item (displayed below the item).
+  - Attributes: Category, color, style, size
+- **Save or Discard Changes:**
+  - All edits prompt a confirmation dialog: “Save Changes” or “Discard Changes”
 - **Delete:**
-    - Prompts: _“Confirm Delete” or “Cancel”_
+  - Deletion prompts a confirmation dialog: “Confirm Delete” or “Cancel”
+- **Favorite:**
+  - Option to mark the item as a favorite
 
 #### 🔍 Filtering System
-Users can filter clothing by:
-- Style (casual, formal, minimalist, sport, etc.)
-- Color (red, white, black, yellow, etc.)
-- Category (top, bottom, shoes, etc.)
+
+Users can filter clothing based on:
+
+- Style (e.g., casual, formal, minimalist, sport, etc.)
+- Color (e.g., red, white, black, yellow, etc.)
+- Clothing category (e.g., top, bottom, shoes, etc.)
 - Favorites
 
-#### ❤️ Favorites
-Displays:
-- Clothing marked as favorite
-- Saved fits marked as favorite from the Generate tab
+---
+
+### 2. Generate
+
+Opens as a popup tab (modal).
+
+#### 🎲 Fit Generation Features
+
+- Category checkboxes to include specific clothing types (e.g., top, bottom, shoes) in generation
+- Random fit generator based on selected checkboxes
+- Switch item feature to browse other options for a category (e.g., change tops left/right)
+- Save generated fits
 
 ---
 
-### 2. 🎲 Generate
+### 3. Collections
 
-Opened as a popup modal.
-
-#### Fit Generation Features
-- Category checkboxes to include specific item types (e.g., tops, bottoms, shoes)
-- Random outfit generation based on selected types
-- Item switch (left/right arrows) to browse options per category
-- **Save Fit:**
-    - Option to save the outfit
-    - Add it to a collection album
-
----
-
-### 3. 📚 Collections
-
-- View saved outfits grouped in albums (similar to Pinterest boards)
-- Features include:
-    - View and manage fits in each album
-    - Edit or update saved outfits
-    - Add or remove outfits from albums
+- Displays saved outfits in a Pinterest-style board layout
+- Features:
+  - View all saved fits
+  - Edit individual items within saved fits (e.g., change top, bottom, etc.)
+  - Option to mark fits as favorite
 
 ---
 
 ## 🔷 About Us
 
-Includes:
-- Project description
-- Purpose and vision overview
-- Developer names and their respective roles
+- Includes:
+  - Project description
+  - Overview of purpose and vision
+  - Developer names and roles
+  - Developer information may also include:
+    - Documentation process
+    - Daily timeline of project progress
 
 ---
 
 ## 🔷 Contact Us
 
-Contains:
-- Developer contact info (email, social media)
-- Links to Pilifit’s social platforms or communication channels
-
----
-
-### 📌 Note
-This document reflects the latest structure and functionality of the Pilifit app. Future updates may enhance or add features based on user feedback and development goals.
-
+- Contains:
+  - Developer contact details (email, socials)
+  - Project social media accounts or communication channels
