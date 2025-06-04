@@ -3,9 +3,19 @@ package com.example.pilifitproject.controller;
 import com.example.pilifitproject.SceneSwitcher;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.CheckMenuItem;
+import javafx.scene.control.MenuButton;
+
 import java.io.IOException;
 
 public class HomeController {
+
+    @FXML
+    private MenuButton categoryDropdown;     // CATEGORY
+    @FXML
+    private MenuButton styleDropdown;    // STYLE
+    @FXML
+    private MenuButton colorDropdown;   // COLOR
 
     @FXML
     private void goHome(ActionEvent event) throws IOException {
@@ -20,5 +30,72 @@ public class HomeController {
     @FXML
     private void goContact(ActionEvent event) throws IOException {
         SceneSwitcher.switchTo(event, "Contact.fxml");
+    }
+
+    @FXML
+    public void initialize() {
+        setupCategoryDropdown();
+        setupStyleDropdown();
+        setupColorDropdown();
+    }
+
+    private void setupCategoryDropdown() {
+        CheckMenuItem top = new CheckMenuItem("Top");
+        CheckMenuItem bottom = new CheckMenuItem("Bottom");
+        CheckMenuItem shoes = new CheckMenuItem("Shoes");
+        CheckMenuItem accessories = new CheckMenuItem("Accessories");
+        CheckMenuItem other = new CheckMenuItem("Other");
+
+        categoryDropdown.getItems().addAll(top, bottom, shoes, accessories, other);
+
+        top.setOnAction(e -> handleCategoryFilter(top));
+        bottom.setOnAction(e -> handleCategoryFilter(bottom));
+        shoes.setOnAction(e -> handleCategoryFilter(shoes));
+        accessories.setOnAction(e -> handleCategoryFilter(accessories));
+        other.setOnAction(e -> handleCategoryFilter(other));
+    }
+
+    private void setupStyleDropdown() {
+        CheckMenuItem formal = new CheckMenuItem("Formal");
+        CheckMenuItem casual = new CheckMenuItem("Casual");
+        CheckMenuItem others = new CheckMenuItem("Others");
+
+        styleDropdown.getItems().addAll(formal, casual, others);
+
+        formal.setOnAction(e -> handleStyleFilter(formal));
+        casual.setOnAction(e -> handleStyleFilter(casual));
+        others.setOnAction(e -> handleStyleFilter(others));
+    }
+
+    private void setupColorDropdown() {
+        CheckMenuItem red = new CheckMenuItem("Red");
+        CheckMenuItem orange = new CheckMenuItem("Orange");
+        CheckMenuItem yellow = new CheckMenuItem("Yellow");
+        CheckMenuItem green = new CheckMenuItem("Green");
+        CheckMenuItem blue = new CheckMenuItem("Blue");
+        CheckMenuItem violet = new CheckMenuItem("Violet");
+        CheckMenuItem others = new CheckMenuItem("Others");
+
+        colorDropdown.getItems().addAll(red, orange, yellow, green, blue, violet, others);
+
+        red.setOnAction(e -> handleColorFilter(red));
+        orange.setOnAction(e -> handleColorFilter(orange));
+        yellow.setOnAction(e -> handleColorFilter(yellow));
+        green.setOnAction(e -> handleColorFilter(green));
+        blue.setOnAction(e -> handleColorFilter(blue));
+        violet.setOnAction(e -> handleColorFilter(violet));
+        others.setOnAction(e -> handleColorFilter(others));
+    }
+
+    private void handleCategoryFilter(CheckMenuItem item) {
+        System.out.println("CATEGORY: " + item.getText() + (item.isSelected() ? " selected" : " deselected"));
+    }
+
+    private void handleStyleFilter(CheckMenuItem item) {
+        System.out.println("STYLE: " + item.getText() + (item.isSelected() ? " selected" : " deselected"));
+    }
+
+    private void handleColorFilter(CheckMenuItem item) {
+        System.out.println("COLOR: " + item.getText() + (item.isSelected() ? " selected" : " deselected"));
     }
 }
