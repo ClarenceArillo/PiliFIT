@@ -29,7 +29,7 @@
                 <String fx:value="-fx-padding: 10;" />
             </styleClass>
             <children>
-            <VBox layoutX="38.0" layoutY="271.0" prefHeight="162.0" prefWidth="180.0" style="-fx-background-color: BLACK;" styleClass="border-pad" stylesheets="@../styles/AboutUs.css">
+            <VBox layoutX="37.0" layoutY="265.0" prefHeight="162.0" prefWidth="180.0" style="-fx-background-color: BLACK;" styleClass="border-pad" stylesheets="@../styles/AboutUs.css">
                <children>
                   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="213.0" text="GOAL" textAlignment="CENTER" textFill="WHITE">
                      <VBox.margin>
@@ -43,7 +43,7 @@
                   </Text>
                </children>
             </VBox>
-              <VBox layoutX="38.0" layoutY="145.0" prefHeight="118.0" prefWidth="627.0" style="-fx-background-color: BLACK;" stylesheets="@../styles/AboutUs.css">
+              <VBox layoutX="37.0" layoutY="118.0" prefHeight="136.0" prefWidth="654.0" style="-fx-background-color: BLACK;" stylesheets="@../styles/AboutUs.css">
                   <children>
                       <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="28.0" prefWidth="641.0" text="ABOUT US" textAlignment="CENTER" textFill="WHITE">
                      <VBox.margin>
@@ -61,9 +61,9 @@
                   <String fx:value="border-pad" />
                </styleClass>
               </VBox>
-            <VBox layoutX="258.0" layoutY="271.0" prefHeight="118.0" prefWidth="201.0" style="-fx-background-color: BLACK;" styleClass="border-pad" stylesheets="@../styles/AboutUs.css">
+            <VBox layoutX="258.0" layoutY="265.0" prefHeight="118.0" prefWidth="201.0" style="-fx-background-color: BLACK;" styleClass="border-pad" stylesheets="@../styles/AboutUs.css">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="213.0" text="GOAL" textAlignment="CENTER" textFill="WHITE">
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="213.0" text="CREATORS" textAlignment="CENTER" textFill="WHITE">
                      <VBox.margin>
                         <Insets top="5.0" />
                      </VBox.margin>
@@ -75,9 +75,9 @@
                   </Text>
                </children>
             </VBox>
-            <VBox layoutX="478.0" layoutY="271.0" prefHeight="118.0" prefWidth="201.0" style="-fx-background-color: BLACK;" styleClass="border-pad" stylesheets="@../styles/AboutUs.css">
+            <VBox layoutX="477.0" layoutY="265.0" prefHeight="118.0" prefWidth="201.0" style="-fx-background-color: BLACK;" styleClass="border-pad" stylesheets="@../styles/AboutUs.css">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="213.0" text="GOAL" textAlignment="CENTER" textFill="WHITE">
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="213.0" text="WELCOME" textAlignment="CENTER" textFill="WHITE">
                      <VBox.margin>
                         <Insets top="5.0" />
                      </VBox.margin>
@@ -89,7 +89,7 @@
                   </Text>
                </children>
             </VBox>
-              <GridPane layoutX="-4.0" layoutY="31.0" prefHeight="140.0" prefWidth="730.0">
+              <GridPane layoutY="45.0" prefHeight="112.0" prefWidth="730.0">
                   <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" maxWidth="471.0" minWidth="10.0" prefWidth="244.0" />
                       <ColumnConstraints hgrow="SOMETIMES" maxWidth="471.0" minWidth="10.0" prefWidth="261.1999755859375" />
@@ -110,9 +110,6 @@
                               <Font size="62.0" />
                           </font>
                       </Label>
-                      <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="34.0" text="&lt;" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-                      <Button layoutX="10.0" layoutY="100.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="34.0" text="&gt;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-                      <Button mnemonicParsing="false" text="GENERATE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
                   </children>
               </GridPane>
             </children>
