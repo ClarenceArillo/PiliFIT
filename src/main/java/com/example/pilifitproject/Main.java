@@ -44,7 +44,7 @@ public class Main extends Application {
 //
 //        controller.displayItem(testItem);
 
-        Scene scene = new Scene(root, 320, 240);
+        Scene scene = new Scene(root, 724, 600);
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
@@ -397,7 +397,7 @@ public class Main extends Application {
             e.printStackTrace();
         }
 
-        //launch();
+        launch();
 
 
     }

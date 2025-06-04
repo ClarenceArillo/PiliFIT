@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<AnchorPane fx:id="root" prefHeight="423.0" prefWidth="345.0" styleClass="soft-tab" stylesheets="@../styles/UploadDialog.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="root" fx:controller="com.example.pilifitproject.controller.UploadDialogController" prefHeight="423.0" prefWidth="345.0" styleClass="soft-tab" stylesheets="@../styles/UploadDialog.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Button layoutX="286.0" layoutY="13.0" mnemonicParsing="false" styleClass="close-button" text="X">
          <font>
@@ -54,7 +54,7 @@
                   </Text>
                </children>
             </TextFlow>
-            <Button layoutX="99.0" layoutY="328.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="117.0" styleClass="upload-button" text="UPLOAD FILE">
+            <Button fx:id="UploadItem" layoutX="99.0" layoutY="328.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="117.0" styleClass="upload-button" text="UPLOAD FILE">
                <font>
                   <Font name="Bell MT Bold" size="10.0" />
                </font>
