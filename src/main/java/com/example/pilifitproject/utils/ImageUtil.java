@@ -13,6 +13,8 @@ import java.nio.file.*;
             /**
              * Loads a JavaFX Image from a given path.
              */
+
+            /*
             public static Image loadImage(String path) {
                 try {
                     if (path != null && !path.isEmpty()) {
@@ -27,7 +29,27 @@ import java.nio.file.*;
                 return null;
             }
 
-            /**
+             */
+
+            public static Image loadImage(String relativePath) {
+                try {
+                    if (relativePath != null && !relativePath.isEmpty()) {
+                        Path fullPath = BASE_IMAGE_DIR.resolve(relativePath);
+                        File file = fullPath.toFile();
+                        if (file.exists()) {
+                            return new Image(file.toURI().toString());
+                        } else {
+                            System.err.println("Image file not found: " + fullPath);
+                        }
+                    }
+                } catch (Exception e) {
+                    System.err.println("Error loading image: " + e.getMessage());
+                }
+                return null;
+            }
+
+
+        /**
              * Saves an image file to the specified category folder.
              *
              * @param sourceFile The image file to save.
