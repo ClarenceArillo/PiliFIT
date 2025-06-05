@@ -37,10 +37,10 @@
 .border-pad {
     -fx-background-color: white;
     -fx-border-width: 2px;
-    -fx-background-radius: 8;
-    -fx-border-radius: 8    ;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px    ;
     -fx-border-color: black;
-    -fx-padding: 4;
+    -fx-padding: 4px;
 
 }
 
@@ -62,11 +62,12 @@
 
 .tab-border {
     -fx-background-color: white;
-    -fx-background-radius: 15;
-    -fx-border-radius: 15;
+    -fx-background-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
     -fx-border-color: transparent;
     -fx-border-width: 2px;
-    -fx-padding: 5 ;
+    -fx-padding: 5px;
 }
 
 

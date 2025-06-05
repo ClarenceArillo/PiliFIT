@@ -5,42 +5,43 @@
     -fx-border-width: 2px;
     -fx-text-fill: black;
     -fx-font-size: 10px;
-    -fx-font-family: "Berlin Sans FB Bold";
+    -fx-font-family: "Segoe UI";
+    -fx-font-weight: bold;
     -fx-background-radius: 20;
     -fx-border-radius: 20;
     -fx-padding: 5 20;
 
 }
 
-
 .close-button {
     -fx-background-color: #f5f5f5;
     -fx-text-fill: black;
     -fx-font-size: 12px;
+    -fx-font-weight: bold;
     -fx-font-family: "System Bold";
     -fx-background-radius: 100%;
-    -fx-border-color: black;
+    -fx-border-color: transparent;
     -fx-border-width: 2px;
     -fx-border-radius: 100%;
-    -fx-pref-width: 5px;
-    -fx-pref-height: 5px;
+    -fx-pref-width: 20px;
+    -fx-pref-height: 20px;
+}
+
+.close-button: hover {
+    -fx-background-color: #F75D59;
+    -fx-cursor: hand;
 }
 
 .soft-tab {
     -fx-background-color: white;
-    -fx-background-radius: 15;
-    -fx-border-radius: 15;
-    -fx-border-color: black;
+    -fx-background-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    -fx-border-color: transparent;
     -fx-border-width: 2px;
-    -fx-padding: 10;
+    -fx-padding: 5px;
 }
 
-/* Rectangle frame around image */
-.preview-border {
-    -fx-fill: #c3c9cf;
-    -fx-stroke: black;
-    -fx-stroke-type: inside;
-}
 
 /* Title above the guideline instructions */
 .guidelines-title {
@@ -65,6 +66,14 @@
     -fx-font-family: "Berlin Sans FB Bold";
     -fx-background-radius: 20;
     -fx-border-radius: 20;
-    -fx-padding: 5 20;
+    -fx-padding: 5;
 
+}
+
+.image-holder {
+    -fx-background-color: #d9d9d9;
+    -fx-border-color: transparent;
+    -fx-border-radius: 15px;
+    -fx-border-width: 1px;
+    -fx-background-radius: 15px;
 }

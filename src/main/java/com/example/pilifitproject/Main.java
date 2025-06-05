@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException, SQLException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/pilifitproject/view/Home.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/pilifitproject/view/Home.fxml"));
         Parent root = fxmlLoader.load();
 
         /* =============image display test  =========*/
