@@ -16,7 +16,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-
+import javafx.event.ActionEvent;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -52,8 +52,8 @@ public class HomeController {
         setupCategoryDropdown();
         setupStyleDropdown();
         setupColorDropdown();
-        //part of generate
-        GenerateFitBtn.setOnAction(e -> handleGenerateButtonAction());
+        //image test
+
     }
 
     //=====GENERATE Button Action=====
@@ -70,7 +70,7 @@ public class HomeController {
     private final RandomFitGenerator randomFitGenerator = new RandomFitGenerator();
     private GeneratedFitPreview currentPreview;
 
-
+    @FXML
     private void handleGenerateButtonAction() {
         try {
             // Generate the random fit
@@ -81,8 +81,8 @@ public class HomeController {
             loadImageIntoView(currentPreview.getBottom().getImagePath(), bottomImageView);
             loadImageIntoView(currentPreview.getShoes().getImagePath(), shoesImageView);
 
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception event) {
+            //e.printStackTrace();
             System.out.println("btn generate is not working properly");
         }
     }
@@ -93,6 +93,7 @@ public class HomeController {
         Image image = ImageUtil.loadImage(imagePath);  // This now resolves relative path correctly
         imageView.setImage(image);
     }
+
 
     //===GENERATE btn end
 
