@@ -3,12 +3,16 @@ package com.example.pilifitproject.controller;
 import com.example.pilifitproject.dao.ClothingItemDAO;
 import com.example.pilifitproject.model.ClothingItem;
 import com.example.pilifitproject.utils.ImageUtil;
-import javafx.fxml.FXML;
+import javafx.fxml.*;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.control.ComboBox;
 import javafx.stage.FileChooser;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
-
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -17,42 +21,74 @@ public class UploadDialogController {
 
     @FXML
     private Button UploadItem;
+    @FXML private TextField nameField;
+    @FXML private ComboBox<String> categoryComboBox;
+    @FXML private ComboBox<String> colorComboBox;
+    @FXML private ComboBox<String> styleComboBox;
+    @FXML private TextField sizeField;
+
+    private Stage dialogStage;
+    private File selectedFile;
 
     @FXML
     public void initialize() {
         UploadItem.setOnAction(event -> openFileChooser());
     }
 
+    public void setDialogStage(Stage stage) {
+        this.dialogStage = stage;
+    }
+
+    public void closeDialog() {
+        if (dialogStage != null) {
+            dialogStage.close();
+        }
+    }
+
     private void openFileChooser() {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select a Clothing Item");
 
-        // Optional: restrict to image files
-        FileChooser.ExtensionFilter imageFilter =
-                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg");
-        fileChooser.getExtensionFilters().add(imageFilter);
+        fileChooser.getExtensionFilters().add(
+                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg")
+        );
 
-        Stage stage = (Stage) UploadItem.getScene().getWindow();
-        File selectedFile = fileChooser.showOpenDialog(stage);
-
+        this.selectedFile = fileChooser.showOpenDialog(dialogStage);
         if (selectedFile != null) {
-            System.out.println("Selected file: " + selectedFile.getAbsolutePath());
-
-            // Optional: Pass file back to HomeController or preview it
-        } else {
-            System.out.println("No file selected.");
+            openSaveConfirmation(selectedFile);
         }
-
-
-
-
-
-
-
     }
-    public void handleSave(){
+
+    private void openSaveConfirmation(File selectedFile) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/pilifitproject/view/SaveConfirmation.fxml"));
+            Parent root = loader.load();
+
+            SaveConfirmationController controller = loader.getController();
+            controller.setUploadDialogController(this, selectedFile);
+
+            Stage confirmationStage = new Stage();
+            confirmationStage.initModality(Modality.APPLICATION_MODAL);
+            confirmationStage.setScene(new Scene(root));
+            confirmationStage.setTitle("Confirm Save");
+            confirmationStage.showAndWait();
+
+        } catch (IOException e) {
+            showAlert("Error", "Failed to open confirmation dialog: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+
+    public void handleSave(File selectedFile){
 
         try {
+            // Validate inputs
+            if (nameField.getText() == null || nameField.getText().trim().isEmpty()) {
+                showAlert("Error", "Please enter a name for the clothing item");
+                return;
+            }
+
             byte[] imageData = ImageUtil.fileToBytes(selectedFile);
 
             ClothingItem newItem = new ClothingItem(
@@ -66,13 +102,13 @@ public class UploadDialogController {
                     0 // Not favorite by default
             );
 
-            new ClothingItemDAO().addClothingItem(newItem);
+            ClothingItemDAO dao = new ClothingItemDAO();
+            dao.addClothingItem(newItem);
+            closeDialog();
 
-            imagePreview.getScene().getWindow().hide();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        } catch (IOException | SQLException e) {
+            showAlert("Error", "Failed to save item: " + e.getMessage());
+            e.printStackTrace();
         }
 
     }

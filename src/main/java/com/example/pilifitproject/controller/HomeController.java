@@ -84,9 +84,9 @@ public class HomeController {
 //            currentPreview = randomFitGenerator.generateRandomPreview();
 //
 //            // Load images into their views
-//            loadImageIntoView(currentPreview.getTop().getImagePath(), topImageView);
-//            loadImageIntoView(currentPreview.getBottom().getImagePath(), bottomImageView);
-//            loadImageIntoView(currentPreview.getShoes().getImagePath(), shoesImageView);
+//            loadImageIntoView(currentPreview.getTop().getImageData(), topImageView);
+//            loadImageIntoView(currentPreview.getBottom().getImageData(), bottomImageView);
+//            loadImageIntoView(currentPreview.getShoes().getImageData(), shoesImageView);
 //
 //        } catch (Exception event) {
 //            //e.printStackTrace();
@@ -182,10 +182,14 @@ public class HomeController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/pilifitproject/view/UploadDialog.fxml"));
             Parent root = loader.load();
 
+            UploadDialogController controller = loader.getController();
+
             Stage dialogStage = new Stage();
             dialogStage.setTitle("Add New Piece");
             dialogStage.initModality(Modality.APPLICATION_MODAL);
             dialogStage.setScene(new Scene(root));
+
+            controller.setDialogStage(dialogStage);
             dialogStage.showAndWait();
         } catch (IOException e) {
             e.printStackTrace();

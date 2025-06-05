@@ -34,7 +34,7 @@ public class ClothingItemDAO {
     }
 
     public void addClothingItem(ClothingItem item) throws SQLException {
-        String sql = "INSERT INTO clothing_item (name, data, category_id, color_id, style_id, size, is_favorite)" + "VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO clothing_item (name, image_data, category_id, color_id, style_id, size, is_favorite)" + "VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
