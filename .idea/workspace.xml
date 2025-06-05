@@ -4,10 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="635ec7d8-d374-4bf4-977d-6b60cb30ac35" name="Changes" comment="deleteconfirmation fxml and css">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/images/others/DeleteBin.png" afterDir="false" />
+    <list default="true" id="635ec7d8-d374-4bf4-977d-6b60cb30ac35" name="Changes" comment="deleteconfirmation polished">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/styles/Confirmation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/SaveConfirmation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_29_2025_10_29_AM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_29_2025_10_29_AM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_29_2025_10_30_AM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_29_2025_10_30_AM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_29_2025_9_54_AM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_29_2025_9_54_AM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/styles/UploadDialog.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/styles/UploadDialog.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/DeleteConfirmation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/DeleteConfirmation.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -208,7 +215,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749033745704</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="deleteconfirmation polished">
+      <option name="closed" value="true" />
+      <created>1749035080890</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1749035080890</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -246,6 +261,7 @@
     <MESSAGE value="Filters Category, Color, Style, isFavorites test done!" />
     <MESSAGE value="Connect Home and UploadDialog. With file explorer viewer" />
     <MESSAGE value="deleteconfirmation fxml and css" />
-    <option name="LAST_COMMIT_MESSAGE" value="deleteconfirmation fxml and css" />
+    <MESSAGE value="deleteconfirmation polished" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleteconfirmation polished" />
   </component>
 </project>
