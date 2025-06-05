@@ -53,7 +53,7 @@
       </VBox>
 
       <!-- Details Column -->
-      <VBox layoutX="269.0" layoutY="42.0" prefHeight="183.0" prefWidth="218.0" spacing="10">
+      <VBox layoutX="269.0" layoutY="42.0" prefHeight="174.0" prefWidth="218.0" spacing="10">
          <children>
             <Text styleClass="title-text" text="CLOTHES DETAILS" wrappingWidth="189.06451416015625">
                <font>
@@ -62,9 +62,9 @@
             </Text>
 
             <!-- Category -->
-            <HBox prefHeight="31.0" prefWidth="211.0" spacing="10">
+            <HBox prefHeight="21.0" prefWidth="218.0" spacing="10">
                <Text styleClass="text-filter" text="CATEGORY:" />
-               <MenuButton fx:id="categoryDropdown" accessibleRole="COMBO_BOX" alignment="CENTER" contentDisplay="CENTER" prefHeight="22.0" prefWidth="130.0" styleClass="image-holder" text="Select Category" textAlignment="CENTER">
+               <MenuButton fx:id="categoryDropdown" accessibleRole="COMBO_BOX" alignment="CENTER" contentDisplay="CENTER" prefHeight="22.0" prefWidth="130.0" styleClass="select-items" text="Select Category" textAlignment="CENTER">
                   <font>
                      <Font size="9.0" />
                   </font>
@@ -74,7 +74,7 @@
             <!-- Style -->
             <HBox prefHeight="22.0" prefWidth="238.0" spacing="10">
                <Text styleClass="text-filter" text="STYLE:" wrappingWidth="76.5501708984375" />
-               <MenuButton fx:id="styleDropdown" alignment="CENTER" prefHeight="31.0" prefWidth="156.0" styleClass="image-holder" text="Select Style">
+               <MenuButton fx:id="styleDropdown" alignment="CENTER" prefHeight="31.0" prefWidth="156.0" styleClass="select-items" text="Select Style">
                   <font>
                      <Font size="9.0" />
                   </font>
@@ -82,13 +82,13 @@
             </HBox>
 
             <!-- Color -->
-            <HBox spacing="10">
+            <HBox prefHeight="19.0" prefWidth="218.0" spacing="10">
                <Text styleClass="text-filter" text="COLOR:" wrappingWidth="76.4595947265625" />
                <TextField fx:id="colorInput" alignment="CENTER" prefHeight="15.0" prefWidth="132.0" promptText="Enter color" styleClass="image-holder" />
             </HBox>
 
             <!-- Size -->
-            <HBox prefHeight="30.0" prefWidth="210.0" spacing="10">
+            <HBox prefHeight="22.0" prefWidth="218.0" spacing="10">
                <Text styleClass="text-filter" text="SIZE:" wrappingWidth="76.82635498046875" />
                <TextField fx:id="sizeInput" alignment="CENTER" prefHeight="2.0" prefWidth="131.0" promptText="Enter size" styleClass="image-holder" />
             </HBox>
@@ -125,5 +125,6 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
       </GridPane>
+      <Button layoutX="476.0" layoutY="358.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="50.0" styleClass="save-button" text="save" />
    </children>
 </AnchorPane>
