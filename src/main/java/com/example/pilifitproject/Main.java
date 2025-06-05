@@ -58,14 +58,14 @@ public class Main extends Application {
         FitDAO fitDao = new FitDAO();
 
         ClothingItem item = new ClothingItem(
-                9,
-                "Black Heels",
-                "/images/footwear/F2.png",
+                6,
+                "Black Leather Jacket",
+                "/com/example/pilifitproject/images/top/T3.png",
+                1,
+                8,
                 3,
-                9,
-                3,
-                "8",
-                0
+                "XL",
+                1
         );
 
 
@@ -251,6 +251,7 @@ public class Main extends Application {
 //            System.out.println("Added fit with ID: " + newFit.getId());
 
             // TEST 2: Get all fits
+            /*
             System.out.println("\n=== TEST 2: Getting all fits ===");
             List<Fit> allFits = fitDao.getAllFits();
             if (allFits.isEmpty()) {
@@ -272,6 +273,8 @@ public class Main extends Application {
                     );
                 }
             }
+
+             */
 
             // TEST 3: Add fit to favorites
 /*
@@ -388,6 +391,7 @@ public class Main extends Application {
 
 
  */
+
 
 
         } catch (SQLiteException e) {
