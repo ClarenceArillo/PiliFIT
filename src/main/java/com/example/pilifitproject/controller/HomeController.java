@@ -102,16 +102,14 @@ public class HomeController {
         CheckMenuItem top = new CheckMenuItem("Top");
         CheckMenuItem bottom = new CheckMenuItem("Bottom");
         CheckMenuItem shoes = new CheckMenuItem("Shoes");
-        CheckMenuItem accessories = new CheckMenuItem("Accessories");
-        CheckMenuItem other = new CheckMenuItem("Other");
 
-        categoryDropdown.getItems().addAll(top, bottom, shoes, accessories, other);
+
+        categoryDropdown.getItems().addAll(top, bottom, shoes);
 
         top.setOnAction(e -> handleCategoryFilter(top));
         bottom.setOnAction(e -> handleCategoryFilter(bottom));
         shoes.setOnAction(e -> handleCategoryFilter(shoes));
-        accessories.setOnAction(e -> handleCategoryFilter(accessories));
-        other.setOnAction(e -> handleCategoryFilter(other));
+
     }
 
     private void setupStyleDropdown() {

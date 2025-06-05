@@ -9,8 +9,8 @@ import java.nio.file.*;
     public class ImageUtil {
 
             // Base directory for images
-            //private static final Path BASE_IMAGE_DIR = Paths.get("src", "main", "resources", "com", "example", "pilifitproject", "images");
-            private static final Path BASE_IMAGE_DIR = Paths.get(System.getProperty("user.home"), "PilifitImages");
+            private static final Path BASE_IMAGE_DIR = Paths.get("src", "main", "resources", "com", "example", "pilifitproject", "images");
+
 
             /**
              * Loads a JavaFX Image from a given path.
