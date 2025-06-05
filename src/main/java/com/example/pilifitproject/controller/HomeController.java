@@ -1,6 +1,8 @@
 package com.example.pilifitproject.controller;
 
 import com.example.pilifitproject.SceneSwitcher;
+import com.example.pilifitproject.dao.ClothingItemDAO;
+import com.example.pilifitproject.model.ClothingItem;
 import com.example.pilifitproject.utils.GeneratedFitPreview;
 import com.example.pilifitproject.utils.ImageUtil;
 import com.example.pilifitproject.utils.RandomFitGenerator;
@@ -14,9 +16,12 @@ import javafx.scene.control.CheckMenuItem;
 import javafx.scene.control.MenuButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
+
+import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -58,45 +63,49 @@ public class HomeController {
 
     //=====GENERATE Button Action=====
 
-    @FXML
-    private ImageView topImageView;
-    @FXML
-    private ImageView bottomImageView;
-    @FXML
-    private ImageView shoesImageView;
-    @FXML
-    private Button GenerateFitBtn;
-
-    private final RandomFitGenerator randomFitGenerator = new RandomFitGenerator();
-    private GeneratedFitPreview currentPreview;
-
-    @FXML
-    private void handleGenerateButtonAction() {
-        try {
-            // Generate the random fit
-            currentPreview = randomFitGenerator.generateRandomPreview();
-
-            // Load images into their views
-            loadImageIntoView(currentPreview.getTop().getImagePath(), topImageView);
-            loadImageIntoView(currentPreview.getBottom().getImagePath(), bottomImageView);
-            loadImageIntoView(currentPreview.getShoes().getImagePath(), shoesImageView);
-
-        } catch (Exception event) {
-            //e.printStackTrace();
-            System.out.println("btn generate is not working properly");
-        }
-    }
-
-    GeneratedFitPreview fitPreview = randomFitGenerator.generateRandomPreview();
-    @FXML
-    private void loadImageIntoView(String imagePath, ImageView imageView) {
-        Image image = ImageUtil.loadImage(imagePath);  // This now resolves relative path correctly
-        imageView.setImage(image);
-    }
+//    @FXML
+//    private ImageView topImageView;
+//    @FXML
+//    private ImageView bottomImageView;
+//    @FXML
+//    private ImageView shoesImageView;
+//    @FXML
+//    private Button GenerateFitBtn;
+//
+//    private final RandomFitGenerator randomFitGenerator = new RandomFitGenerator();
+//    private GeneratedFitPreview currentPreview;
+//
+//    @FXML
+//    private void handleGenerateButtonAction() {
+//        try {
+//            // Generate the random fit
+//            currentPreview = randomFitGenerator.generateRandomPreview();
+//
+//            // Load images into their views
+//            loadImageIntoView(currentPreview.getTop().getImagePath(), topImageView);
+//            loadImageIntoView(currentPreview.getBottom().getImagePath(), bottomImageView);
+//            loadImageIntoView(currentPreview.getShoes().getImagePath(), shoesImageView);
+//
+//        } catch (Exception event) {
+//            //e.printStackTrace();
+//            System.out.println("btn generate is not working properly");
+//        }
+//    }
+//
+//    GeneratedFitPreview fitPreview = randomFitGenerator.generateRandomPreview();
+//    @FXML
+//    private void loadImageIntoView(String imagePath, ImageView imageView) {
+//        Image image = ImageUtil.loadImage(imagePath);  // This now resolves relative path correctly
+//        imageView.setImage(image);
+//    }
 
 
     //===GENERATE btn end
 
+    //===Image Upload btn start
+
+
+    //===Image Upload btn end
 
     private void setupCategoryDropdown() {
         CheckMenuItem top = new CheckMenuItem("Top");

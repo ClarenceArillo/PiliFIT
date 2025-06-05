@@ -20,7 +20,7 @@ public class ClothingItemDAO {
                 ClothingItem item = new ClothingItem(
                         rs.getInt("id"),
                         rs.getString("name"),
-                        rs.getString("image_path"),
+                        rs.getBytes("image_data"),
                         rs.getInt("category_id"),
                         rs.getInt("color_id"),
                         rs.getInt("style_id"),
@@ -34,13 +34,13 @@ public class ClothingItemDAO {
     }
 
     public void addClothingItem(ClothingItem item) throws SQLException {
-        String sql = "INSERT INTO clothing_item (name, image_path, category_id, color_id, style_id, size, is_favorite)" + "VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO clothing_item (name, data, category_id, color_id, style_id, size, is_favorite)" + "VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setString(1, item.getName());
-            pstmt.setString(2, item.getImagePath());
+            pstmt.setBytes(2, item.getImageData());
             pstmt.setInt(3, item.getCategoryId());
             pstmt.setInt(4, item.getColorId());
             pstmt.setInt(5, item.getStyleId());
@@ -126,7 +126,7 @@ public class ClothingItemDAO {
                 return new ClothingItem(
                         rs.getInt("id"),
                         rs.getString("name"),
-                        rs.getString("image_path"),
+                        rs.getBytes("image_data"),
                         rs.getInt("category_id"),
                         rs.getInt("color_id"),
                         rs.getInt("style_id"),
@@ -154,7 +154,7 @@ public class ClothingItemDAO {
                     ClothingItem item = new ClothingItem(
                             rs.getInt("id"),
                             rs.getString("name"),
-                            rs.getString("image_path"),
+                            rs.getBytes("image_data"),
                             rs.getInt("category_id"),
                             rs.getInt("color_id"),
                             rs.getInt("style_id"),
@@ -197,7 +197,7 @@ public class ClothingItemDAO {
                     ClothingItem item = new ClothingItem(
                             rs.getInt("id"),
                             rs.getString("name"),
-                            rs.getString("image_path"),
+                            rs.getBytes("image_data"),
                             rs.getInt("category_id"),
                             rs.getInt("color_id"),
                             rs.getInt("style_id"),
@@ -236,7 +236,7 @@ public class ClothingItemDAO {
                     ClothingItem item = new ClothingItem(
                             rs.getInt("id"),
                             rs.getString("name"),
-                            rs.getString("image_path"),
+                            rs.getBytes("image_data"),
                             rs.getInt("category_id"),
                             rs.getInt("color_id"),
                             rs.getInt("style_id"),
@@ -268,7 +268,7 @@ public class ClothingItemDAO {
                     ClothingItem item = new ClothingItem(
                             rs.getInt("id"),
                             rs.getString("name"),
-                            rs.getString("image_path"),
+                            rs.getBytes("image_data"),
                             rs.getInt("category_id"),
                             rs.getInt("color_id"),
                             rs.getInt("style_id"),
@@ -297,7 +297,7 @@ public class ClothingItemDAO {
                 return new ClothingItem(
                         rs.getInt("id"),
                         rs.getString("name"),
-                        rs.getString("image_path"),
+                        rs.getBytes("image_data"),
                         rs.getInt("category_id"),
                         rs.getInt("color_id"),
                         rs.getInt("style_id"),
