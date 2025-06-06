@@ -3,22 +3,35 @@ package com.example.pilifitproject.utils;
 import javafx.scene.image.Image;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.*;
 
     public class ImageUtil {
 
             // Base directory for images
-            private static final Path BASE_IMAGE_DIR = Paths.get("src", "main", "resources", "com", "example", "pilifitproject", "images");
+            //private static final Path BASE_IMAGE_DIR = Paths.get("src", "main", "resources", "com", "example", "pilifitproject", "images");
+            private static final Path BASE_IMAGE_DIR = Paths.get(System.getProperty("user.home"), "PilifitImages");
 
             /**
              * Loads a JavaFX Image from a given path.
              */
-            public static Image loadImage(String path) {
+
+
+            public static Image loadImage(String resourcePath) {
                 try {
-                    if (path != null && !path.isEmpty()) {
-                        File file = new File(path);
-                        if (file.exists()) {
-                            return new Image(file.toURI().toString());
+                    if (resourcePath != null && !resourcePath.isEmpty()) {
+                        resourcePath = resourcePath.replace("\\", "/");
+                        if (resourcePath.startsWith("/") || resourcePath.startsWith("\\")) {
+                            resourcePath = resourcePath.substring(1);
+                        }
+
+                        System.out.println("Trying to load resource: " + resourcePath);
+
+                        InputStream is = ImageUtil.class.getClassLoader().getResourceAsStream(resourcePath);
+                        if (is != null) {
+                            return new Image(is);
+                        } else {
+                            System.err.println("Resource not found in classpath: " + resourcePath);
                         }
                     }
                 } catch (Exception e) {
@@ -27,7 +40,9 @@ import java.nio.file.*;
                 return null;
             }
 
-            /**
+
+
+        /**
              * Saves an image file to the specified category folder.
              *
              * @param sourceFile The image file to save.
