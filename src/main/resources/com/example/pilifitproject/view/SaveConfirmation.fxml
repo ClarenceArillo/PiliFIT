@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="199.0" prefWidth="338.0" styleClass="soft-tab" stylesheets="@../styles/Confirmation.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pilifitproject.controller.UploadDialogController">
+<AnchorPane fx:id="root" prefHeight="199.0" prefWidth="338.0" styleClass="soft-tab" stylesheets="@../styles/Confirmation.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pilifitproject.controller.SaveConfirmationController">
     <children>
         <Button layoutX="310.0" layoutY="23.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="15.0" styleClass="close-button" text="X">
             <font>
@@ -18,12 +18,12 @@
                 <Font name="System Bold" size="16.0" />
             </font>
         </Label>
-        <Button layoutX="197.0" layoutY="147.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="118.0" styleClass="save-button" text="Save edits">
+        <Button fx:id="SaveEditsBtn" layoutX="197.0" layoutY="147.0" mnemonicParsing="false" onAction="#handleSaveEdits" prefHeight="30.0" prefWidth="118.0" styleClass="save-button" text="Save edits">
             <font>
                 <Font size="10.0" />
             </font>
         </Button>
-        <Button layoutX="67.0" layoutY="147.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="118.0" styleClass="delete-button" text="Discard changes">
+        <Button fx:id="DiscardChangesBtn" layoutX="67.0" layoutY="147.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="118.0" styleClass="delete-button" text="Discard changes">
             <font>
                 <Font name="System Bold" size="10.0" />
             </font>

@@ -53,7 +53,7 @@ public class ClothingItemDAO {
 
     public void updateClothingItem(ClothingItem item) throws SQLException {
         String sql = "UPDATE clothing_item SET name = ?, category_id = ?, color_id = ?, " +
-                "style_id = ?, size = ?, is_favorite = ? WHERE id = ?";
+                "style_id = ?, size = ? WHERE id = ?";
 
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -63,8 +63,7 @@ public class ClothingItemDAO {
             pstmt.setInt(3, item.getColorId());
             pstmt.setInt(4, item.getStyleId());
             pstmt.setString(5, item.getSize());
-            pstmt.setInt(6, item.getIsFavorite());
-            pstmt.setInt(7, item.getId());
+            pstmt.setInt(6, item.getId());
             pstmt.executeUpdate();
 
         }

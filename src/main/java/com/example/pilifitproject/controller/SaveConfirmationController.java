@@ -38,8 +38,15 @@ public class SaveConfirmationController {
 
     @FXML
     private void handleSaveEdits() {
+        System.out.println("SaveEdits clicked"); // Debug 1
+        System.out.println("UploadDialogController is null? " + (uploadDialogController == null)); // Debug 2
+        System.out.println("Selected file is null? " + (selectedFile == null)); // Debug 3
+
         if (uploadDialogController != null && selectedFile != null) {
+            System.out.println("Calling handleSave on uploadDialogController"); // Debug 4
             uploadDialogController.handleSave(selectedFile);
+        }else {
+            System.out.println("Skipping handleSave - controller or file is null"); // Debug 5
         }
         // Close confirmation dialog
         Stage stage = (Stage) SaveEditsBtn.getScene().getWindow();
