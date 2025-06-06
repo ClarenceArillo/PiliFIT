@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException, SQLException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/pilifitproject/view/Home.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/pilifitproject/view/Home.fxml"));
         Parent root = fxmlLoader.load();
 
         /* =============image display test  =========*/
@@ -57,16 +57,16 @@ public class Main extends Application {
         ClothingItemDAO dao = new ClothingItemDAO();
         FitDAO fitDao = new FitDAO();
 
-        ClothingItem item = new ClothingItem(
-                6,
-                "Black Leather Jacket",
-                "/com/example/pilifitproject/images/top/T3.png",
-                1,
-                8,
-                3,
-                "XL",
-                1
-        );
+//        ClothingItem item = new ClothingItem(
+//                6,
+//                "Black Leather Jacket",
+//                "/com/example/pilifitproject/images/top/T3.png",
+//                1,
+//                8,
+//                3,
+//                "XL",
+//                1
+//        );
 
 
 
@@ -92,7 +92,7 @@ public class Main extends Application {
             for(ClothingItem c: dao.getAllClothingItem()){
                 System.out.println( "ID          : " + c.getId() +
                                     "\nName       : " + c.getName() +
-                                    "\nImagePath  : " + c.getImagePath() +
+                                    "\nImagePath  : " + c.getImageData() +
                                     "\nCategoryID : " + c.getCategoryId() +
                                     "\nColorID    : " + c.getColorId() +
                                     "\nStyleID    : " + c.getStyleId() +
