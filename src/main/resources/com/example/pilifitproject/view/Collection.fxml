@@ -3,7 +3,6 @@
 <?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -17,7 +16,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="700.0" prefWidth="1280.0" stylesheets="@../styles/Home.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pilifitproject.controller.FavoritesController">
+<BorderPane prefHeight="700.0" prefWidth="1280.0" stylesheets="@../styles/Home.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pilifitproject.controller.CollectionController">
     <top>
         <AnchorPane BorderPane.alignment="CENTER">
             <children>
@@ -41,7 +40,7 @@
                         <Button fx:id="AboutController" mnemonicParsing="false" onAction="#goAbout" prefHeight="26.0" prefWidth="126.0" styleClass="scene-switch" text="ABOUT" GridPane.columnIndex="1" />
                     </children>
                 </GridPane>
-                <Button fx:id="closetButton" alignment="CENTER" layoutX="629.0" layoutY="196.0" mnemonicParsing="false" onAction="#goCloset" styleClass="add-item" text="CLOSET">
+                <Button alignment="CENTER" layoutX="629.0" layoutY="196.0" mnemonicParsing="false" onAction="#goCloset" styleClass="add-item" text="CLOSET">
                     <font>
                         <Font name="System Bold" size="20.0" />
                     </font>
@@ -61,15 +60,11 @@
                             </stops>
                         </RadialGradient>
                     </textFill></Button>
-                <Button layoutX="713.0" layoutY="137.0" mnemonicParsing="false" prefWidth="143.0" styleClass="icon-button" text="GENERATE">
-                    <font>
-                        <Font name="System Bold" size="24.0" />
-                    </font></Button>
                 <Label layoutX="674.0" layoutY="44.0" prefHeight="73.0" prefWidth="287.0" text="PILIFIT" textFill="WHITE">
                     <font>
                         <Font name="MS UI Gothic" size="79.0" />
                     </font></Label>
-                <Button fx:id="collectionsButton" alignment="CENTER" layoutX="824.0" layoutY="194.0" mnemonicParsing="false" onAction="#goCollection" styleClass="add-item" text="COLLECTIONS" textFill="WHITE">
+                <Button alignment="CENTER" layoutX="824.0" layoutY="194.0" mnemonicParsing="false" onAction="#goCollection" styleClass="add-item" text="COLLECTIONS" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="20.0" />
                     </font>
@@ -103,29 +98,6 @@
                         <String fx:value="axis" />
                     </styleClass>
                 </Slider>
-                <GridPane layoutX="-6.0" layoutY="30.0" prefHeight="30.0" prefWidth="1573.0">
-                    <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                    <children>
-                        <MenuButton fx:id="styleDropdown" accessibleRole="COMBO_BOX" alignment="CENTER" mnemonicParsing="false" prefHeight="34.0" prefWidth="150.0" styleClass="drop-select" text="STYLE" GridPane.columnIndex="4" />
-                        <MenuButton fx:id="categoryDropdown" accessibleRole="COMBO_BOX" alignment="CENTER" mnemonicParsing="false" prefHeight="34.0" prefWidth="150.0" styleClass="drop-select" text="CATEGORY" GridPane.columnIndex="3" />
-                        <MenuButton fx:id="colorDropdown" accessibleRole="COMBO_BOX" alignment="CENTER" mnemonicParsing="false" prefHeight="34.0" prefWidth="150.0" styleClass="drop-select" text="COLOR" GridPane.columnIndex="5" />
-                        <Button mnemonicParsing="false" onAction="#goFavorites" prefHeight="34.0" prefWidth="149.0" styleClass="drop-select" text="FAVORITES" GridPane.columnIndex="6" />
-                    </children>
-                </GridPane>
             </children>
         </AnchorPane>
     </right>
