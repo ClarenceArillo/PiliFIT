@@ -102,14 +102,6 @@ public class HomeController {
 
     public void refreshClothingItems() {
         try {
-            // Clear existing items (except the first cell which is the Add button)
-//            itemsGridPane.getChildren().removeIf(node -> {
-//                Integer rowIndex = GridPane.getRowIndex(node);
-//                Integer colIndex = GridPane.getColumnIndex(node);
-//                return (rowIndex == null || colIndex == null) ||
-//                        (rowIndex != 0 || colIndex != 0);
-//            });
-
             List<Node> toRemove = new ArrayList<>();
             for (Node node : itemsGridPane.getChildren()) {
                 if (node != Addnew) {
