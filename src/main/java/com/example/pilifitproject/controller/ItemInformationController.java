@@ -3,6 +3,7 @@ package com.example.pilifitproject.controller;
 import com.example.pilifitproject.dao.ClothingItemDAO;
 import com.example.pilifitproject.model.ClothingItem;
 import com.example.pilifitproject.utils.CategoryMapper;
+import com.example.pilifitproject.utils.Constants;
 import com.example.pilifitproject.utils.ImageUtil;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -28,6 +29,8 @@ public class ItemInformationController {
         @FXML private TextField sizeInput;
         @FXML private Button SaveItemInfoBtn;
         @FXML private Button deleteBtn;
+        @FXML private Button favoriteBtn;
+
 
         private ClothingItem clothingItem;
         private HomeController homeController;
@@ -47,8 +50,49 @@ public class ItemInformationController {
 
             SaveItemInfoBtn.setOnAction(event -> handleSave());
             deleteBtn.setOnAction(event -> handleDeleteButton());
+            favoriteBtn.setOnAction(event -> handleAddToFavorites());
 
         }
+        @FXML
+        private void handleAddToFavorites() {
+            if (clothingItem == null) return;
+
+            try {
+                // Toggle favorite status
+                int newFavoriteStatus = clothingItem.getIsFavorite() == Constants.FAVORITE
+                        ? Constants.NOT_FAVORITE
+                        : Constants.FAVORITE;
+
+                // Update in database
+                new ClothingItemDAO().addClothingItemToFavorite(clothingItem.getId(), newFavoriteStatus);
+
+                // Update local model
+                clothingItem.setIsFavorite(newFavoriteStatus);
+
+                // Update button appearance
+                updateFavoriteButton();
+
+                // Refresh parent view if needed
+                if (homeController != null) {
+                    homeController.refreshClothingItems();
+                }
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+                showAlert("Database Error", "Failed to update favorite status");
+            }
+        }
+
+    private void updateFavoriteButton() {
+        if (clothingItem.getIsFavorite() == Constants.FAVORITE) {
+            favoriteBtn.setText("❤️"); // Filled heart
+            favoriteBtn.setStyle("-fx-text-fill: red;");
+        } else {
+            favoriteBtn.setText("♡"); // Empty heart
+            favoriteBtn.setStyle("-fx-text-fill: gray;");
+        }
+    }
+
 
     public void setClothingItem(ClothingItem item) {
 
@@ -83,6 +127,7 @@ public class ItemInformationController {
             // Set text fields
             nameInput.setText(clothingItem.getName());
             sizeInput.setText(clothingItem.getSize());
+            updateFavoriteButton();
 
             // Set combo box selections
             categoryDropdown.setValue(CategoryMapper.getCategoryName(clothingItem.getCategoryId()));
