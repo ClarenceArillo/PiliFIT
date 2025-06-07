@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="635ec7d8-d374-4bf4-977d-6b60cb30ac35" name="Changes" comment="Upload Clothing Item and Edit Info Test Done!">
+    <list default="true" id="635ec7d8-d374-4bf4-977d-6b60cb30ac35" name="Changes" comment="delete btn and delete confirmation. bug on closing uploadDialog">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/pilifit.db" beforeDir="false" afterPath="$PROJECT_DIR$/database/pilifit.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/ItemInformationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/ItemInformationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/dao/ClothingItemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/dao/ClothingItemDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +39,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="blob-testing" />
+        <entry key="$PROJECT_DIR$" value="AboutUsFeature2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -69,34 +71,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main .executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;#3 on HomeCloUpDia&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/cyy/IdeaProjects/kkkk/src/main/java/com&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/CLARENCE/IdeaProjects/OOP Class/BLOB PiliFit&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main .executor": "Run",
+    "Application.Main.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "HomeCloUpDia",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "C:/Users/cyy/IdeaProjects/kkkk/src/main/java/com",
+    "last_opened_file_path": "C:/Users/CLARENCE/IdeaProjects/OOP Class/PiliFItProjectJDK24",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\cyy\IdeaProjects\kkkk\src\main\resources\com\example\pilifitproject\images\others" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.pilifitproject.Main" />
       <module name="PiliFitProject" />
+      <option name="VM_PARAMETERS" value="--enable-native-access=ALL-UNNAMED --enable-native-access=ALL-UNNAMED,javafx.graphics,org.xerial.sqlitejdbc --add-exports=javafx.graphics/com.sun.marlin=ALL-UNNAMED" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.pilifitproject.controller.*" />
+          <option name="PATTERN" value="com.example.pilifitproject.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -105,11 +119,6 @@
       <option name="filePath" />
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -184,63 +193,71 @@
       <option name="project" value="LOCAL" />
       <updated>1748663452981</updated>
     </task>
-    <task id="LOCAL-00009" summary="generate btn done untested">
+    <task id="LOCAL-00009" summary="Connect Home and UploadDialog. With file explorer viewer">
       <option name="closed" value="true" />
-      <created>1749029638298</created>
+      <created>1749032718175</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1749029638298</updated>
+      <updated>1749032718175</updated>
     </task>
-    <task id="LOCAL-00010" summary="ABOUTUSNEW">
+    <task id="LOCAL-00010" summary="deleteconfirmation fxml and css">
       <option name="closed" value="true" />
-      <created>1749034826813</created>
+      <created>1749033745704</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1749034826813</updated>
+      <updated>1749033745704</updated>
     </task>
-    <task id="LOCAL-00011" summary="buggy generate btn and upload btn">
+    <task id="LOCAL-00011" summary="deleteconfirmation polished">
       <option name="closed" value="true" />
-      <created>1749102385995</created>
+      <created>1749035080890</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1749102385996</updated>
+      <updated>1749035080890</updated>
     </task>
-    <task id="LOCAL-00012" summary="still buggyyyyyyyyyyyyyyyy">
+    <task id="LOCAL-00012" summary="save confirmation and filters exclusiveness">
       <option name="closed" value="true" />
-      <created>1749106989942</created>
+      <created>1749105462065</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1749106989942</updated>
+      <updated>1749105462065</updated>
     </task>
-    <task id="LOCAL-00013" summary="upload clothing item added to database, lack the item display">
+    <task id="LOCAL-00013" summary="Closet fxml&amp;css polished">
       <option name="closed" value="true" />
-      <created>1749206284165</created>
+      <created>1749110645145</created>
       <option name="number" value="00013" />
       <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1749206284165</updated>
+      <updated>1749110645145</updated>
     </task>
-    <task id="LOCAL-00014" summary="def not this db">
+    <task id="LOCAL-00014" summary="Closet and Upload Dialog fxml&amp;css polished">
       <option name="closed" value="true" />
-      <created>1749206596297</created>
+      <created>1749117166507</created>
       <option name="number" value="00014" />
       <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1749206596297</updated>
+      <updated>1749117166507</updated>
     </task>
-    <task id="LOCAL-00015" summary="Upload Clothing Item and Edit Info Test Done!">
+    <task id="LOCAL-00015" summary="Closet controller for dropdown and save button for save confirmation">
       <option name="closed" value="true" />
-      <created>1749275637452</created>
+      <created>1749118880595</created>
       <option name="number" value="00015" />
       <option name="presentableId" value="LOCAL-00015" />
       <option name="project" value="LOCAL" />
-      <updated>1749275637452</updated>
+      <updated>1749118880595</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="delete btn and delete confirmation. bug on closing uploadDialog">
+      <option name="closed" value="true" />
+      <created>1749291000497</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1749291000497</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -254,7 +271,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="file-system-issue" />
+                        <option value="HomeCloUpDia" />
                       </list>
                     </value>
                   </entry>
@@ -276,13 +293,14 @@
     <MESSAGE value="Clean CRUD testing on Main" />
     <MESSAGE value="deleted txt." />
     <MESSAGE value="Filters Category, Color, Style, isFavorites test done!" />
-    <MESSAGE value="generate btn done untested" />
-    <MESSAGE value="ABOUTUSNEW" />
-    <MESSAGE value="buggy generate btn and upload btn" />
-    <MESSAGE value="still buggyyyyyyyyyyyyyyyy" />
-    <MESSAGE value="upload clothing item added to database, lack the item display" />
-    <MESSAGE value="def not this db" />
-    <MESSAGE value="Upload Clothing Item and Edit Info Test Done!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Upload Clothing Item and Edit Info Test Done!" />
+    <MESSAGE value="Connect Home and UploadDialog. With file explorer viewer" />
+    <MESSAGE value="deleteconfirmation fxml and css" />
+    <MESSAGE value="deleteconfirmation polished" />
+    <MESSAGE value="save confirmation and filters exclusiveness" />
+    <MESSAGE value="Closet fxml&amp;css polished" />
+    <MESSAGE value="Closet and Upload Dialog fxml&amp;css polished" />
+    <MESSAGE value="Closet controller for dropdown and save button for save confirmation" />
+    <MESSAGE value="delete btn and delete confirmation. bug on closing uploadDialog" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete btn and delete confirmation. bug on closing uploadDialog" />
   </component>
 </project>

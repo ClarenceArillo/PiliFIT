@@ -85,19 +85,20 @@ public class UploadDialogController {
                 homeController.refreshClothingItems();
             }
 
-            closeDialog();
-
         } catch (IOException | SQLException e) {
             showAlert("Error", "Failed to save item: " + e.getMessage());
             e.printStackTrace();
         }
+        forceCloseDialog();
     }
 
-    public void closeDialog() {
+
+    public void forceCloseDialog() {
         if (dialogStage != null) {
             dialogStage.close();
         }
     }
+
     private void openSaveConfirmation(File selectedFile) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/pilifitproject/view/SaveConfirmation.fxml"));
@@ -107,10 +108,11 @@ public class UploadDialogController {
             controller.setUploadDialogController(this, selectedFile);
 
             Stage confirmationStage = new Stage();
-            confirmationStage.initModality(Modality.APPLICATION_MODAL);
+            confirmationStage.initOwner(dialogStage);
+            controller.setDialogStage(confirmationStage);
             confirmationStage.setScene(new Scene(root));
             confirmationStage.setTitle("Confirm Save");
-            confirmationStage.showAndWait();
+            confirmationStage.show();
 
         } catch (IOException e) {
             showAlert("Error", "Failed to open confirmation dialog: " + e.getMessage());

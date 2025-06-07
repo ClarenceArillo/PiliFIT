@@ -3,13 +3,19 @@ package com.example.pilifitproject.controller;
 import com.example.pilifitproject.dao.ClothingItemDAO;
 import com.example.pilifitproject.model.ClothingItem;
 import com.example.pilifitproject.utils.CategoryMapper;
+import com.example.pilifitproject.utils.Constants;
 import com.example.pilifitproject.utils.ImageUtil;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +28,9 @@ public class ItemInformationController {
         @FXML private ComboBox<String> colorDropdown;
         @FXML private TextField sizeInput;
         @FXML private Button SaveItemInfoBtn;
+        @FXML private Button deleteBtn;
+        @FXML private Button favoriteBtn;
+
 
         private ClothingItem clothingItem;
         private HomeController homeController;
@@ -40,9 +49,50 @@ public class ItemInformationController {
             System.out.println("1 → " + CategoryMapper.getCategoryName(1));     // Should be "Top"
 
             SaveItemInfoBtn.setOnAction(event -> handleSave());
-
+            deleteBtn.setOnAction(event -> handleDeleteButton());
+            favoriteBtn.setOnAction(event -> handleAddToFavorites());
 
         }
+        @FXML
+        private void handleAddToFavorites() {
+            if (clothingItem == null) return;
+
+            try {
+                // Toggle favorite status
+                int newFavoriteStatus = clothingItem.getIsFavorite() == Constants.FAVORITE
+                        ? Constants.NOT_FAVORITE
+                        : Constants.FAVORITE;
+
+                // Update in database
+                new ClothingItemDAO().addClothingItemToFavorite(clothingItem.getId(), newFavoriteStatus);
+
+                // Update local model
+                clothingItem.setIsFavorite(newFavoriteStatus);
+
+                // Update button appearance
+                updateFavoriteButton();
+
+                // Refresh parent view if needed
+                if (homeController != null) {
+                    homeController.refreshClothingItems();
+                }
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+                showAlert("Database Error", "Failed to update favorite status");
+            }
+        }
+
+    private void updateFavoriteButton() {
+        if (clothingItem.getIsFavorite() == Constants.FAVORITE) {
+            favoriteBtn.setText("❤️"); // Filled heart
+            favoriteBtn.setStyle("-fx-text-fill: red;");
+        } else {
+            favoriteBtn.setText("♡"); // Empty heart
+            favoriteBtn.setStyle("-fx-text-fill: gray;");
+        }
+    }
+
 
     public void setClothingItem(ClothingItem item) {
 
@@ -67,21 +117,6 @@ public class ItemInformationController {
         try {
             System.out.println("Loading item data for: " + clothingItem.getName()); // Debug
 
-            /*
-            // Load image
-            if (clothingItem.getImageData() == null) {
-                System.out.println("Image data is null!"); // Debug
-            } else {
-                Image image = ImageUtil.bytesToImage(clothingItem.getImageData());
-                if (image == null) {
-                    System.out.println("Failed to convert bytes to image!"); // Debug
-                    ItemInformationImg.setImage(image);
-                } else {
-
-                }
-            }
-
-             */
             if (clothingItem.getImageData() != null) {
                 Image image = ImageUtil.bytesToImage(clothingItem.getImageData());
                 ItemInformationImg.setImage(image);
@@ -89,12 +124,10 @@ public class ItemInformationController {
                 System.err.println("Image data is null!");
             }
 
-
-
-
             // Set text fields
             nameInput.setText(clothingItem.getName());
             sizeInput.setText(clothingItem.getSize());
+            updateFavoriteButton();
 
             // Set combo box selections
             categoryDropdown.setValue(CategoryMapper.getCategoryName(clothingItem.getCategoryId()));
@@ -105,7 +138,6 @@ public class ItemInformationController {
             showAlert("Error", "Failed to load item data");
         }
     }
-
 
     @FXML
     private void handleSave() {
@@ -146,10 +178,50 @@ public class ItemInformationController {
         closeDialog();
     }
 
-    private void closeDialog() {
-        if (dialogStage != null) {
-            dialogStage.close();
+    @FXML
+    private void handleDeleteButton() {
+        try {
+            // Load the confirmation dialog
+            FXMLLoader loader = new FXMLLoader(
+                    getClass().getResource("/com/example/pilifitproject/view/DeleteConfirmation.fxml")
+            );
+            Parent root = loader.load();
+
+            // Get the controller and pass the item ID
+            DeleteConfirmationController controller = loader.getController();
+            controller.setItemId(clothingItem.getId());
+            controller.setHomeController(homeController);
+
+            // Add this callback
+            controller.setOnCancelCallback(() -> {
+                closeDialog(); // This will close the ItemInformation dialog
+            });
+
+            // Show the dialog
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            controller.setDialogStage(stage); // Pass the stage reference
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+
+            // Close the edit dialog after deletion
+            if (controller.isDeleted()) {
+                closeDialog();
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            showAlert("Error", "Failed to open delete confirmation");
         }
+    }
+
+
+    private void closeDialog() {
+//        if (dialogStage != null) {
+//            dialogStage.close();
+//        }
+        Stage stage = (Stage) nameInput.getScene().getWindow();
+        stage.close();
     }
 
     private void showAlert(String title, String message) {

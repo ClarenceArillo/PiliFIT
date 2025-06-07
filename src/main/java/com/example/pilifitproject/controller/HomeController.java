@@ -80,6 +80,20 @@ public class HomeController {
         SceneSwitcher.switchTo(event, "Contact.fxml");
     }
 
+    @FXML
+    private void goCollection(ActionEvent event) throws IOException {
+        SceneSwitcher.switchTo(event, "Collection.fxml");
+    }
+
+    @FXML
+    private void goCloset(ActionEvent event) throws IOException {
+        SceneSwitcher.switchTo(event, "Home.fxml");
+    }
+    @FXML
+    private void goFavorites(ActionEvent event) throws IOException {
+        SceneSwitcher.switchTo(event, "Favorites.fxml");
+        System.out.println("Fav Page");
+    }
 
     private void addItemToGrid(ClothingItem item, int col, int row) {
         try {

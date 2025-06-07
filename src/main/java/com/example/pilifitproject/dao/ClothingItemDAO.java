@@ -83,14 +83,14 @@ public class ClothingItemDAO {
 
     //add and remove clothing item from favorites
     //add to favorite fit
-    public void addClothingItemToFavorite(int FitID)throws SQLException {
-        String sql = "UPDATE fit SET is_favorite = ? WHERE id = ?";
+    public void addClothingItemToFavorite(int itemID, int favoriteStatus)throws SQLException {
+        String sql = "UPDATE Clothing_item SET is_favorite = ? WHERE id = ?";
 
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
-            pstmt.setInt(1, Constants.FAVORITE);
-            pstmt.setInt(2,FitID);
+            pstmt.setInt(1, favoriteStatus);
+            pstmt.setInt(2,itemID);
             pstmt.executeUpdate();
 
         }
