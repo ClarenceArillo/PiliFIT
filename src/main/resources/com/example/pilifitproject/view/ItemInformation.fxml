@@ -28,7 +28,7 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <ImageView fitHeight="222.0" fitWidth="202.0" pickOnBounds="true" preserveRatio="true" styleClass="button-display" />
+                  <ImageView fx:id="ItemInformationImg" fitHeight="222.0" fitWidth="202.0" pickOnBounds="true" preserveRatio="true" styleClass="button-display" />
                </children>
             </GridPane>
          </children></HBox>
@@ -117,6 +117,6 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
       </GridPane>
-      <Button layoutX="476.0" layoutY="358.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="50.0" styleClass="save-button" text="save" />
+      <Button fx:id="SaveItemInfoBtn" layoutX="476.0" layoutY="358.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="50.0" styleClass="save-button" text="save" />
    </children>
 </AnchorPane>

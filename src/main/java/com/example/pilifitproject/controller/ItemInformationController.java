@@ -3,11 +3,11 @@ package com.example.pilifitproject.controller;
 import com.example.pilifitproject.dao.ClothingItemDAO;
 import com.example.pilifitproject.model.ClothingItem;
 import com.example.pilifitproject.utils.CategoryMapper;
+import com.example.pilifitproject.utils.ImageUtil;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.CheckMenuItem;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.sql.SQLException;
@@ -15,13 +15,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ItemInformationController {
+        @FXML private ImageView ItemInformationImg;
         @FXML private TextField nameInput;
         @FXML private ComboBox<String> categoryDropdown;
         @FXML private ComboBox<String> styleDropdown;
         @FXML private ComboBox<String> colorDropdown;
         @FXML private TextField sizeInput;
+        @FXML private Button SaveItemInfoBtn;
 
-        private ClothingItem item;
+        private ClothingItem clothingItem;
+        private HomeController homeController;
         private Stage dialogStage;
 
         @FXML
@@ -30,47 +33,109 @@ public class ItemInformationController {
             colorDropdown.getItems().addAll("Red", "Orange", "Yellow", "Green", "Blue",
                     "Violet", "White", "Black", "Others");
             styleDropdown.getItems().addAll("Formal", "Casual", "Semi-Formal", "Others");
+
+            // Debug: Test CategoryMapper
+            System.out.println("CategoryMapper Test:");
+            System.out.println("Top → " + CategoryMapper.getCategoryId("Top")); // Should be 1
+            System.out.println("1 → " + CategoryMapper.getCategoryName(1));     // Should be "Top"
+
+            SaveItemInfoBtn.setOnAction(event -> handleSave());
+
+
         }
 
-    private void setCurrentSelections() {
-        // Set category selection
-        for (String category : categoryDropdown.getItems()) {
-            if (CategoryMapper.getCategoryId(category) == item.getCategoryId()) {
-                categoryDropdown.setValue(category);
-                break;
-            }
+    public void setClothingItem(ClothingItem item) {
+
+        if (item == null) {
+            showAlert("Error", "No item data provided.");
+            return;
         }
 
-        // Set color selection
-        for (String color : colorDropdown.getItems()) {
-            if (CategoryMapper.getColorId(color) == item.getColorId()) {
-                colorDropdown.setValue(color);
-                break;
-            }
-        }
+            this.clothingItem = item;
+            loadItemData();
+    }
 
-        // Set style selection
-        for (String style : styleDropdown.getItems()) {
-            if (CategoryMapper.getStyleId(style) == item.getStyleId()) {
-                styleDropdown.setValue(style);
-                break;
+    public void setHomeController(HomeController homeController) {
+        this.homeController = homeController;
+    }
+
+    public void setDialogStage(Stage stage) {
+        this.dialogStage = stage;
+    }
+
+    private void loadItemData() {
+        try {
+            System.out.println("Loading item data for: " + clothingItem.getName()); // Debug
+
+            /*
+            // Load image
+            if (clothingItem.getImageData() == null) {
+                System.out.println("Image data is null!"); // Debug
+            } else {
+                Image image = ImageUtil.bytesToImage(clothingItem.getImageData());
+                if (image == null) {
+                    System.out.println("Failed to convert bytes to image!"); // Debug
+                    ItemInformationImg.setImage(image);
+                } else {
+
+                }
             }
+
+             */
+            if (clothingItem.getImageData() != null) {
+                Image image = ImageUtil.bytesToImage(clothingItem.getImageData());
+                ItemInformationImg.setImage(image);
+            } else {
+                System.err.println("Image data is null!");
+            }
+
+
+
+
+            // Set text fields
+            nameInput.setText(clothingItem.getName());
+            sizeInput.setText(clothingItem.getSize());
+
+            // Set combo box selections
+            categoryDropdown.setValue(CategoryMapper.getCategoryName(clothingItem.getCategoryId()));
+            colorDropdown.setValue(CategoryMapper.getColorName(clothingItem.getColorId()));
+            styleDropdown.setValue(CategoryMapper.getStyleName(clothingItem.getStyleId()));
+        } catch (Exception e) {
+            e.printStackTrace();
+            showAlert("Error", "Failed to load item data");
         }
     }
 
 
     @FXML
     private void handleSave() {
+        if (nameInput.getText().isEmpty() || sizeInput.getText().isEmpty() ||
+                categoryDropdown.getValue() == null ||
+                colorDropdown.getValue() == null ||
+                styleDropdown.getValue() == null) {
+            showAlert("Validation Error", "Please fill all fields");
+            return;
+        }
+
         // Update the item with new values
-        item.setName(nameInput.getText());
-        item.setCategoryId(CategoryMapper.getCategoryId(categoryDropdown.getValue()));
-        item.setColorId(CategoryMapper.getColorId(colorDropdown.getValue()));
-        item.setStyleId(CategoryMapper.getStyleId(styleDropdown.getValue()));
-        item.setSize(sizeInput.getText());
+        clothingItem.setName(nameInput.getText());
+        clothingItem.setCategoryId(CategoryMapper.getCategoryId(categoryDropdown.getValue()));
+        clothingItem.setColorId(CategoryMapper.getColorId(colorDropdown.getValue()));
+        clothingItem.setStyleId(CategoryMapper.getStyleId(styleDropdown.getValue()));
+        clothingItem.setSize(sizeInput.getText());
 
         try {
-            new ClothingItemDAO().updateClothingItem(item);
-            closeDialog();
+            new ClothingItemDAO().updateClothingItem(clothingItem);
+            if (homeController != null) {
+                homeController.refreshClothingItems();
+            }
+
+            // Close the dialog
+            if (dialogStage != null) {
+                dialogStage.close();
+            } else {
+                ((Stage) SaveItemInfoBtn.getScene().getWindow()).close();
+            }
         } catch (SQLException e) {
             showAlert("Error", "Failed to update item: " + e.getMessage());
         }

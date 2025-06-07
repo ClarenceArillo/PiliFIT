@@ -8,14 +8,19 @@ import com.example.pilifitproject.utils.ImageUtil;
 import com.example.pilifitproject.utils.RandomFitGenerator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.CheckMenuItem;
+import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -31,12 +36,31 @@ public class HomeController {
 
     private final List<CheckMenuItem> allFilterItems = new ArrayList<>();
 
+    @FXML private GridPane itemsGridPane;
+    @FXML private Button Addnew;
+
+    private static final int COLUMNS = 6;
+    private static final int ITEM_WIDTH = 120;
+    private static final int ITEM_HEIGHT = 150;
+
     @FXML
     private MenuButton categoryDropdown;     // CATEGORY
     @FXML
     private MenuButton styleDropdown;    // STYLE
     @FXML
     private MenuButton colorDropdown;   // COLOR
+
+    @FXML
+    public void initialize() {
+        setupCategoryDropdown();
+        setupStyleDropdown();
+        setupColorDropdown();
+
+        refreshClothingItems();
+
+        // Set up upload button
+        Addnew.setOnAction(event -> openUploadDialog());
+    }
 
     public HomeController() throws SQLException {
     }
@@ -56,11 +80,118 @@ public class HomeController {
         SceneSwitcher.switchTo(event, "Contact.fxml");
     }
 
+
+    private void addItemToGrid(ClothingItem item, int col, int row) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/pilifitproject/view/itemDisplay.fxml"));
+            AnchorPane itemDisplay = loader.load();
+
+            ItemDisplayController controller = loader.getController();
+            controller.setClothingItem(item);
+
+            controller.setHomeController(this);
+
+            GridPane.setConstraints(itemDisplay, col, row);
+            itemsGridPane.getChildren().add(itemDisplay);
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Fallback to simple VBox if FXML fails
+            itemsGridPane.add(createItemBox(item), col, row);
+        }
+    }
+
+    public void refreshClothingItems() {
+        try {
+            // Clear existing items (except the first cell which is the Add button)
+//            itemsGridPane.getChildren().removeIf(node -> {
+//                Integer rowIndex = GridPane.getRowIndex(node);
+//                Integer colIndex = GridPane.getColumnIndex(node);
+//                return (rowIndex == null || colIndex == null) ||
+//                        (rowIndex != 0 || colIndex != 0);
+//            });
+
+            List<Node> toRemove = new ArrayList<>();
+            for (Node node : itemsGridPane.getChildren()) {
+                if (node != Addnew) {
+                    toRemove.add(node);
+                }
+            }
+            itemsGridPane.getChildren().removeAll(toRemove);
+
+            // Get all clothing items from database
+            List<ClothingItem> items = new ClothingItemDAO().getAllClothingItem();
+
+            // Add items to grid
+            int row = 0;
+            int col = 1; // Start from column 1 to preserve the Add button
+
+            for (ClothingItem item : items) {
+                addItemToGrid(item, col, row);
+
+                col++;
+                if (col >= COLUMNS) {
+                    col = 0;
+                    row++;
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // Show error alert
+        }
+        System.out.println("Button visible: " + Addnew.isVisible());
+        System.out.println("Button managed: " + Addnew.isManaged());
+    }
+
+
+    private VBox createItemBox(ClothingItem item) {
+        VBox box = new VBox(5);
+        box.setPrefSize(ITEM_WIDTH, ITEM_HEIGHT);
+        box.setStyle("-fx-background-color: #161718; -fx-padding: 5;");
+
+        try {
+            // Create image view
+            ImageView imageView = new ImageView();
+            imageView.setFitWidth(ITEM_WIDTH - 10);
+            imageView.setFitHeight(ITEM_HEIGHT - 30);
+            imageView.setPreserveRatio(true);
+
+            // Convert BLOB to JavaFX Image
+            Image image = ImageUtil.bytesToImage(item.getImageData());
+            imageView.setImage(image);
+
+            // Create label for item name
+            Label nameLabel = new Label(item.getName());
+            nameLabel.setStyle("-fx-text-fill: white; -fx-font-size: 10px;");
+            nameLabel.setMaxWidth(ITEM_WIDTH - 10);
+            nameLabel.setWrapText(true);
+
+            box.getChildren().addAll(imageView, nameLabel);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            box.getChildren().add(new Label("Error loading image"));
+        }
+
+        return box;
+    }
+
     @FXML
-    public void initialize() {
-        setupCategoryDropdown();
-        setupStyleDropdown();
-        setupColorDropdown();
+    private void openUploadDialog() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/pilifitproject/view/UploadDialog.fxml"));
+            Parent root = loader.load();
+
+            UploadDialogController controller = loader.getController();
+            controller.setHomeController(this); // Pass reference to refresh after upload
+
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     //=====GENERATE Button Action=====

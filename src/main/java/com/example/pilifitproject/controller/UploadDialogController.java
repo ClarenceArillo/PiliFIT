@@ -30,7 +30,11 @@ public class UploadDialogController {
 
     private Stage dialogStage;
     private File selectedFile;
+    private HomeController homeController;
 
+    public void setHomeController(HomeController controller) {
+        this.homeController = controller;
+    }
 
     @FXML
     public void initialize() {
@@ -73,8 +77,14 @@ public class UploadDialogController {
                     DEFAULT_SIZE,
                     0
             );
+
             System.out.println("Created new ClothingItem: " + newItem);
             new ClothingItemDAO().addClothingItem(newItem);
+
+            if (homeController != null) {
+                homeController.refreshClothingItems();
+            }
+
             closeDialog();
 
         } catch (IOException | SQLException e) {

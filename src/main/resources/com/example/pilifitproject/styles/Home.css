@@ -86,6 +86,12 @@
     -fx-background-color: transparent;
     -fx-text-fill: white;
     -fx-cursor: hand;
+    -fx-background-color: #161718;
+    -fx-text-fill: #ab0808;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-pref-width: 120px;
+    -fx-pref-height: 150px;
 }
 
 .add-item:hover {

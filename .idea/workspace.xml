@@ -5,17 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="635ec7d8-d374-4bf4-977d-6b60cb30ac35" name="Changes" comment="image_path to image_data BLOB">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/utils/CategoryMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_30_2025_8_38_AM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_30_2025_8_38_AM__Changes_.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/ItemDisplayController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/pilifit.db" beforeDir="false" afterPath="$PROJECT_DIR$/database/pilifit.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/ClosetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/ItemInformationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/SaveConfirmationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/SaveConfirmationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/ItemInformationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/ItemInformationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/UploadDialogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/UploadDialogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/dao/ClothingItemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/dao/ClothingItemDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/Closet.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/ItemInformation.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/SaveConfirmation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/SaveConfirmation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/utils/CategoryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/utils/CategoryMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/styles/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/styles/Home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/Home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/ItemDisplay.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/ItemDisplay.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/ItemInformation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/ItemInformation.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +47,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="DAO-Models-Filter" />
+        <entry key="$PROJECT_DIR$" value="blob-testing" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -85,7 +86,6 @@
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;#3 on HomeCloUpDia&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_directory_selection&quot;: &quot;C:/Users/cyy/IdeaProjects/kkkk/src/main/java/com&quot;,
@@ -226,7 +226,23 @@
       <option name="project" value="LOCAL" />
       <updated>1749106989942</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="upload clothing item added to database, lack the item display">
+      <option name="closed" value="true" />
+      <created>1749206284165</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1749206284165</updated>
+    </task>
+    <task id="LOCAL-00014" summary="def not this db">
+      <option name="closed" value="true" />
+      <created>1749206596297</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1749206596297</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -266,6 +282,8 @@
     <MESSAGE value="ABOUTUSNEW" />
     <MESSAGE value="buggy generate btn and upload btn" />
     <MESSAGE value="still buggyyyyyyyyyyyyyyyy" />
-    <option name="LAST_COMMIT_MESSAGE" value="still buggyyyyyyyyyyyyyyyy" />
+    <MESSAGE value="upload clothing item added to database, lack the item display" />
+    <MESSAGE value="def not this db" />
+    <option name="LAST_COMMIT_MESSAGE" value="def not this db" />
   </component>
 </project>
