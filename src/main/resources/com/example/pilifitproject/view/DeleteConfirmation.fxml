@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="199.0" prefWidth="338.0" styleClass="soft-tab" stylesheets="@../styles/Confirmation.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pilifitproject.controller.UploadDialogController">
+<AnchorPane fx:id="root" prefHeight="199.0" prefWidth="338.0" styleClass="soft-tab" stylesheets="@../styles/Confirmation.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pilifitproject.controller.DeleteConfirmationController">
     <children>
         <Button layoutX="310.0" layoutY="23.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="15.0" styleClass="close-button" text="X">
             <font>
@@ -20,12 +20,12 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Button layoutX="197.0" layoutY="147.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="86.0" styleClass="delete-button" text="DELETE">
+      <Button fx:id="DeleteItemConfirmation" layoutX="197.0" layoutY="147.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="86.0" styleClass="delete-button" text="DELETE">
          <font>
             <Font size="10.0" />
          </font>
       </Button>
-      <Button layoutX="101.0" layoutY="147.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="86.0" style="-fx-background-color: light grey;" styleClass="upload-button" text="CANCEL">
+      <Button fx:id="CancelDeleteItemConfirmation" layoutX="101.0" layoutY="147.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="86.0" style="-fx-background-color: light grey;" styleClass="upload-button" text="CANCEL">
          <font>
             <Font name="System Bold" size="10.0" />
          </font>

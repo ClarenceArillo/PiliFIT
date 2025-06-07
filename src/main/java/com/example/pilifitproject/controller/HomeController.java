@@ -95,7 +95,6 @@ public class HomeController {
         System.out.println("Fav Page");
     }
 
-
     private void addItemToGrid(ClothingItem item, int col, int row) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/pilifitproject/view/itemDisplay.fxml"));
