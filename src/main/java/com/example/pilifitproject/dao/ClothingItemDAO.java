@@ -20,7 +20,7 @@ public class ClothingItemDAO {
                 ClothingItem item = new ClothingItem(
                         rs.getInt("id"),
                         rs.getString("name"),
-                        rs.getString("image_path"),
+                        rs.getBytes("image_data"),
                         rs.getInt("category_id"),
                         rs.getInt("color_id"),
                         rs.getInt("style_id"),
@@ -34,13 +34,13 @@ public class ClothingItemDAO {
     }
 
     public void addClothingItem(ClothingItem item) throws SQLException {
-        String sql = "INSERT INTO clothing_item (name, image_path, category_id, color_id, style_id, size, is_favorite)" + "VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO clothing_item (name, image_data, category_id, color_id, style_id, size, is_favorite)" + "VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setString(1, item.getName());
-            pstmt.setString(2, item.getImagePath());
+            pstmt.setBytes(2, item.getImageData());
             pstmt.setInt(3, item.getCategoryId());
             pstmt.setInt(4, item.getColorId());
             pstmt.setInt(5, item.getStyleId());
@@ -53,7 +53,7 @@ public class ClothingItemDAO {
 
     public void updateClothingItem(ClothingItem item) throws SQLException {
         String sql = "UPDATE clothing_item SET name = ?, category_id = ?, color_id = ?, " +
-                "style_id = ?, size = ?, is_favorite = ? WHERE id = ?";
+                "style_id = ?, size = ? WHERE id = ?";
 
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -63,8 +63,7 @@ public class ClothingItemDAO {
             pstmt.setInt(3, item.getColorId());
             pstmt.setInt(4, item.getStyleId());
             pstmt.setString(5, item.getSize());
-            pstmt.setInt(6, item.getIsFavorite());
-            pstmt.setInt(7, item.getId());
+            pstmt.setInt(6, item.getId());
             pstmt.executeUpdate();
 
         }
@@ -126,7 +125,7 @@ public class ClothingItemDAO {
                 return new ClothingItem(
                         rs.getInt("id"),
                         rs.getString("name"),
-                        rs.getString("image_path"),
+                        rs.getBytes("image_data"),
                         rs.getInt("category_id"),
                         rs.getInt("color_id"),
                         rs.getInt("style_id"),
@@ -154,7 +153,7 @@ public class ClothingItemDAO {
                     ClothingItem item = new ClothingItem(
                             rs.getInt("id"),
                             rs.getString("name"),
-                            rs.getString("image_path"),
+                            rs.getBytes("image_data"),
                             rs.getInt("category_id"),
                             rs.getInt("color_id"),
                             rs.getInt("style_id"),
@@ -197,7 +196,7 @@ public class ClothingItemDAO {
                     ClothingItem item = new ClothingItem(
                             rs.getInt("id"),
                             rs.getString("name"),
-                            rs.getString("image_path"),
+                            rs.getBytes("image_data"),
                             rs.getInt("category_id"),
                             rs.getInt("color_id"),
                             rs.getInt("style_id"),
@@ -236,7 +235,7 @@ public class ClothingItemDAO {
                     ClothingItem item = new ClothingItem(
                             rs.getInt("id"),
                             rs.getString("name"),
-                            rs.getString("image_path"),
+                            rs.getBytes("image_data"),
                             rs.getInt("category_id"),
                             rs.getInt("color_id"),
                             rs.getInt("style_id"),
@@ -268,7 +267,7 @@ public class ClothingItemDAO {
                     ClothingItem item = new ClothingItem(
                             rs.getInt("id"),
                             rs.getString("name"),
-                            rs.getString("image_path"),
+                            rs.getBytes("image_data"),
                             rs.getInt("category_id"),
                             rs.getInt("color_id"),
                             rs.getInt("style_id"),
@@ -297,7 +296,7 @@ public class ClothingItemDAO {
                 return new ClothingItem(
                         rs.getInt("id"),
                         rs.getString("name"),
-                        rs.getString("image_path"),
+                        rs.getBytes("image_data"),
                         rs.getInt("category_id"),
                         rs.getInt("color_id"),
                         rs.getInt("style_id"),

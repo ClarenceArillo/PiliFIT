@@ -7,30 +7,27 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="300.0" style="-fx-border-radius: 20;" styleClass="tab-border" stylesheets="@../styles/ItemDisplay.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="ItemDisplayContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="124.0" style="-fx-border-radius: 20;" styleClass="tab-border" stylesheets="@../styles/ItemDisplay.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pilifitproject.controller.ItemDisplayController">
    <children>
-      <Pane layoutX="10.0" layoutY="14.0" prefHeight="282.0" prefWidth="280.0" style="-fx-background-color: #CCCCCC;" styleClass="image-view">
+      <Pane layoutX="7.0" layoutY="7.0" prefHeight="100.0" prefWidth="110.0" style="-fx-background-color: #CCCCCC;" styleClass="image-view">
          <children>
-
-            <ImageView fitHeight="282.0" fitWidth="280.0" pickOnBounds="true" preserveRatio="true" />
+            <Pane prefHeight="100.0" prefWidth="110.0">
+               <children>
+            
+                  <ImageView fx:id="ImageViewContainer" fitHeight="80.0" fitWidth="100.0" layoutX="5.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button fx:id="ViewItemEdit" layoutX="-12.0" layoutY="-2.0" mnemonicParsing="false" onAction="#handleEditButton" text="View" />
+               </children></Pane>
          </children>
       </Pane>
-      <Pane layoutX="21.0" layoutY="305.0" prefHeight="56.0" prefWidth="259.0">
-         <children>
-            <TextField prefHeight="30.0" prefWidth="201.0" styleClass="name-button" stylesheets="@../styles/ItemDisplay.css">
-               <font>
-                  <Font name="System Bold" size="88.0" />
-               </font></TextField>
-            <TextField layoutY="31.0" prefHeight="25.0" prefWidth="201.0" styleClass="details-button">
-               <font>
-                  <Font size="13.0" />
-               </font></TextField>
-            <Button layoutX="216.0" layoutY="5.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" styleClass="icon-button" stylesheets="@../styles/ItemDisplay.css" text="❤">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Button>
-         </children>
-      </Pane>
+      <TextField fx:id="ClothingItemNameDisplay" layoutX="7.0" layoutY="107.0" prefHeight="20.0" prefWidth="69.0" promptText="Item Name" styleClass="name-button" stylesheets="@../styles/ItemDisplay.css">
+         <font>
+            <Font name="System Bold" size="88.0" />
+         </font>
+      </TextField>
+      <Button layoutX="76.0" layoutY="101.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" styleClass="icon-button" stylesheets="@../styles/ItemDisplay.css" text="❤">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="635ec7d8-d374-4bf4-977d-6b60cb30ac35" name="Changes" comment="Filters Category, Color, Style, isFavorites test done!">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/utils/FitService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/utils/GeneratedFitPreview.java" afterDir="false" />
+    <list default="true" id="635ec7d8-d374-4bf4-977d-6b60cb30ac35" name="Changes" comment="Closet controller for dropdown and save button for save confirmation">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/CollectionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/FavoritesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/Collection.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/GenerateController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/utils/RandomFitGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/utils/RandomFitGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/Closet.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/ItemInformation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/Favorites.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/Favorites.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/Home.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +55,7 @@
   }
 }</component>
   <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="fcffe777-0ad5-4147-b62c-10c7f71ae64f" />
+    <option name="defaultAccountId" value="004dbcd4-a7d4-41be-aef2-95116c987b73" />
   </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
@@ -67,7 +70,6 @@
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2xderoEwte8Sd4oMrx7Qd4P7r8x" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -80,7 +82,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;#3 on HomeCloUpDia&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;HomeCloUpDia&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_directory_selection&quot;: &quot;C:/Users/cyy/IdeaProjects/kkkk/src/main/java/com&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/CLARENCE/IdeaProjects/OOP Class/PiliFItProjectJDK24&quot;,
@@ -88,9 +90,14 @@
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\cyy\IdeaProjects\kkkk\src\main\resources\com\example\pilifitproject\images\others" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.pilifitproject.Main" />
@@ -189,7 +196,63 @@
       <option name="project" value="LOCAL" />
       <updated>1748663452981</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Connect Home and UploadDialog. With file explorer viewer">
+      <option name="closed" value="true" />
+      <created>1749032718175</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1749032718175</updated>
+    </task>
+    <task id="LOCAL-00010" summary="deleteconfirmation fxml and css">
+      <option name="closed" value="true" />
+      <created>1749033745704</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1749033745704</updated>
+    </task>
+    <task id="LOCAL-00011" summary="deleteconfirmation polished">
+      <option name="closed" value="true" />
+      <created>1749035080890</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1749035080890</updated>
+    </task>
+    <task id="LOCAL-00012" summary="save confirmation and filters exclusiveness">
+      <option name="closed" value="true" />
+      <created>1749105462065</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1749105462065</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Closet fxml&amp;css polished">
+      <option name="closed" value="true" />
+      <created>1749110645145</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1749110645145</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Closet and Upload Dialog fxml&amp;css polished">
+      <option name="closed" value="true" />
+      <created>1749117166507</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1749117166507</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Closet controller for dropdown and save button for save confirmation">
+      <option name="closed" value="true" />
+      <created>1749118880595</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1749118880595</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -203,7 +266,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/AboutUsFeature2" />
+                        <option value="HomeCloUpDia" />
                       </list>
                     </value>
                   </entry>
@@ -225,6 +288,13 @@
     <MESSAGE value="Clean CRUD testing on Main" />
     <MESSAGE value="deleted txt." />
     <MESSAGE value="Filters Category, Color, Style, isFavorites test done!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Filters Category, Color, Style, isFavorites test done!" />
+    <MESSAGE value="Connect Home and UploadDialog. With file explorer viewer" />
+    <MESSAGE value="deleteconfirmation fxml and css" />
+    <MESSAGE value="deleteconfirmation polished" />
+    <MESSAGE value="save confirmation and filters exclusiveness" />
+    <MESSAGE value="Closet fxml&amp;css polished" />
+    <MESSAGE value="Closet and Upload Dialog fxml&amp;css polished" />
+    <MESSAGE value="Closet controller for dropdown and save button for save confirmation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Closet controller for dropdown and save button for save confirmation" />
   </component>
 </project>
