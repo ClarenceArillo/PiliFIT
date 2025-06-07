@@ -82,7 +82,7 @@
    <right>
       <AnchorPane prefHeight="442.0" prefWidth="1580.0" BorderPane.alignment="CENTER">
          <children>
-               <GridPane layoutX="101.0" layoutY="76.0" prefHeight="364.0" prefWidth="736.0">
+               <GridPane fx:id="itemsGridPane" layoutX="101.0" layoutY="76.0" prefHeight="364.0" prefWidth="736.0">
                    <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="132.4000244140625" minWidth="10.0" prefWidth="132.4000244140625" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="132.4000244140625" minWidth="10.0" prefWidth="132.4000244140625" />
