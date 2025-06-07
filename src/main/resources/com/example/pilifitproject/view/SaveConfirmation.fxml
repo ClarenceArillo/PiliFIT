@@ -23,7 +23,7 @@
                 <Font size="10.0" />
             </font>
         </Button>
-        <Button fx:id="DiscardChangesBtn" layoutX="67.0" layoutY="147.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="118.0" styleClass="delete-button" text="Discard changes">
+        <Button fx:id="DiscardChangesBtn" layoutX="67.0" layoutY="147.0" mnemonicParsing="false" onAction="#handleDiscardChanges" prefHeight="30.0" prefWidth="118.0" styleClass="delete-button" text="Discard changes">
             <font>
                 <Font name="System Bold" size="10.0" />
             </font>

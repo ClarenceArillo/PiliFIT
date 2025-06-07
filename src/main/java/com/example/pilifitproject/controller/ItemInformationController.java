@@ -5,11 +5,16 @@ import com.example.pilifitproject.model.ClothingItem;
 import com.example.pilifitproject.utils.CategoryMapper;
 import com.example.pilifitproject.utils.ImageUtil;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +27,7 @@ public class ItemInformationController {
         @FXML private ComboBox<String> colorDropdown;
         @FXML private TextField sizeInput;
         @FXML private Button SaveItemInfoBtn;
+        @FXML private Button deleteBtn;
 
         private ClothingItem clothingItem;
         private HomeController homeController;
@@ -40,7 +46,7 @@ public class ItemInformationController {
             System.out.println("1 → " + CategoryMapper.getCategoryName(1));     // Should be "Top"
 
             SaveItemInfoBtn.setOnAction(event -> handleSave());
-
+            deleteBtn.setOnAction(event -> handleDeleteButton());
 
         }
 
@@ -67,30 +73,12 @@ public class ItemInformationController {
         try {
             System.out.println("Loading item data for: " + clothingItem.getName()); // Debug
 
-            /*
-            // Load image
-            if (clothingItem.getImageData() == null) {
-                System.out.println("Image data is null!"); // Debug
-            } else {
-                Image image = ImageUtil.bytesToImage(clothingItem.getImageData());
-                if (image == null) {
-                    System.out.println("Failed to convert bytes to image!"); // Debug
-                    ItemInformationImg.setImage(image);
-                } else {
-
-                }
-            }
-
-             */
             if (clothingItem.getImageData() != null) {
                 Image image = ImageUtil.bytesToImage(clothingItem.getImageData());
                 ItemInformationImg.setImage(image);
             } else {
                 System.err.println("Image data is null!");
             }
-
-
-
 
             // Set text fields
             nameInput.setText(clothingItem.getName());
@@ -105,7 +93,6 @@ public class ItemInformationController {
             showAlert("Error", "Failed to load item data");
         }
     }
-
 
     @FXML
     private void handleSave() {
@@ -146,10 +133,50 @@ public class ItemInformationController {
         closeDialog();
     }
 
-    private void closeDialog() {
-        if (dialogStage != null) {
-            dialogStage.close();
+    @FXML
+    private void handleDeleteButton() {
+        try {
+            // Load the confirmation dialog
+            FXMLLoader loader = new FXMLLoader(
+                    getClass().getResource("/com/example/pilifitproject/view/DeleteConfirmation.fxml")
+            );
+            Parent root = loader.load();
+
+            // Get the controller and pass the item ID
+            DeleteConfirmationController controller = loader.getController();
+            controller.setItemId(clothingItem.getId());
+            controller.setHomeController(homeController);
+
+            // Add this callback
+            controller.setOnCancelCallback(() -> {
+                closeDialog(); // This will close the ItemInformation dialog
+            });
+
+            // Show the dialog
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            controller.setDialogStage(stage); // Pass the stage reference
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+
+            // Close the edit dialog after deletion
+            if (controller.isDeleted()) {
+                closeDialog();
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            showAlert("Error", "Failed to open delete confirmation");
         }
+    }
+
+
+    private void closeDialog() {
+//        if (dialogStage != null) {
+//            dialogStage.close();
+//        }
+        Stage stage = (Stage) nameInput.getScene().getWindow();
+        stage.close();
     }
 
     private void showAlert(String title, String message) {
