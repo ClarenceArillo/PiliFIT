@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="370.0" prefWidth="519.0" styleClass="tab-border" stylesheets="@../styles/Closet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pilifitproject.controller.ItemInformationController">
+   <children>
+
+                  <!-- Image & Form Details Row -->
+      <HBox layoutX="30.0" layoutY="42.0" prefHeight="242.0" prefWidth="219.0" styleClass="image-holder">
+         <children>
+            <GridPane prefHeight="241.0" prefWidth="204.0" styleClass="image-holder">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView fx:id="ItemInformationImg" fitHeight="222.0" fitWidth="202.0" pickOnBounds="true" preserveRatio="true" styleClass="button-display" />
+               </children>
+            </GridPane>
+         </children></HBox>
+
+      <!-- Container with rounded corners -->
+      <VBox layoutX="30.0" layoutY="299.0" prefHeight="34.0" prefWidth="219.0" spacing="20">
+         <children>
+      
+            <!-- Bottom Bar -->
+            <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="188.0" spacing="10">
+               <children>
+                  <TextField fx:id="nameInput" alignment="CENTER" prefHeight="26.0" prefWidth="155.0" promptText="Name" styleClass="image-holder" />
+                  <Button fx:id="favoriteBtn" ellipsisString="❤" styleClass="icon-button" text="❤" textAlignment="CENTER">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="deleteBtn" ellipsisString="🗑" styleClass="heart-bin" text="🗑" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+
+      <!-- Details Column -->
+      <VBox layoutX="269.0" layoutY="42.0" prefHeight="174.0" prefWidth="218.0" spacing="10">
+         <children>
+            <Text styleClass="title-text" text="CLOTHES DETAILS" wrappingWidth="189.06451416015625">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Text>
+
+            <!-- Category -->
+            <HBox prefHeight="21.0" prefWidth="218.0" spacing="10">
+               <Text styleClass="text-filter" text="CATEGORY:" />
+               <ComboBox fx:id="categoryDropdown" prefWidth="150.0" promptText="Select Category" />
+            </HBox>
+
+            <!-- Style -->
+            <HBox prefHeight="22.0" prefWidth="238.0" spacing="10">
+               <Text styleClass="text-filter" text="STYLE:" wrappingWidth="76.5501708984375" />
+               <ComboBox fx:id="styleDropdown" prefWidth="150.0" promptText="Select Style" />
+            </HBox>
+
+            <!-- Color -->
+            <HBox prefHeight="19.0" prefWidth="218.0" spacing="10">
+               <Text styleClass="text-filter" text="COLOR:" wrappingWidth="76.4595947265625" />
+               <ComboBox fx:id="colorDropdown" prefWidth="150.0" promptText="Select Color" />
+            </HBox>
+
+            <!-- Size -->
+            <HBox prefHeight="22.0" prefWidth="218.0" spacing="10">
+               <Text styleClass="text-filter" text="SIZE:" wrappingWidth="76.82635498046875" />
+               <TextField fx:id="sizeInput" alignment="CENTER" prefHeight="2.0" prefWidth="131.0" promptText="Enter size" styleClass="image-holder" />
+            </HBox>
+
+         </children>
+      </VBox>
+      <GridPane layoutX="263.0" layoutY="251.0" prefHeight="95.0" prefWidth="78.0" styleClass="image-holder">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+      <Button layoutX="502.0" layoutY="27.0" mnemonicParsing="false" styleClass="close-button" text="X" />
+      <Label layoutX="271.0" layoutY="225.0" prefHeight="11.0" prefWidth="61.0" text="PREVIEW" textAlignment="CENTER">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </Label>
+      <GridPane layoutX="351.0" layoutY="251.0" prefHeight="95.0" prefWidth="78.0" styleClass="image-holder">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <GridPane layoutX="438.0" layoutY="251.0" prefHeight="95.0" prefWidth="78.0" styleClass="image-holder">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <Button fx:id="SaveItemInfoBtn" layoutX="476.0" layoutY="358.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="50.0" styleClass="save-button" text="save" />
+   </children>
+</AnchorPane>

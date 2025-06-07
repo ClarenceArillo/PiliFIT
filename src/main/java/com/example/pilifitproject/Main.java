@@ -23,7 +23,11 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException, SQLException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/pilifitproject/view/Home.fxml"));
-        Parent root = fxmlLoader.load();
+        Scene scene = new Scene(fxmlLoader.load(), 1024, 768);
+        stage.setTitle("Hello!");
+        stage.setScene(scene);
+        stage.show();
+    }
 
         /* =============image display test  =========*/
 //        HomeController controller = fxmlLoader.getController();
@@ -44,11 +48,6 @@ public class Main extends Application {
 //
 //        controller.displayItem(testItem);
 
-        Scene scene = new Scene(root, 724, 600);
-        stage.setTitle("Hello!");
-        stage.setScene(scene);
-        stage.show();
-    }
 
     public static void main(String[] args) {
 
@@ -57,16 +56,16 @@ public class Main extends Application {
         ClothingItemDAO dao = new ClothingItemDAO();
         FitDAO fitDao = new FitDAO();
 
-        ClothingItem item = new ClothingItem(
-                6,
-                "Black Leather Jacket",
-                "/com/example/pilifitproject/images/top/T3.png",
-                1,
-                8,
-                3,
-                "XL",
-                1
-        );
+//        ClothingItem item = new ClothingItem(
+//                6,
+//                "Black Leather Jacket",
+//                "/com/example/pilifitproject/images/top/T3.png",
+//                1,
+//                8,
+//                3,
+//                "XL",
+//                1
+//        );
 
 
 
@@ -84,15 +83,17 @@ public class Main extends Application {
 //            System.out.println("Item updated successfully");
 
             // Delete item
-//            dao.deleteClothingItem(4);
-//            dao.deleteClothingItem(5);
+//            dao.deleteClothingItem(6);
+//            dao.deleteClothingItem(7);
+//            dao.deleteClothingItem(8);
+//            dao.deleteClothingItem(9);
 //            System.out.println("Items deleted successfully");
 
             // Get all items
             for(ClothingItem c: dao.getAllClothingItem()){
                 System.out.println( "ID          : " + c.getId() +
                                     "\nName       : " + c.getName() +
-                                    "\nImagePath  : " + c.getImagePath() +
+                                    "\nImagePath  : " + c.getImageData() +
                                     "\nCategoryID : " + c.getCategoryId() +
                                     "\nColorID    : " + c.getColorId() +
                                     "\nStyleID    : " + c.getStyleId() +
