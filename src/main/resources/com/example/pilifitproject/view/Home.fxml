@@ -43,7 +43,7 @@
                   <Button fx:id="AboutController" mnemonicParsing="false" onAction="#goAbout" prefHeight="26.0" prefWidth="126.0" styleClass="scene-switch" text="ABOUT" GridPane.columnIndex="1" />
                </children>
             </GridPane>
-            <Button alignment="CENTER" layoutX="629.0" layoutY="196.0" mnemonicParsing="false" styleClass="add-item" text="CLOSET">
+            <Button fx:id="closetButton" alignment="CENTER" layoutX="629.0" layoutY="196.0" mnemonicParsing="false" onAction="#goCloset" styleClass="add-item" text="CLOSET">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -71,7 +71,7 @@
                <font>
                   <Font name="MS UI Gothic" size="79.0" />
                </font></Label>
-            <Button alignment="CENTER" layoutX="824.0" layoutY="194.0" mnemonicParsing="false" styleClass="add-item" text="COLLECTIONS" textFill="WHITE">
+            <Button fx:id="collectionsButton" alignment="CENTER" layoutX="824.0" layoutY="194.0" mnemonicParsing="false" onAction="#goCollection" styleClass="add-item" text="COLLECTIONS" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -146,7 +146,7 @@
                   <MenuButton fx:id="styleDropdown" accessibleRole="COMBO_BOX" alignment="CENTER" mnemonicParsing="false" prefHeight="34.0" prefWidth="150.0" styleClass="drop-select" text="STYLE" GridPane.columnIndex="4" />
                   <MenuButton fx:id="categoryDropdown" accessibleRole="COMBO_BOX" alignment="CENTER" mnemonicParsing="false" prefHeight="34.0" prefWidth="150.0" styleClass="drop-select" text="CATEGORY" GridPane.columnIndex="3" />
                   <MenuButton fx:id="colorDropdown" accessibleRole="COMBO_BOX" alignment="CENTER" mnemonicParsing="false" prefHeight="34.0" prefWidth="150.0" styleClass="drop-select" text="COLOR" GridPane.columnIndex="5" />
-                  <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="149.0" styleClass="drop-select" text="FAVORITES" GridPane.columnIndex="6" />
+                  <Button mnemonicParsing="false" onAction="#goFavorites" prefHeight="34.0" prefWidth="149.0" styleClass="drop-select" text="FAVORITES" GridPane.columnIndex="6" />
                </children>
             </GridPane>
          </children>

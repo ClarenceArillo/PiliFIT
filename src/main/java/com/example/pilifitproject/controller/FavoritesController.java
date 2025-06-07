@@ -15,7 +15,7 @@ import java.util.List;
 
 import java.io.IOException;
 
-public class HomeController {
+public class FavoritesController {
 
     private final List<CheckMenuItem> allFilterItems = new ArrayList<>();
 
@@ -53,7 +53,6 @@ public class HomeController {
     @FXML
     private void goFavorites(ActionEvent event) throws IOException {
         SceneSwitcher.switchTo(event, "Favorites.fxml");
-        System.out.println("Fav Page");
     }
 
 
