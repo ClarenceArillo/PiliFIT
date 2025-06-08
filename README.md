@@ -97,3 +97,4 @@ Opens as a popup tab (modal).
 - Contains:
   - Developer contact details (email, socials)
   - Project social media accounts or communication channels
+ 

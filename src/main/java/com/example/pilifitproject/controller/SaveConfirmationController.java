@@ -16,6 +16,7 @@ public class SaveConfirmationController {
 
     @FXML
     private Button DiscardChangesBtn;
+    @FXML private Button CloseButton;
 
     @FXML
     private Button SaveEditsBtn;
@@ -31,12 +32,12 @@ public class SaveConfirmationController {
 
     @FXML
     private void handleDiscardChanges() {
-//        // Close both dialogs
-//        Stage stage = (Stage) DiscardChangesBtn.getScene().getWindow();
-//        stage.close();
+//        Close both dialogs
+        Stage stage = (Stage) DiscardChangesBtn.getScene().getWindow();
+        stage.close();
 //
 //        // Also close the upload dialog if needed
-//        uploadDialogController.closeDialog();
+        uploadDialogController.closeDialog();
 
         // Close this confirmation dialog
 //        if (dialogStage != null) {
@@ -80,9 +81,9 @@ public class SaveConfirmationController {
 
 
         // Close confirmation dialog
-//        Stage stage = (Stage) SaveEditsBtn.getScene().getWindow();
-//        stage.close();
-//        uploadDialogController.closeDialog();
+        Stage stage = (Stage) SaveEditsBtn.getScene().getWindow();
+        stage.close();
+        uploadDialogController.closeDialog();
 
 
 
@@ -101,4 +102,18 @@ public class SaveConfirmationController {
             //currentStage.close();
         }
     }
+    @FXML
+    private void handleCancel() {
+        closeDialog();
+    }
+
+    private void closeDialog() {
+        if (dialogStage != null) {
+            dialogStage.close();
+        } else {
+            ((Stage) CloseButton.getScene().getWindow()).close();
+        }
+        System.out.println("Close Tab");
+    }
+
 }

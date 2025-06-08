@@ -21,6 +21,7 @@ import java.sql.SQLException;
 public class UploadDialogController {
 
     @FXML private Button UploadItem;
+    @FXML private Button CloseButton;
 
     private static final String DEFAULT_NAME = "New Clothing Item";
     private static final String DEFAULT_CATEGORY = "Top"; // Default to Top
@@ -127,6 +128,27 @@ public class UploadDialogController {
         alert.setContentText(message);
         alert.showAndWait();
     }
+    @FXML
+    private void handleCancel() {
+        closeDialog();
+    }
+
+    public void closeDialog() {
+        if (dialogStage != null) {
+            dialogStage.close();
+        } else {
+            ((Stage) CloseButton.getScene().getWindow()).close();
+        }
+        System.out.println("Close Tab");
+    }
+    public Button getCloseButton() {
+        return CloseButton;
+    }
+
+    public void setCloseButton(Button closeButton) {
+        CloseButton = closeButton;
+    }
+
 
 
 }
