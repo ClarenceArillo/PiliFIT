@@ -10,7 +10,7 @@
 
 <AnchorPane fx:id="root" prefHeight="423.0" prefWidth="336.0" styleClass="soft-tab" stylesheets="@../styles/UploadDialog.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pilifitproject.controller.UploadDialogController">
    <children>
-      <Button layoutX="293.0" layoutY="14.0" mnemonicParsing="false" styleClass="close-button" text="X">
+      <Button layoutX="293.0" layoutY="14.0" mnemonicParsing="false" styleClass="close-button" fx:id="CloseButton" text="X" onAction="#handleCancel">
          <font>
             <Font name="System Bold" size="4.0" />
          </font>

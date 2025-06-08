@@ -8,7 +8,7 @@
 
 <AnchorPane fx:id="root" prefHeight="199.0" prefWidth="338.0" styleClass="soft-tab" stylesheets="@../styles/Confirmation.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pilifitproject.controller.SaveConfirmationController">
     <children>
-        <Button layoutX="310.0" layoutY="23.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="15.0" styleClass="close-button" text="X">
+        <Button layoutX="310.0" layoutY="23.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="15.0" styleClass="close-button" text="X" fx:id="CloseButton" onAction="#handleCancel">
             <font>
                 <Font name="System Bold" size="4.0" />
             </font>

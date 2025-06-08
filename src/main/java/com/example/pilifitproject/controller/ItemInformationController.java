@@ -32,6 +32,7 @@ public class ItemInformationController {
         @FXML private Button deleteBtn;
         @FXML private Button favoriteBtn;
 
+        @FXML private Button closeButton;
 
         private ClothingItem clothingItem;
         private RefreshableController homeController;
@@ -252,6 +253,14 @@ public class ItemInformationController {
         // Optional: Print selected item for testing
         System.out.println("Selected: " + selectedItem.getText());
     }
+    public Button getCloseButton() {
+        return closeButton;
+    }
+
+    public void setCloseButton(Button closeButton) {
+        Button CloseButton = closeButton;
+    }
+
 
     // In your ClosetController or similar
 

@@ -16,6 +16,7 @@ public class SaveConfirmationController {
 
     @FXML
     private Button DiscardChangesBtn;
+    @FXML private Button CloseButton;
 
     @FXML
     private Button SaveEditsBtn;
@@ -31,6 +32,30 @@ public class SaveConfirmationController {
 
     @FXML
     private void handleDiscardChanges() {
+//        Close both dialogs
+        Stage stage = (Stage) DiscardChangesBtn.getScene().getWindow();
+        stage.close();
+//
+//        // Also close the upload dialog if needed
+        uploadDialogController.closeDialog();
+
+        // Close this confirmation dialog
+//        if (dialogStage != null) {
+//            dialogStage.close();
+//        } else {
+//            ((Stage) DiscardChangesBtn.getScene().getWindow()).close();
+//        }
+//
+//        // Then close the upload dialog
+//        if (uploadDialogController != null) {
+//            uploadDialogController.closeDialog();
+//        }
+
+        // Close the upload dialog
+//        if (uploadDialogController != null) {
+//            uploadDialogController.closeDialog();
+//        }
+
 
         // Close this confirmation dialog
         closeCurrentStage();
@@ -53,6 +78,18 @@ public class SaveConfirmationController {
             uploadDialogController.handleSave(selectedFile);
         }
 
+
+        // Close confirmation dialog
+        Stage stage = (Stage) SaveEditsBtn.getScene().getWindow();
+        stage.close();
+        uploadDialogController.closeDialog();
+
+
+
+//        // Close the upload dialog
+//        if (uploadDialogController != null) {
+//            uploadDialogController.closeDialog();
+//        }
     }
 
     private void closeCurrentStage() {
@@ -64,4 +101,18 @@ public class SaveConfirmationController {
             //currentStage.close();
         }
     }
+    @FXML
+    private void handleCancel() {
+        closeDialog();
+    }
+
+    private void closeDialog() {
+        if (dialogStage != null) {
+            dialogStage.close();
+        } else {
+            ((Stage) CloseButton.getScene().getWindow()).close();
+        }
+        System.out.println("Close Tab");
+    }
+
 }

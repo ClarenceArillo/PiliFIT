@@ -8,6 +8,9 @@
     -fx-font-size: 8px;
     -fx-cursor: hand;
 }
+.icon-button: hover {
+    -fx-background-color: #FDFD96;
+}
 
 .heart-bin {
     -fx-background-color: #d9d9d9;
@@ -20,6 +23,9 @@
     -fx-font-size: 8px;
     -fx-cursor: hand;
 
+}
+.heart-bin: hover {
+    -fx-background-color: #F75D59;
 }
 
 .title-text {
@@ -70,7 +76,7 @@
     -fx-border-radius: 15px;
     -fx-border-color: transparent;
     -fx-border-width: 2px;
-    -fx-padding: 5px;
+    -fx-padding: 2px;
 }
 
 

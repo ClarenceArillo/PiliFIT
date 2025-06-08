@@ -10,9 +10,13 @@
     -fx-background-radius: 20;
     -fx-border-radius: 20;
     -fx-padding: 5 20;
+    -fx-cursor: hand;
 
 }
 
+.upload-button: hover {
+        -fx-background-color: #d9d9d9;
+}
 .close-button {
     -fx-background-color: #f5f5f5;
     -fx-text-fill: black;
@@ -23,8 +27,8 @@
     -fx-border-color: transparent;
     -fx-border-width: 2px;
     -fx-border-radius: 100%;
-    -fx-pref-width: 20px;
-    -fx-pref-height: 20px;
+    -fx-pref-width: 5px;
+    -fx-pref-height: 5px;
 }
 
 .close-button: hover {
@@ -40,14 +44,6 @@
     -fx-border-color: transparent;
     -fx-border-width: 2px;
     -fx-padding: 5px;
-}
-
-
-/* Title above the guideline instructions */
-.guidelines-title {
-    -fx-font-size: 10px;
-    -fx-font-family: "System Bold";
-    -fx-text-fill: black;
 }
 
 /* Text inside TextFlow for instructions */
