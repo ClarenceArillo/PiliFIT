@@ -1,5 +1,6 @@
 package com.example.pilifitproject.controller;
 
+import com.example.pilifitproject.RefreshableController;
 import com.example.pilifitproject.model.ClothingItem;
 import com.example.pilifitproject.utils.ImageUtil;
 import javafx.fxml.FXML;
@@ -22,7 +23,7 @@ public class ItemDisplayController {
     @FXML private Button ViewItemEdit;
 
     private ClothingItem clothingItem;
-    private HomeController homeController;
+    private RefreshableController homeController;
 
     public void setClothingItem(ClothingItem item) {
         if (item == null) {
@@ -40,9 +41,11 @@ public class ItemDisplayController {
         }
     }
 
-    public void setHomeController(HomeController homeController) {
-        this.homeController = homeController;
+    public void setHomeController(RefreshableController controller) {
+        this.homeController = controller;
     }
+
+
 
     @FXML
     private void handleEditButton() {
@@ -60,10 +63,19 @@ public class ItemDisplayController {
             stage.showAndWait();
 
             // Refresh the display after editing
-            setClothingItem(clothingItem);
+            //setClothingItem(clothingItem);
+            refreshParentController();
+
         } catch (IOException e) {
             e.printStackTrace();
             showAlert("Error", "Failed to open edit dialog");
+        }
+    }
+
+    private void refreshParentController() {
+        if (homeController != null) {
+            homeController.refreshClothingItems();
+            homeController.refreshFavorites();
         }
     }
 

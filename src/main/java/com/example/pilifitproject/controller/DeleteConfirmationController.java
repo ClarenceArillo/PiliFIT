@@ -1,5 +1,6 @@
 package com.example.pilifitproject.controller;
 
+import com.example.pilifitproject.RefreshableController;
 import com.example.pilifitproject.dao.ClothingItemDAO;
 import com.example.pilifitproject.controller.HomeController;
 import javafx.fxml.FXML;
@@ -15,7 +16,7 @@ public class DeleteConfirmationController {
     @FXML private Button CancelDeleteItemConfirmation;
 
     private int itemId;
-    private HomeController homeController;
+    private RefreshableController homeController;
     private boolean isDeleted = false;
     private Stage dialogStage;
     private Runnable onCancelCallback;  // New callback function
@@ -24,8 +25,8 @@ public class DeleteConfirmationController {
         this.itemId = id;
     }
 
-    public void setHomeController(HomeController homeController) {
-        this.homeController = homeController;
+    public void setHomeController(RefreshableController controller) {
+        this.homeController = controller;
     }
 
     public boolean isDeleted() {
@@ -54,6 +55,7 @@ public class DeleteConfirmationController {
 
             if (homeController != null || dialogStage != null) {
                 homeController.refreshClothingItems();
+                homeController.refreshFavorites();
                 dialogStage.close();
             }else {
                 ((Stage) CancelDeleteItemConfirmation.getScene().getWindow()).close();

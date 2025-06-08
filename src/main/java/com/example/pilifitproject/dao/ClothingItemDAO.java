@@ -253,6 +253,7 @@ public class ClothingItemDAO {
     }
 
     // favorite filter
+
     public static List<ClothingItem> getAllClothingItemsByIsFavorite(int is_favorite) throws SQLException {
         List<ClothingItem> items = new ArrayList<>();
         String sql = "SELECT * FROM clothing_item WHERE is_favorite = ?";
@@ -283,6 +284,8 @@ public class ClothingItemDAO {
 
 
     }
+
+
 
     public ClothingItem getRandomClothingItemByCategory(int categoryId) throws SQLException {
         String sql = "SELECT * FROM clothing_item WHERE category_id = ? ORDER BY RANDOM() LIMIT 1";

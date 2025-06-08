@@ -1,5 +1,6 @@
 package com.example.pilifitproject.controller;
 
+import com.example.pilifitproject.RefreshableController;
 import com.example.pilifitproject.SceneSwitcher;
 import com.example.pilifitproject.dao.ClothingItemDAO;
 import com.example.pilifitproject.model.ClothingItem;
@@ -32,7 +33,7 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class HomeController {
+public class HomeController implements RefreshableController {
 
     private final List<CheckMenuItem> allFilterItems = new ArrayList<>();
 
@@ -114,6 +115,7 @@ public class HomeController {
         }
     }
 
+    @Override
     public void refreshClothingItems() {
         try {
             List<Node> toRemove = new ArrayList<>();
@@ -147,6 +149,11 @@ public class HomeController {
         }
         System.out.println("Button visible: " + Addnew.isVisible());
         System.out.println("Button managed: " + Addnew.isManaged());
+    }
+
+    @Override
+    public void refreshFavorites() {
+        // Can be empty if not needed
     }
 
 

@@ -1,5 +1,6 @@
 package com.example.pilifitproject.controller;
 
+import com.example.pilifitproject.RefreshableController;
 import com.example.pilifitproject.dao.ClothingItemDAO;
 import com.example.pilifitproject.model.ClothingItem;
 import com.example.pilifitproject.utils.CategoryMapper;
@@ -33,7 +34,7 @@ public class ItemInformationController {
 
 
         private ClothingItem clothingItem;
-        private HomeController homeController;
+        private RefreshableController homeController;
         private Stage dialogStage;
 
         @FXML
@@ -105,8 +106,8 @@ public class ItemInformationController {
             loadItemData();
     }
 
-    public void setHomeController(HomeController homeController) {
-        this.homeController = homeController;
+    public void setHomeController(RefreshableController controller) {
+        this.homeController = controller;
     }
 
     public void setDialogStage(Stage stage) {
@@ -156,10 +157,17 @@ public class ItemInformationController {
         clothingItem.setStyleId(CategoryMapper.getStyleId(styleDropdown.getValue()));
         clothingItem.setSize(sizeInput.getText());
 
+        if (homeController instanceof FavoritesController) {
+            ((FavoritesController) homeController).refreshFavorites();
+        } else if (homeController instanceof HomeController) {
+            ((HomeController) homeController).refreshClothingItems();
+        }
+
         try {
             new ClothingItemDAO().updateClothingItem(clothingItem);
             if (homeController != null) {
                 homeController.refreshClothingItems();
+                homeController.refreshFavorites();
             }
 
             // Close the dialog
