@@ -28,6 +28,7 @@ public class ItemInformationController {
         @FXML private TextField sizeInput;
         @FXML private Button SaveItemInfoBtn;
         @FXML private Button deleteBtn;
+        @FXML private Button closeButton;
 
         private ClothingItem clothingItem;
         private HomeController homeController;
@@ -199,6 +200,14 @@ public class ItemInformationController {
         // Optional: Print selected item for testing
         System.out.println("Selected: " + selectedItem.getText());
     }
+    public Button getCloseButton() {
+        return closeButton;
+    }
+
+    public void setCloseButton(Button closeButton) {
+        Button CloseButton = closeButton;
+    }
+
 
     // In your ClosetController or similar
 

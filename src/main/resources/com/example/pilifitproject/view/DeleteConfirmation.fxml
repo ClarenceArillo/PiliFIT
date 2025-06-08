@@ -25,7 +25,7 @@
             <Font size="10.0" />
          </font>
       </Button>
-      <Button fx:id="CancelDeleteItemConfirmation" layoutX="101.0" layoutY="147.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="86.0" style="-fx-background-color: light grey;" styleClass="upload-button" text="CANCEL">
+      <Button fx:id="CancelDeleteItemConfirmation" layoutX="101.0" layoutY="147.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="86.0" styleClass="cancel-button" text="CANCEL">
          <font>
             <Font name="System Bold" size="10.0" />
          </font>

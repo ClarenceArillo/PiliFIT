@@ -18,38 +18,40 @@
     -fx-text-fill: black;
     -fx-font-size: 12px;
     -fx-font-family: "System Bold";
+    -fx-font-weight: bold;
     -fx-background-radius: 100%;
-    -fx-border-color: black;
+    -fx-border-color: transparent;
     -fx-border-width: 2px;
     -fx-border-radius: 100%;
     -fx-pref-width: 5px;
     -fx-pref-height: 5px;
+    -fx-cursor: hand;
+}
+.close-button: hover{
+    -fx-background-color: #F75D59;
 }
 
 .soft-tab {
     -fx-background-color: white;
-    -fx-background-radius: 15;
-    -fx-border-radius: 15;
-    -fx-border-color: black;
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    -fx-border-color: transparent;
     -fx-border-width: 2px;
-    -fx-padding: 10;
+    -fx-padding: 10px;
 }
 
-/* Rectangle frame around image */
 .preview-border {
     -fx-fill: #c3c9cf;
     -fx-stroke: black;
     -fx-stroke-type: inside;
 }
 
-/* Title above the guideline instructions */
 .guidelines-title {
     -fx-font-size: 10px;
     -fx-font-family: "System Bold";
     -fx-text-fill: black;
 }
 
-/* Text inside TextFlow for instructions */
 .guidelines-text {
     -fx-font-size: 10px;
     -fx-font-family: "Berlin Sans FB";
@@ -66,6 +68,7 @@
     -fx-background-radius: 20;
     -fx-border-radius: 20;
     -fx-padding: 5 20;
+    -fx-cursor: hand;
 
 }
 .save-button: hover {
@@ -83,12 +86,29 @@
     -fx-background-radius: 20;
     -fx-border-radius: 20;
     -fx-padding: 5 20;
+    -fx-cursor: hand;
 
 }
 
 .delete-button: hover {
     -fx-background-color: #F75D59;
 
+}
+
+.cancel-button {
+    -fx-background-color: white;
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+    -fx-text-fill: black;
+    -fx-font-size: 10px;
+    -fx-font-family: "Berlin Sans FB Bold";
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-padding: 5 20;
+}
+
+.cancel-button: hover {
+    -fx-background-color: #d9d9d9;
 }
 
 
