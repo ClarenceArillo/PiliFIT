@@ -5,7 +5,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="ItemDisplayContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="124.0" style="-fx-border-radius: 20;" styleClass="tab-border" stylesheets="@../styles/ItemDisplay.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pilifitproject.controller.ItemDisplayController">
    <children>
@@ -14,20 +13,12 @@
             <Pane prefHeight="100.0" prefWidth="110.0">
                <children>
             
-                  <ImageView fx:id="ImageViewContainer" fitHeight="80.0" fitWidth="100.0" layoutX="5.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
-                  <Button fx:id="ViewItemEdit" layoutX="-12.0" layoutY="-2.0" mnemonicParsing="false" onAction="#handleEditButton" text="View" />
+                  <ImageView id="ItemImage" fx:id="ImageViewContainer" fitHeight="83.0" fitWidth="82.0" layoutX="15.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button id="ViewButton" fx:id="ViewItemEdit" layoutX="-5.0" layoutY="-2.0" mnemonicParsing="false" onAction="#handleEditButton" prefHeight="27.0" prefWidth="41.0" styleClass="view-button" text="👁️‍🗨️" />
                </children></Pane>
          </children>
       </Pane>
-      <TextField fx:id="ClothingItemNameDisplay" layoutX="7.0" layoutY="107.0" prefHeight="20.0" prefWidth="69.0" promptText="Item Name" styleClass="name-button" stylesheets="@../styles/ItemDisplay.css">
-         <font>
-            <Font name="System Bold" size="88.0" />
-         </font>
-      </TextField>
-      <Button layoutX="76.0" layoutY="101.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" styleClass="icon-button" stylesheets="@../styles/ItemDisplay.css" text="❤">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Button>
+      <TextField fx:id="ClothingItemNameDisplay" layoutX="7.0" layoutY="115.0" prefHeight="21.0" prefWidth="74.0" promptText="Item Name" styleClass="name-button" stylesheets="@../styles/ItemDisplay.css" />
+      <Button id="favoritebutton" ellipsisString="♥︎" layoutX="80.0" layoutY="113.0" mnemonicParsing="false" styleClass="icon-button" stylesheets="@../styles/ItemDisplay.css" text="❤" textAlignment="CENTER" />
    </children>
 </AnchorPane>
