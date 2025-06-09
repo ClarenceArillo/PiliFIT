@@ -15,11 +15,12 @@ public class AboutController {
 
     @FXML
     private void goAbout(ActionEvent event) throws IOException {
-        SceneSwitcher.switchTo(event, "AboutUs2.fxml");
+        SceneSwitcher.switchTo(event, "AboutUs.fxml");
     }
 
     @FXML
     private void goContact(ActionEvent event) throws IOException {
-        SceneSwitcher.switchTo(event, "Contact.fxml");
+        SceneSwitcher.switchTo(event, "ContactUs.fxml");
+        System.out.println("Contact Page");
     }
 }

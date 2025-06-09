@@ -58,12 +58,12 @@ public class FavoritesController implements RefreshableController {
 
     @FXML
     private void goAbout(ActionEvent event) throws IOException {
-        SceneSwitcher.switchTo(event, "AboutUs2.fxml");
+        SceneSwitcher.switchTo(event, "AboutUs.fxml");
     }
 
     @FXML
     private void goContact(ActionEvent event) throws IOException {
-        SceneSwitcher.switchTo(event, "Contact.fxml");
+        SceneSwitcher.switchTo(event, "ContactUs.fxml");
     }
 
     @FXML

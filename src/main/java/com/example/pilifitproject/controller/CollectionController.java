@@ -15,21 +15,11 @@ public class CollectionController {
 
     @FXML
     private void goAbout(ActionEvent event) throws IOException {
-        SceneSwitcher.switchTo(event, "AboutUs2.fxml");
+        SceneSwitcher.switchTo(event, "AboutUs.fxml");
     }
 
     @FXML
     private void goContact(ActionEvent event) throws IOException {
-        SceneSwitcher.switchTo(event, "Contact.fxml");
-    }
-
-    @FXML
-    private void goCollection(ActionEvent event) throws IOException {
-        SceneSwitcher.switchTo(event, "Collection.fxml");
-    }
-
-    @FXML
-    private void goCloset(ActionEvent event) throws IOException {
-        SceneSwitcher.switchTo(event, "Home.fxml");
+        SceneSwitcher.switchTo(event, "ContactUs.fxml");
     }
 }

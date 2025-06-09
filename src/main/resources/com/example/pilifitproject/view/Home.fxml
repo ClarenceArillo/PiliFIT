@@ -38,7 +38,7 @@
               </rowConstraints>
                <children>
                   <Button fx:id="HomeController" mnemonicParsing="false" onAction="#goHome" prefHeight="26.0" prefWidth="116.0" styleClass="scene-switch" text="HOME" />
-                  <Button mnemonicParsing="false" onAction="#goContact" prefHeight="26.0" prefWidth="90.0" styleClass="scene-switch" text="CONTACT" GridPane.columnIndex="2" />
+                  <Button fx:id="ContactController" mnemonicParsing="false" onAction="#goContact" prefHeight="26.0" prefWidth="90.0" styleClass="scene-switch" text="CONTACT" GridPane.columnIndex="2" />
                   <Button fx:id="AboutController" mnemonicParsing="false" onAction="#goAbout" prefHeight="26.0" prefWidth="126.0" styleClass="scene-switch" text="ABOUT" GridPane.columnIndex="1" />
                </children>
             </GridPane>
