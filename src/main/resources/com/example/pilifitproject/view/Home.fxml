@@ -62,7 +62,7 @@
                      </stops>
                   </RadialGradient>
                </textFill></Button>
-            <Button layoutX="723.0" layoutY="143.0" mnemonicParsing="false" prefWidth="143.0" styleClass="icon-button" text="GENERATE">
+            <Button layoutX="723.0" layoutY="143.0" mnemonicParsing="false" prefWidth="143.0" styleClass="icon-button" text="✨ GENERATE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font></Button>
