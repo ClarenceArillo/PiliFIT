@@ -10,18 +10,17 @@ import com.example.pilifitproject.utils.RandomFitGenerator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
+import javafx.scene.control.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.CheckMenuItem;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.control.CheckMenuItem;
+import javafx.scene.control.MenuButton;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -43,6 +42,10 @@ public class HomeController implements RefreshableController {
     private static final int COLUMNS = 6;
     private static final int ITEM_WIDTH = 120;
     private static final int ITEM_HEIGHT = 150;
+
+    private Integer currentCategoryFilter = null;
+    private Integer currentColorFilter = null;
+    private Integer currentStyleFilter = null;
 
     @FXML
     private MenuButton categoryDropdown;     // CATEGORY
@@ -124,10 +127,15 @@ public class HomeController implements RefreshableController {
                     toRemove.add(node);
                 }
             }
-            itemsGridPane.getChildren().removeAll(toRemove);
 
-            // Get all clothing items from database
-            List<ClothingItem> items = new ClothingItemDAO().getAllClothingItem();
+            itemsGridPane.getChildren().removeIf(node -> !(node instanceof Button && ((Button) node).getId() != null && ((Button) node).getId().equals("Addnew")));
+
+            // Get filtered items
+            List<ClothingItem> items = new ClothingItemDAO().getFilteredClothingItems(
+                    currentCategoryFilter,
+                    currentColorFilter,
+                    currentStyleFilter
+            );
 
             // Add items to grid
             int row = 0;
@@ -152,11 +160,241 @@ public class HomeController implements RefreshableController {
     }
 
     @Override
+    public void applyFilters(Integer categoryId, Integer colorId, Integer styleId) {
+        this.currentCategoryFilter = categoryId;
+        this.currentColorFilter = colorId;
+        this.currentStyleFilter = styleId;
+        refreshClothingItems();
+    }
+
+    @Override
     public void refreshFavorites() {
         // Can be empty if not needed
     }
 
+    /*
+    private void setupCategoryDropdown() {
+        categoryDropdown.getItems().clear();
+        ToggleGroup categoryGroup = new ToggleGroup();
 
+        // Add "All Categories" option
+        CheckMenuItem allCategories = new CheckMenuItem("All Categories");
+        allCategories.setToggleGroup(categoryGroup);
+        allCategories.setOnAction(e -> {
+            currentCategoryFilter = null;
+            refreshClothingItems();
+        });
+
+        // Add specific category options
+        CheckMenuItem top = createFilterMenuItem("Top", 1, "category", categoryGroup);
+        CheckMenuItem bottom = createFilterMenuItem("Bottom", 2, "category", categoryGroup);
+        CheckMenuItem shoes = createFilterMenuItem("Shoes", 3, "category", categoryGroup);
+
+
+        categoryDropdown.getItems().addAll(allCategories, top, bottom, shoes);
+    }
+
+    private void setupColorDropdown() {
+        colorDropdown.getItems().clear();
+        ToggleGroup colorGroup = new ToggleGroup();
+
+        // Add "All Colors" option
+        CheckMenuItem allColors = new CheckMenuItem("All Colors");
+        allColors.setToggleGroup(colorGroup);
+        allColors.setOnAction(e -> {
+            currentColorFilter = null;
+            refreshClothingItems();
+        });
+
+        // Add specific color options
+        CheckMenuItem red = createFilterMenuItem("Red", 1, "color", colorGroup);
+        CheckMenuItem orange = createFilterMenuItem("Orange", 2, "color", colorGroup);
+        CheckMenuItem yellow = createFilterMenuItem("Yellow", 3, "color", colorGroup;
+        CheckMenuItem green = createFilterMenuItem("Green", 4, "color", colorGroup);
+        CheckMenuItem blue = createFilterMenuItem("Blue", 5, "color", colorGroup);
+        CheckMenuItem violet = createFilterMenuItem("Violet", 6, "color", colorGroup);
+        CheckMenuItem white = createFilterMenuItem("White", 7, "color", colorGroup);
+        CheckMenuItem black = createFilterMenuItem("Black", 8, "color", colorGroup);
+        CheckMenuItem othersColor = createFilterMenuItem("Others", 9, "color", colorGroup);
+
+        colorDropdown.getItems().addAll(allColors, red, orange, yellow, green,
+                blue, violet, white, black, othersColor);
+    }
+
+    private void setupStyleDropdown() {
+        styleDropdown.getItems().clear();
+        ToggleGroup styleGroup = new ToggleGroup();
+
+        // Add "All Styles" option
+        CheckMenuItem allStyles = new CheckMenuItem("All Styles");
+        allStyles.setToggleGroup(styleGroup);
+        allStyles.setOnAction(e -> {
+            currentStyleFilter = null;
+            refreshClothingItems();
+        });
+
+        // Add specific style options
+        CheckMenuItem formal = createFilterMenuItem("Formal", 1, "style", styleGroup);
+        CheckMenuItem casual = createFilterMenuItem("Casual", 2, "style", styleGroup);
+        CheckMenuItem semiFormal = createFilterMenuItem("Semi-Formal", 3, "style", styleGroup);
+        CheckMenuItem othersStyle = createFilterMenuItem("Others", 4, "style", styleGroup);
+
+        styleDropdown.getItems().addAll(allStyles, formal, casual, semiFormal, othersStyle);
+    }
+
+
+
+    private CheckMenuItem createFilterMenuItem(String name, int id, String filterType, ToggleGroup toggleGroup) {
+        CheckMenuItem menuItem = new CheckMenuItem(name);
+        menuItem.setToggleGroup(toggleGroup);
+        menuItem.setOnAction(e -> {
+            switch (filterType) {
+                case "category":
+                    currentCategoryFilter = menuItem.isSelected() ? id : null;
+                    break;
+                case "color":
+                    currentColorFilter = menuItem.isSelected() ? id : null;
+                    break;
+                case "style":
+                    currentStyleFilter = menuItem.isSelected() ? id : null;
+                    break;
+            }
+            refreshClothingItems();
+        });
+        return menuItem;
+    }
+
+*/
+
+    private void setupCategoryDropdown() {
+        categoryDropdown.getItems().clear();
+
+        // Add "All Categories" option
+        CheckMenuItem allCategories = new CheckMenuItem("All Categories");
+        allCategories.setOnAction(e -> {
+            clearCategorySelections();
+            currentCategoryFilter = null;
+            refreshClothingItems();
+        });
+
+        // Add specific category options
+        CheckMenuItem top = createRadioLikeMenuItem("Top", 1, "category");
+        CheckMenuItem bottom = createRadioLikeMenuItem("Bottom", 2, "category");
+        CheckMenuItem shoes = createRadioLikeMenuItem("Shoes", 3, "category");
+
+        categoryDropdown.getItems().addAll(allCategories, top, bottom, shoes);
+    }
+
+    private void setupColorDropdown() {
+        colorDropdown.getItems().clear();
+
+        // Add "All Colors" option
+        CheckMenuItem allColors = new CheckMenuItem("All Colors");
+        allColors.setOnAction(e -> {
+            clearColorSelections();
+            currentColorFilter = null;
+            refreshClothingItems();
+        });
+
+        // Add specific color options
+        CheckMenuItem red = createRadioLikeMenuItem("Red", 1, "color");
+        CheckMenuItem orange = createRadioLikeMenuItem("Orange", 2, "color");
+        CheckMenuItem yellow = createRadioLikeMenuItem("Yellow", 3, "color");
+        CheckMenuItem green = createRadioLikeMenuItem("Green", 4, "color");
+        CheckMenuItem blue = createRadioLikeMenuItem("Blue", 5, "color");
+        CheckMenuItem violet = createRadioLikeMenuItem("Violet", 6, "color");
+        CheckMenuItem white = createRadioLikeMenuItem("White", 7, "color");
+        CheckMenuItem black = createRadioLikeMenuItem("Black", 8, "color");
+        CheckMenuItem othersColor = createRadioLikeMenuItem("Others", 9, "color");
+
+
+        colorDropdown.getItems().addAll(allColors, red, orange, yellow, green,
+                blue, violet, white, black, othersColor);
+    }
+
+    private void setupStyleDropdown() {
+        styleDropdown.getItems().clear();
+
+        // Add "All Styles" option
+        CheckMenuItem allStyles = new CheckMenuItem("All Styles");
+        allStyles.setOnAction(e -> {
+            clearStyleSelections();
+            currentStyleFilter = null;
+            refreshClothingItems();
+        });
+
+        // Add specific style options
+        CheckMenuItem formal = createRadioLikeMenuItem("Formal", 1, "style");
+        CheckMenuItem casual = createRadioLikeMenuItem("Casual", 2, "style");
+        CheckMenuItem semiFormal = createRadioLikeMenuItem("Semi-Formal", 3, "style");
+        CheckMenuItem othersStyle = createRadioLikeMenuItem("Others", 4, "style");
+
+        styleDropdown.getItems().addAll(allStyles, formal, casual, semiFormal, othersStyle);
+    }
+
+    private CheckMenuItem createRadioLikeMenuItem(String name, int id, String filterType) {
+        CheckMenuItem menuItem = new CheckMenuItem(name);
+        menuItem.setOnAction(e -> {
+            // Clear other selections in this group
+            clearSelections(filterType);
+
+            // Set this item as selected
+            menuItem.setSelected(true);
+
+            // Update the filter
+            switch (filterType) {
+                case "category":
+                    currentCategoryFilter = id;
+                    break;
+                case "color":
+                    currentColorFilter = id;
+                    break;
+                case "style":
+                    currentStyleFilter = id;
+                    break;
+            }
+            refreshClothingItems();
+        });
+        return menuItem;
+    }
+
+    private void clearSelections(String filterType) {
+        switch (filterType) {
+            case "category":
+                clearCategorySelections();
+                break;
+            case "color":
+                clearColorSelections();
+                break;
+            case "style":
+                clearStyleSelections();
+                break;
+        }
+    }
+
+    private void clearCategorySelections() {
+        for (MenuItem item : categoryDropdown.getItems()) {
+            if (item instanceof CheckMenuItem) {
+                ((CheckMenuItem) item).setSelected(false);
+            }
+        }
+    }
+
+    private void clearColorSelections() {
+        for (MenuItem item : colorDropdown.getItems()) {
+            if (item instanceof CheckMenuItem) {
+                ((CheckMenuItem) item).setSelected(false);
+            }
+        }
+    }
+
+    private void clearStyleSelections() {
+        for (MenuItem item : styleDropdown.getItems()) {
+            if (item instanceof CheckMenuItem) {
+                ((CheckMenuItem) item).setSelected(false);
+            }
+        }
+    }
     private VBox createItemBox(ClothingItem item) {
         VBox box = new VBox(5);
         box.setPrefSize(ITEM_WIDTH, ITEM_HEIGHT);
@@ -252,7 +490,7 @@ public class HomeController implements RefreshableController {
 
 
     //===Image Upload btn end
-
+/*
     private void setupCategoryDropdown() {
         CheckMenuItem top = new CheckMenuItem("Top");
         CheckMenuItem bottom = new CheckMenuItem("Bottom");
@@ -308,6 +546,8 @@ public class HomeController implements RefreshableController {
         black.setOnAction(e -> handleExclusiveSelection(black));
         others.setOnAction(e -> handleExclusiveSelection(others));
     }
+
+ */
 
     private void handleCategoryFilter(CheckMenuItem item) {
         System.out.println("CATEGORY: " + item.getText() + (item.isSelected() ? " selected" : " deselected"));

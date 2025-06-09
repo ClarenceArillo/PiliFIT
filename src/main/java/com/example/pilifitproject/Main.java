@@ -305,7 +305,6 @@ public class Main extends Application {
 
  */
 
-
             // TEST 4: Remove fit from favorites
 /*
 
@@ -402,7 +401,7 @@ public class Main extends Application {
             e.printStackTrace();
         }
 
-        //launch();
+        launch();
 
 
     }

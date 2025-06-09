@@ -35,30 +35,9 @@ public class SaveConfirmationController {
 //        Close both dialogs
         Stage stage = (Stage) DiscardChangesBtn.getScene().getWindow();
         stage.close();
-//
+
 //        // Also close the upload dialog if needed
         uploadDialogController.closeDialog();
-
-        // Close this confirmation dialog
-//        if (dialogStage != null) {
-//            dialogStage.close();
-//        } else {
-//            ((Stage) DiscardChangesBtn.getScene().getWindow()).close();
-//        }
-//
-//        // Then close the upload dialog
-//        if (uploadDialogController != null) {
-//            uploadDialogController.closeDialog();
-//        }
-
-        // Close the upload dialog
-//        if (uploadDialogController != null) {
-//            uploadDialogController.closeDialog();
-//        }
-
-
-        // Close this confirmation dialog
-        closeCurrentStage();
 
         // Close the upload dialog through its controller
         if (uploadDialogController != null) {
@@ -72,7 +51,7 @@ public class SaveConfirmationController {
         System.out.println("UploadDialogController is null? " + (uploadDialogController == null)); // Debug 2
         System.out.println("Selected file is null? " + (selectedFile == null)); // Debug 3
 
-        closeCurrentStage();
+
         if (uploadDialogController != null && selectedFile != null) {
             System.out.println("Calling handleSave on uploadDialogController"); // Debug 4
             uploadDialogController.handleSave(selectedFile);
@@ -84,23 +63,8 @@ public class SaveConfirmationController {
         stage.close();
         uploadDialogController.closeDialog();
 
-
-
-//        // Close the upload dialog
-//        if (uploadDialogController != null) {
-//            uploadDialogController.closeDialog();
-//        }
     }
 
-    private void closeCurrentStage() {
-        if (dialogStage != null) {
-            dialogStage.close();
-        } else {
-            //Stage currentStage = (Stage) DiscardChangesBtn.getScene().getWindow();
-            ((Stage) DiscardChangesBtn.getScene().getWindow()).close();
-            //currentStage.close();
-        }
-    }
     @FXML
     private void handleCancel() {
         closeDialog();

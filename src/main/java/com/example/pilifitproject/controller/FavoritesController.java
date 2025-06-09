@@ -176,6 +176,10 @@ public class FavoritesController implements RefreshableController {
     public void refreshClothingItems() {
         // Can be empty if not needed
     }
+    @Override
+    public void applyFilters(Integer categoryId, Integer colorId, Integer styleId) {
+        // Can be empty if not needed
+    }
 
 //    private void refreshAfterEdit() {
 //        if (homeController instanceof FavoritesController) {

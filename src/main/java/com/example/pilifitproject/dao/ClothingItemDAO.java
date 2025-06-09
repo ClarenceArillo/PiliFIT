@@ -285,6 +285,57 @@ public class ClothingItemDAO {
 
     }
 
+    public List<ClothingItem> getFilteredClothingItems(
+            Integer categoryId,
+            Integer colorId,
+            Integer styleId
+    ) throws SQLException {
+        List<ClothingItem> items = new ArrayList<>();
+        StringBuilder sql = new StringBuilder("SELECT * FROM clothing_item WHERE 1=1");
+        List<Object> params = new ArrayList<>();
+
+        if (categoryId != null) {
+            sql.append(" AND category_id = ?");
+            params.add(categoryId);
+        }
+
+        if (colorId != null) {
+            sql.append(" AND color_id = ?");
+            params.add(colorId);
+        }
+
+        if (styleId != null) {
+            sql.append(" AND style_id = ?");
+            params.add(styleId);
+        }
+
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql.toString())) {
+
+            for (int i = 0; i < params.size(); i++) {
+                pstmt.setObject(i + 1, params.get(i));
+            }
+
+            try (ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+                    ClothingItem item = new ClothingItem(
+                            rs.getInt("id"),
+                            rs.getString("name"),
+                            rs.getBytes("image_data"),
+                            rs.getInt("category_id"),
+                            rs.getInt("color_id"),
+                            rs.getInt("style_id"),
+                            rs.getString("size"),
+                            rs.getInt("is_favorite")
+                    );
+                    items.add(item);
+                }
+            }
+        }
+
+        return items;
+    }
+
 
 
     public ClothingItem getRandomClothingItemByCategory(int categoryId) throws SQLException {
