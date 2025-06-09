@@ -42,7 +42,7 @@
                   <Button fx:id="AboutController" mnemonicParsing="false" onAction="#goAbout" prefHeight="26.0" prefWidth="126.0" styleClass="scene-switch" text="ABOUT" GridPane.columnIndex="1" />
                </children>
             </GridPane>
-            <Button fx:id="closetButton" alignment="CENTER" layoutX="555.0" layoutY="194.0" mnemonicParsing="false" onAction="#goCloset" styleClass="closet-collections" text="CLOSET">
+            <Button fx:id="closetButton" alignment="CENTER" ellipsisString="CLOSET" layoutX="555.0" layoutY="194.0" mnemonicParsing="false" onAction="#goCloset" styleClass="closet-collections" stylesheets="@../styles/Home.css" text="CLOSET">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -70,7 +70,7 @@
                <font>
                   <Font name="Arial" size="79.0" />
                </font></Label>
-            <Button fx:id="collectionsButton" alignment="CENTER" layoutX="868.0" layoutY="194.0" mnemonicParsing="false" onAction="#goCollection" style="-fx-background-color: rgba(0, 0, 0, 0, 0.1);" styleClass="closet-collections" text="COLLECTIONS" textFill="WHITE">
+            <Button fx:id="collectionsButton" alignment="CENTER" ellipsisString="COLLECTIONS" layoutX="868.0" layoutY="194.0" mnemonicParsing="false" onAction="#goCollection" style="-fx-background-color: rgba(0, 0, 0, 0, 0.1);" styleClass="closet-collections" text="COLLECTIONS" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>

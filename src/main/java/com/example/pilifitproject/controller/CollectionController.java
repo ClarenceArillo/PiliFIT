@@ -32,4 +32,10 @@ public class CollectionController {
     private void goCloset(ActionEvent event) throws IOException {
         SceneSwitcher.switchTo(event, "Home.fxml");
     }
+
+    @FXML
+    private void goFavorites(ActionEvent event) throws IOException {
+        SceneSwitcher.switchTo(event, "Favorites.fxml");
+    }
+
 }
