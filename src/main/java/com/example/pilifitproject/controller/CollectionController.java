@@ -22,4 +22,10 @@ public class CollectionController {
     private void goContact(ActionEvent event) throws IOException {
         SceneSwitcher.switchTo(event, "ContactUs.fxml");
     }
+
+    @FXML
+    private void goFavorites(ActionEvent event) throws IOException {
+        SceneSwitcher.switchTo(event, "Favorites.fxml");
+    }
+
 }
