@@ -4,6 +4,7 @@ import com.example.pilifitproject.RefreshableController;
 import com.example.pilifitproject.SceneSwitcher;
 import com.example.pilifitproject.dao.ClothingItemDAO;
 import com.example.pilifitproject.model.ClothingItem;
+import com.example.pilifitproject.utils.FitService;
 import com.example.pilifitproject.utils.GeneratedFitPreview;
 import com.example.pilifitproject.utils.ImageUtil;
 import com.example.pilifitproject.utils.RandomFitGenerator;
@@ -54,16 +55,30 @@ public class HomeController implements RefreshableController {
     @FXML
     private MenuButton colorDropdown;   // COLOR
 
+    @FXML private ImageView topImageContainer;
+    @FXML private ImageView bottomImageContainer;
+    @FXML private ImageView shoesImageContainer;
+    @FXML private Button generateRandomFitBtn;
+    @FXML private Button saveFitBtn;
+    @FXML private Button leftTop, rightTop;
+    @FXML private Button leftBottom, rightBottom;
+    @FXML private Button leftShoes, rightShoes;
+
+    private GeneratedFitPreview currentPreview;
+    private final RandomFitGenerator randomFitGenerator = new RandomFitGenerator();
+    private final FitService fitService = new FitService();
+
     @FXML
     public void initialize() {
         setupCategoryDropdown();
         setupStyleDropdown();
         setupColorDropdown();
-
         refreshClothingItems();
-
         // Set up upload button
         Addnew.setOnAction(event -> openUploadDialog());
+
+        setupFitGeneration();
+        generateInitialFit();
     }
 
     public HomeController() throws SQLException {
@@ -351,48 +366,6 @@ public class HomeController implements RefreshableController {
         }
     }
 
-    //=====GENERATE Button Action=====
-
-//    @FXML
-//    private ImageView topImageView;
-//    @FXML
-//    private ImageView bottomImageView;
-//    @FXML
-//    private ImageView shoesImageView;
-//    @FXML
-//    private Button GenerateFitBtn;
-//
-//    private final RandomFitGenerator randomFitGenerator = new RandomFitGenerator();
-//    private GeneratedFitPreview currentPreview;
-//
-//    @FXML
-//    private void handleGenerateButtonAction() {
-//        try {
-//            // Generate the random fit
-//            currentPreview = randomFitGenerator.generateRandomPreview();
-//
-//            // Load images into their views
-//            loadImageIntoView(currentPreview.getTop().getImageData(), topImageView);
-//            loadImageIntoView(currentPreview.getBottom().getImageData(), bottomImageView);
-//            loadImageIntoView(currentPreview.getShoes().getImageData(), shoesImageView);
-//
-//        } catch (Exception event) {
-//            //e.printStackTrace();
-//            System.out.println("btn generate is not working properly");
-//        }
-//    }
-//
-//    GeneratedFitPreview fitPreview = randomFitGenerator.generateRandomPreview();
-//    @FXML
-//    private void loadImageIntoView(String imagePath, ImageView imageView) {
-//        Image image = ImageUtil.loadImage(imagePath);  // This now resolves relative path correctly
-//        imageView.setImage(image);
-//    }
-
-
-    //===GENERATE btn end
-
-
     @FXML
     private void openUploadDialog(ActionEvent event) {
         try {
@@ -412,5 +385,141 @@ public class HomeController implements RefreshableController {
             e.printStackTrace();
         }
     }
+
+    //=====GENERATE Button Action=====
+    private void setupFitGeneration() {
+        // Set up button actions
+        generateRandomFitBtn.setOnAction(e -> generateNewFit());
+        saveFitBtn.setOnAction(e -> saveCurrentFit());
+
+        // Set up navigation buttons
+        leftTop.setOnAction(e -> navigateItem("top", -1));
+        rightTop.setOnAction(e -> navigateItem("top", 1));
+        leftBottom.setOnAction(e -> navigateItem("bottom", -1));
+        rightBottom.setOnAction(e -> navigateItem("bottom", 1));
+        leftShoes.setOnAction(e -> navigateItem("shoes", -1));
+        rightShoes.setOnAction(e -> navigateItem("shoes", 1));
+    }
+
+    private void generateInitialFit() {
+        generateNewFit();
+    }
+
+    private void generateNewFit() {
+        try {
+            currentPreview = randomFitGenerator.generateRandomPreview();
+            updatePreviewImages();
+        } catch (Exception e) {
+            e.printStackTrace();
+            showAlert("Error", "Failed to generate outfit");
+        }
+    }
+
+    private void updatePreviewImages() {
+        try {
+            Image topImage = ImageUtil.bytesToImage(currentPreview.getTop().getImageData());
+            Image bottomImage = ImageUtil.bytesToImage(currentPreview.getBottom().getImageData());
+            Image shoesImage = ImageUtil.bytesToImage(currentPreview.getShoes().getImageData());
+
+            topImageContainer.setImage(topImage);
+            bottomImageContainer.setImage(bottomImage);
+            shoesImageContainer.setImage(shoesImage);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void navigateItem(String category, int direction) {
+//        try {
+            //System.out.println("Navigating " + category + " direction: " + direction); //debug
+            ClothingItem currentItem = getCurrentItemByCategory(category);
+            List<ClothingItem> categoryItems = getItemsByCategory(category);
+
+            if (categoryItems != null && !categoryItems.isEmpty()) {
+                //System.out.println("Found " + categoryItems.size() + " " + category + " items"); //debug
+                // Find current position or start at 0 if not found
+                int currentIndex = categoryItems.indexOf(currentItem);
+                for (int i = 0; i < categoryItems.size(); i++) {
+                    if (categoryItems.get(i).getId() == currentItem.getId()) {
+                        currentIndex = i;
+                        break;
+                    }
+                }
+                if (currentIndex == -1) currentIndex = 0;
+
+                // Calculate new index with wrap-around
+
+                //int newIndex = (currentIndex + direction + categoryItems.size()) % categoryItems.size();
+
+                int newIndex = (currentIndex + direction + categoryItems.size()) % categoryItems.size();
+                ClothingItem newItem = categoryItems.get(newIndex);
+
+                // Update the preview with new item
+                updatePreviewWithNewItem(category, newItem);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            showAlert("Error", "Failed to navigate items");
+        }
+    }
+
+    private ClothingItem getCurrentItemByCategory(String category) {
+        switch (category) {
+            case "top": return currentPreview.getTop();
+            case "bottom": return currentPreview.getBottom();
+            case "shoes": return currentPreview.getShoes();
+            default: return null;
+        }
+    }
+
+    private List<ClothingItem> getItemsByCategory(String category) throws SQLException {
+        switch (category) {
+            case "top": return new ClothingItemDAO().getAllClothingItemsByCategory(1);
+            case "bottom": return new ClothingItemDAO().getAllClothingItemsByCategory(2);
+            case "shoes": return new ClothingItemDAO().getAllClothingItemsByCategory(3);
+            default: return null;
+        }
+    }
+
+    private void updatePreviewWithNewItem(String category, ClothingItem newItem) {
+        //System.out.println("Updating " + category + " with item ID: " + newItem.getId()); // Debug
+        switch (category) {
+            case "top":
+                currentPreview = new GeneratedFitPreview(newItem, currentPreview.getBottom(), currentPreview.getShoes());
+                topImageContainer.setImage(ImageUtil.bytesToImage(newItem.getImageData()));
+                break;
+            case "bottom":
+                currentPreview = new GeneratedFitPreview(currentPreview.getTop(), newItem, currentPreview.getShoes());
+                bottomImageContainer.setImage(ImageUtil.bytesToImage(newItem.getImageData()));
+                break;
+            case "shoes":
+                currentPreview = new GeneratedFitPreview(currentPreview.getTop(), currentPreview.getBottom(), newItem);
+                shoesImageContainer.setImage(ImageUtil.bytesToImage(newItem.getImageData()));
+                break;
+        }
+    }
+
+    private void saveCurrentFit() {
+        if (currentPreview != null) {
+            try {
+                fitService.saveGeneratedFit("Generated Fit", currentPreview);
+                showAlert("Success", "Fit saved successfully");
+            } catch (SQLException e) {
+                e.printStackTrace();
+                showAlert("Error", "Failed to save fit");
+            }
+        }
+    }
+
+    private void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
+    //===GENERATE btn end
 
 }

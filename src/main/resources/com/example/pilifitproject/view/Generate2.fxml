@@ -59,6 +59,7 @@
                         <Font size="15.0" />
                      </font>
                   </Button>
+                  <Button fx:id="generateRandomFit" mnemonicParsing="false" text="generate" GridPane.rowIndex="3" />
                </children>
             </GridPane>
          </children>
