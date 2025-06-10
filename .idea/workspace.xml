@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="635ec7d8-d374-4bf4-977d-6b60cb30ac35" name="Changes" comment="fixed contact and about viewing layout">
+    <list default="true" id="635ec7d8-d374-4bf4-977d-6b60cb30ac35" name="Changes" comment="works but then bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/pilifit.db" beforeDir="false" afterPath="$PROJECT_DIR$/database/pilifit.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/model/ClothingItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/model/ClothingItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/utils/RandomFitGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/utils/RandomFitGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/Generate2.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/Generate2.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/Home.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,9 +16,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -43,7 +38,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Combine-features-local-copy" />
+        <entry key="$PROJECT_DIR$" value="Combine-features" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -267,7 +262,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749465439912</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="works but then bug">
+      <option name="closed" value="true" />
+      <created>1749557016174</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1749557016174</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -313,6 +316,7 @@
     <MESSAGE value="delete btn and delete confirmation. bug on closing uploadDialog" />
     <MESSAGE value="navigate, contact and about layout" />
     <MESSAGE value="fixed contact and about viewing layout" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed contact and about viewing layout" />
+    <MESSAGE value="works but then bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="works but then bug" />
   </component>
 </project>

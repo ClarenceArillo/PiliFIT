@@ -22,14 +22,10 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.control.CheckMenuItem;
 import javafx.scene.control.MenuButton;
-import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
-
-import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -348,6 +344,7 @@ public class HomeController implements RefreshableController {
         return box;
     }
 
+
     @FXML
     private void openUploadDialog() {
         try {
@@ -365,6 +362,8 @@ public class HomeController implements RefreshableController {
             e.printStackTrace();
         }
     }
+
+
 
     @FXML
     private void openUploadDialog(ActionEvent event) {
@@ -387,6 +386,7 @@ public class HomeController implements RefreshableController {
     }
 
     //=====GENERATE Button Action=====
+
     private void setupFitGeneration() {
         // Set up button actions
         generateRandomFitBtn.setOnAction(e -> generateNewFit());
@@ -430,13 +430,14 @@ public class HomeController implements RefreshableController {
     }
 
     private void navigateItem(String category, int direction) {
-//        try {
-            //System.out.println("Navigating " + category + " direction: " + direction); //debug
+        try {
+
+            System.out.println("Navigating " + category + " direction: " + direction); //debug
             ClothingItem currentItem = getCurrentItemByCategory(category);
             List<ClothingItem> categoryItems = getItemsByCategory(category);
 
             if (categoryItems != null && !categoryItems.isEmpty()) {
-                //System.out.println("Found " + categoryItems.size() + " " + category + " items"); //debug
+                System.out.println("Found " + categoryItems.size() + " " + category + " items"); //debug
                 // Find current position or start at 0 if not found
                 int currentIndex = categoryItems.indexOf(currentItem);
                 for (int i = 0; i < categoryItems.size(); i++) {
@@ -445,7 +446,10 @@ public class HomeController implements RefreshableController {
                         break;
                     }
                 }
-                if (currentIndex == -1) currentIndex = 0;
+                if (currentIndex == -1) {
+                    System.out.println("Current item not found in list, using first item");
+                    currentIndex = 0;
+                }
 
                 // Calculate new index with wrap-around
 
@@ -483,7 +487,7 @@ public class HomeController implements RefreshableController {
     }
 
     private void updatePreviewWithNewItem(String category, ClothingItem newItem) {
-        //System.out.println("Updating " + category + " with item ID: " + newItem.getId()); // Debug
+        System.out.println("Updating " + category + " with item ID: " + newItem.getId()); // Debug
         switch (category) {
             case "top":
                 currentPreview = new GeneratedFitPreview(newItem, currentPreview.getBottom(), currentPreview.getShoes());
@@ -511,6 +515,8 @@ public class HomeController implements RefreshableController {
             }
         }
     }
+
+
 
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
