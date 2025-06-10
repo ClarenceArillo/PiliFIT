@@ -1,5 +1,7 @@
 package com.example.pilifitproject.model;
 
+import java.util.Objects;
+
 public class ClothingItem {
     private int id;
     private String name;
@@ -19,6 +21,19 @@ public class ClothingItem {
         this.styleId = styleId;
         this.size = size;
         this.isFavorite = isFavorite;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ClothingItem that = (ClothingItem) o;
+        return id == that.id; // Compare by ID only
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 
     public int getId(){return id;}

@@ -8,7 +8,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/pilifit.db" beforeDir="false" afterPath="$PROJECT_DIR$/database/pilifit.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/CollectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/CollectionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/model/ClothingItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/model/ClothingItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/utils/RandomFitGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/utils/RandomFitGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/Home.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +67,7 @@
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2xderoEwte8Sd4oMrx7Qd4P7r8x" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
