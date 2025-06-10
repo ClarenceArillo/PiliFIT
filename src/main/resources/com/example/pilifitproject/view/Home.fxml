@@ -12,6 +12,7 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.RadialGradient?>
 <?import javafx.scene.paint.Stop?>
@@ -134,6 +135,7 @@
                   <Button mnemonicParsing="false" onAction="#goFavorites" prefHeight="34.0" prefWidth="149.0" styleClass="drop-select" text="FAVORITES" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
                </children>
             </GridPane>
+            <VBox layoutX="1187.0" layoutY="-4.0" prefHeight="562.0" prefWidth="391.0" />
          </children>
       </AnchorPane>
    </right>

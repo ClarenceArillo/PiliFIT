@@ -40,7 +40,7 @@
                   <Button layoutX="314.0" layoutY="152.0" mnemonicParsing="false" styleClass="icon-button" text="&lt;" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
                   <Button layoutX="10.0" layoutY="152.0" mnemonicParsing="false" styleClass="icon-button" text="&lt;" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
                   <Button layoutX="10.0" layoutY="255.0" mnemonicParsing="false" styleClass="icon-button" text="&lt;" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-                  <Button mnemonicParsing="false" styleClass="icon-button" text="🔁" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Button fx:id="generateRandomFit" mnemonicParsing="false" styleClass="icon-button" text="🔁" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
                </children>
             </GridPane>
          </children>

@@ -172,100 +172,6 @@ public class HomeController implements RefreshableController {
         // Can be empty if not needed
     }
 
-    /*
-    private void setupCategoryDropdown() {
-        categoryDropdown.getItems().clear();
-        ToggleGroup categoryGroup = new ToggleGroup();
-
-        // Add "All Categories" option
-        CheckMenuItem allCategories = new CheckMenuItem("All Categories");
-        allCategories.setToggleGroup(categoryGroup);
-        allCategories.setOnAction(e -> {
-            currentCategoryFilter = null;
-            refreshClothingItems();
-        });
-
-        // Add specific category options
-        CheckMenuItem top = createFilterMenuItem("Top", 1, "category", categoryGroup);
-        CheckMenuItem bottom = createFilterMenuItem("Bottom", 2, "category", categoryGroup);
-        CheckMenuItem shoes = createFilterMenuItem("Shoes", 3, "category", categoryGroup);
-
-
-        categoryDropdown.getItems().addAll(allCategories, top, bottom, shoes);
-    }
-
-    private void setupColorDropdown() {
-        colorDropdown.getItems().clear();
-        ToggleGroup colorGroup = new ToggleGroup();
-
-        // Add "All Colors" option
-        CheckMenuItem allColors = new CheckMenuItem("All Colors");
-        allColors.setToggleGroup(colorGroup);
-        allColors.setOnAction(e -> {
-            currentColorFilter = null;
-            refreshClothingItems();
-        });
-
-        // Add specific color options
-        CheckMenuItem red = createFilterMenuItem("Red", 1, "color", colorGroup);
-        CheckMenuItem orange = createFilterMenuItem("Orange", 2, "color", colorGroup);
-        CheckMenuItem yellow = createFilterMenuItem("Yellow", 3, "color", colorGroup;
-        CheckMenuItem green = createFilterMenuItem("Green", 4, "color", colorGroup);
-        CheckMenuItem blue = createFilterMenuItem("Blue", 5, "color", colorGroup);
-        CheckMenuItem violet = createFilterMenuItem("Violet", 6, "color", colorGroup);
-        CheckMenuItem white = createFilterMenuItem("White", 7, "color", colorGroup);
-        CheckMenuItem black = createFilterMenuItem("Black", 8, "color", colorGroup);
-        CheckMenuItem othersColor = createFilterMenuItem("Others", 9, "color", colorGroup);
-
-        colorDropdown.getItems().addAll(allColors, red, orange, yellow, green,
-                blue, violet, white, black, othersColor);
-    }
-
-    private void setupStyleDropdown() {
-        styleDropdown.getItems().clear();
-        ToggleGroup styleGroup = new ToggleGroup();
-
-        // Add "All Styles" option
-        CheckMenuItem allStyles = new CheckMenuItem("All Styles");
-        allStyles.setToggleGroup(styleGroup);
-        allStyles.setOnAction(e -> {
-            currentStyleFilter = null;
-            refreshClothingItems();
-        });
-
-        // Add specific style options
-        CheckMenuItem formal = createFilterMenuItem("Formal", 1, "style", styleGroup);
-        CheckMenuItem casual = createFilterMenuItem("Casual", 2, "style", styleGroup);
-        CheckMenuItem semiFormal = createFilterMenuItem("Semi-Formal", 3, "style", styleGroup);
-        CheckMenuItem othersStyle = createFilterMenuItem("Others", 4, "style", styleGroup);
-
-        styleDropdown.getItems().addAll(allStyles, formal, casual, semiFormal, othersStyle);
-    }
-
-
-
-    private CheckMenuItem createFilterMenuItem(String name, int id, String filterType, ToggleGroup toggleGroup) {
-        CheckMenuItem menuItem = new CheckMenuItem(name);
-        menuItem.setToggleGroup(toggleGroup);
-        menuItem.setOnAction(e -> {
-            switch (filterType) {
-                case "category":
-                    currentCategoryFilter = menuItem.isSelected() ? id : null;
-                    break;
-                case "color":
-                    currentColorFilter = menuItem.isSelected() ? id : null;
-                    break;
-                case "style":
-                    currentStyleFilter = menuItem.isSelected() ? id : null;
-                    break;
-            }
-            refreshClothingItems();
-        });
-        return menuItem;
-    }
-
-*/
-
     private void setupCategoryDropdown() {
         categoryDropdown.getItems().clear();
 
@@ -486,80 +392,7 @@ public class HomeController implements RefreshableController {
 
     //===GENERATE btn end
 
-    //===Image Upload btn start
 
-
-    //===Image Upload btn end
-/*
-    private void setupCategoryDropdown() {
-        CheckMenuItem top = new CheckMenuItem("Top");
-        CheckMenuItem bottom = new CheckMenuItem("Bottom");
-        CheckMenuItem shoes = new CheckMenuItem("Shoes");
-
-        categoryDropdown.getItems().addAll(top, bottom, shoes );
-        allFilterItems.addAll(List.of(top, bottom, shoes));
-
-        top.setOnAction(e -> handleExclusiveSelection(top));
-        bottom.setOnAction(e -> handleExclusiveSelection(bottom));
-        shoes.setOnAction(e -> handleExclusiveSelection(shoes));;
-
-    }
-
-    private void setupStyleDropdown() {
-        CheckMenuItem formal = new CheckMenuItem("Formal");
-        CheckMenuItem casual = new CheckMenuItem("Casual");
-        CheckMenuItem semi = new CheckMenuItem("Semi-Formal");
-        CheckMenuItem others = new CheckMenuItem("Others");
-
-
-        styleDropdown.getItems().addAll(formal, casual, semi, others);
-        allFilterItems.addAll(List.of(formal, casual, semi, others));
-
-        formal.setOnAction(e -> handleExclusiveSelection(formal));
-        casual.setOnAction(e -> handleExclusiveSelection(casual));
-        semi.setOnAction(e -> handleExclusiveSelection(semi));
-        others.setOnAction(e -> handleExclusiveSelection(others));
-    }
-
-
-    private void setupColorDropdown() {
-        CheckMenuItem red = new CheckMenuItem("Red");
-        CheckMenuItem orange = new CheckMenuItem("Orange");
-        CheckMenuItem yellow = new CheckMenuItem("Yellow");
-        CheckMenuItem green = new CheckMenuItem("Green");
-        CheckMenuItem blue = new CheckMenuItem("Blue");
-        CheckMenuItem violet = new CheckMenuItem("Violet");
-        CheckMenuItem white = new CheckMenuItem("White");
-        CheckMenuItem black = new CheckMenuItem("Black");
-        CheckMenuItem others = new CheckMenuItem("Others");
-
-        colorDropdown.getItems().addAll(red, orange, yellow, green, blue, violet, white, black, others);
-        allFilterItems.addAll(List.of(red, orange, yellow, green, blue, violet, white, black, others));
-
-        red.setOnAction(e -> handleExclusiveSelection(red));
-        orange.setOnAction(e -> handleExclusiveSelection(orange));
-        yellow.setOnAction(e -> handleExclusiveSelection(yellow));
-        green.setOnAction(e -> handleExclusiveSelection(green));
-        blue.setOnAction(e -> handleExclusiveSelection(blue));
-        violet.setOnAction(e -> handleExclusiveSelection(violet));
-        white.setOnAction(e -> handleExclusiveSelection(white));
-        black.setOnAction(e -> handleExclusiveSelection(black));
-        others.setOnAction(e -> handleExclusiveSelection(others));
-    }
-
- */
-
-    private void handleCategoryFilter(CheckMenuItem item) {
-        System.out.println("CATEGORY: " + item.getText() + (item.isSelected() ? " selected" : " deselected"));
-    }
-
-    private void handleStyleFilter(CheckMenuItem item) {
-        System.out.println("STYLE: " + item.getText() + (item.isSelected() ? " selected" : " deselected"));
-    }
-
-    private void handleColorFilter(CheckMenuItem item) {
-        System.out.println("COLOR: " + item.getText() + (item.isSelected() ? " selected" : " deselected"));
-    }
     @FXML
     private void openUploadDialog(ActionEvent event) {
         try {
@@ -579,14 +412,5 @@ public class HomeController implements RefreshableController {
             e.printStackTrace();
         }
     }
-    private void handleExclusiveSelection(CheckMenuItem selectedItem) {
-        for (CheckMenuItem item : allFilterItems) {
-            if (item != selectedItem) {
-                item.setSelected(false);
-            }
-        }
-    }
-
-
 
 }
