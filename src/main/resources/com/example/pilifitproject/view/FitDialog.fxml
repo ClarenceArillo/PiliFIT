@@ -1,38 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="305.0" prefWidth="261.0" style="-fx-border-radius: 20;" styleClass="tab-border" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="255.0" prefWidth="203.0" style="-fx-border-radius: 20;" styleClass="tab-border" stylesheets="@../styles/FitDialog.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <Pane layoutX="8.0" layoutY="9.0" prefHeight="230.0" prefWidth="245.0" style="-fx-background-color: #CCCCCC;" styleClass="image-view">
+          <Button id="DeleteButton" fx:id="deleteButton" layoutX="147.0" layoutY="198.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="53.0" styleClass="icon-button" stylesheets="@../styles/FitDialog.css" text="🗑" />
+        <Pane layoutX="8.0" layoutY="9.0" prefHeight="192.0" prefWidth="187.0" style="-fx-background-color: #CCCCCC;" styleClass="image-view">
             <children>
-            <Pane layoutX="8.0" layoutY="10.0" prefHeight="100.0" prefWidth="110.0">
+            <Pane layoutX="8.0" layoutY="10.0" prefHeight="83.0" prefWidth="82.0">
                <children>
-                  <ImageView fx:id="topImage" id="TopItems" fitHeight="100.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView id="TopItems" fx:id="topImage" fitHeight="83.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </Pane>
-            <Pane layoutX="8.0" layoutY="120.0" prefHeight="100.0" prefWidth="110.0">
+            <Pane layoutX="8.0" layoutY="99.0" prefHeight="83.0" prefWidth="82.0">
                <children>
-                  <ImageView fx:id="bottomImage" id="BottomItems" fitHeight="100.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView id="BottomItems" fx:id="bottomImage" fitHeight="83.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </Pane>
-            <Pane layoutX="127.0" layoutY="79.0" prefHeight="100.0" prefWidth="110.0">
+            <Pane layoutX="97.0" layoutY="58.0" prefHeight="83.0" prefWidth="82.0">
                <children>
-                  <ImageView fx:id="shoesImage" id="ShoesItems" fitHeight="100.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView id="ShoesItems" fx:id="shoesImage" fitHeight="83.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </Pane>
             </children>
         </Pane>
-          <TextField fx:id="fitNameField" id="TitleOfTheOutfit" layoutX="12.0" layoutY="249.0" prefHeight="40.0" prefWidth="180.0" promptText="Fit Name" styleClass="nameFD-button" stylesheets="@../styles/FitDialog.css" />
-          <Button fx:id="deleteButton" id="DeleteButton" layoutX="199.0" layoutY="247.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" styleClass="icon-button" stylesheets="@../styles/ItemDisplay.css" text="🗑" />
+          <TextField id="TitleOfTheOutfit" fx:id="fitNameField" layoutX="8.0" layoutY="207.0" prefHeight="38.0" prefWidth="149.0" promptText="Fit Name" styleClass="nameFD-button" stylesheets="@../styles/FitDialog.css" />
     </children>
-   <stylesheets>
-      <URL value="@../styles/FitDialog.css" />
-      <URL value="@../styles/ItemDisplay.css" />
-   </stylesheets>
 </AnchorPane>

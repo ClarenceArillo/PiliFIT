@@ -8,17 +8,17 @@
 }
 .icon-button {
     -fx-background-color: transparent;
-    -fx-border-color: black;
+    -fx-border-color: transparent;
     -fx-border-radius: 8;
     -fx-border-width: 2px;
     -fx-background-radius: 8;
     -fx-padding: 5 10;
-    -fx-font-size: 20px;
+    -fx-font-size: 30px;
     -fx-cursor: hand;
 }   
 .nameFD-button {
     -fx-background-color: transparent;
-    -fx-font-size: 17px;
+    -fx-font-size: 14px;
     -fx-cursor: hand;
 }
 .details-button {

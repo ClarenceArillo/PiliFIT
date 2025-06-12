@@ -81,14 +81,15 @@
                     <content>
                         <GridPane id="upload/itemsgridpane" gridLinesVisible="true" hgap="15.0" vgap="10.0">
                             <columnConstraints>
-                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="261.0" minWidth="261.0" percentWidth="0.0" prefWidth="261.0" />
-                                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="261.0" minWidth="261.0" percentWidth="0.0" prefWidth="261.0" />
-                                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="261.0" minWidth="261.0" percentWidth="0.0" prefWidth="261.0" />
-                                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="261.0" minWidth="261.0" percentWidth="0.0" prefWidth="261.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="203.0" minWidth="203.0" percentWidth="0.0" prefWidth="203.0" />
+                                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="203.0" minWidth="203.0" percentWidth="0.0" prefWidth="203.0" />
+                                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="203.0" minWidth="203.0" percentWidth="0.0" prefWidth="203.0" />
+                                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="203.0" minWidth="203.0" percentWidth="0.0" prefWidth="203.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="203.0" minWidth="203.0" percentWidth="0.0" prefWidth="203.0" />
                             </columnConstraints>
                             <rowConstraints>
-                                <RowConstraints maxHeight="305.0" minHeight="305.0" percentHeight="0.0" prefHeight="305.0" vgrow="SOMETIMES" />
-                                <RowConstraints maxHeight="305.0" minHeight="305.0" percentHeight="0.0" prefHeight="305.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="255.0" minHeight="255.0" percentHeight="0.0" prefHeight="255.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="255.0" minHeight="255.0" percentHeight="0.0" prefHeight="255.0" vgrow="SOMETIMES" />
                             </rowConstraints>
                             <padding>
                                 <Insets bottom="5.0" left="5.0" right="20.0" top="5.0" />
