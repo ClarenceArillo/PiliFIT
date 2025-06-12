@@ -16,11 +16,10 @@
     -fx-font-size: 20px;
     -fx-cursor: hand;
 }   
-.name-button {
+.nameFD-button {
     -fx-background-color: transparent;
-    -fx-font-size: 15px;
+    -fx-font-size: 17px;
     -fx-cursor: hand;
-
 }
 .details-button {
      -fx-background-color: transparent;

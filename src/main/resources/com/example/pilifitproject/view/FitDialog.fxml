@@ -1,56 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="300.0" style="-fx-border-radius: 20;" styleClass="tab-border" stylesheets="@../styles/FitDialog.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pilifitproject.controller.FitDialogController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="305.0" prefWidth="261.0" style="-fx-border-radius: 20;" styleClass="tab-border" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <Pane layoutX="10.0" layoutY="14.0" prefHeight="282.0" prefWidth="280.0" style="-fx-background-color: #CCCCCC;" styleClass="image-view">
+        <Pane layoutX="8.0" layoutY="9.0" prefHeight="230.0" prefWidth="245.0" style="-fx-background-color: #CCCCCC;" styleClass="image-view">
             <children>
-            <AnchorPane layoutX="9.0" layoutY="10.0" style="-fx-background-color: rgba(128, 128, 128, 0.3);">
+            <Pane layoutX="8.0" layoutY="10.0" prefHeight="100.0" prefWidth="110.0">
                <children>
-                  <ImageView id="TopItems" fitHeight="128.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="topFitImage" />
-                     </image></ImageView>
+                  <ImageView id="TopItems" fitHeight="100.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" />
                </children>
-            </AnchorPane>
-            <AnchorPane layoutX="146.0" layoutY="79.0" prefHeight="142.0" prefWidth="127.0" style="-fx-background-color: rgba(128, 128, 128, 0.3);">
+            </Pane>
+            <Pane layoutX="8.0" layoutY="120.0" prefHeight="100.0" prefWidth="110.0">
                <children>
-                  <ImageView fitHeight="150.0" fitWidth="127.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="shoesFitImage" />
-                     </image></ImageView>
+                  <ImageView id="BottomItems" fitHeight="100.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" />
                </children>
-            </AnchorPane>
-            <AnchorPane layoutX="9.0" layoutY="142.0" prefHeight="128.0" prefWidth="132.0" style="-fx-background-color: rgba(128, 128, 128, 0.3);">
+            </Pane>
+            <Pane layoutX="127.0" layoutY="79.0" prefHeight="100.0" prefWidth="110.0">
                <children>
-                  <ImageView id="ShoeItems" fitHeight="128.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="bottomFitImage" />
-                     </image></ImageView>
+                  <ImageView id="ShoesItems" fitHeight="100.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" />
                </children>
-            </AnchorPane>
+            </Pane>
             </children>
         </Pane>
-        <Pane layoutX="21.0" layoutY="305.0" prefHeight="56.0" prefWidth="259.0">
-            <children>
-                <TextField id="TitleOfTheOutfit" layoutY="4.0" prefHeight="30.0" prefWidth="170.0" promptText="FIt Name" styleClass="name-button" stylesheets="@../styles/ItemDisplay.css">
-                    <font>
-                        <Font name="System Bold" size="88.0" />
-                    </font></TextField>
-                <Button id="DeleteButton" layoutX="216.0" layoutY="5.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" styleClass="icon-button" stylesheets="@../styles/ItemDisplay.css" text="🗑">
-                    <font>
-                        <Font size="20.0" />
-                    </font>
-                </Button>
-            <Button layoutX="177.0" layoutY="6.0" mnemonicParsing="false" text="❤" />
-            </children>
-        </Pane>
+          <TextField id="TitleOfTheOutfit" layoutX="12.0" layoutY="249.0" prefHeight="40.0" prefWidth="180.0" promptText="Fit Name" styleClass="nameFD-button" stylesheets="@../styles/FitDialog.css" />
+          <Button id="DeleteButton" layoutX="199.0" layoutY="247.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" styleClass="icon-button" stylesheets="@../styles/ItemDisplay.css" text="🗑" />
     </children>
+   <stylesheets>
+      <URL value="@../styles/FitDialog.css" />
+      <URL value="@../styles/ItemDisplay.css" />
+   </stylesheets>
 </AnchorPane>
