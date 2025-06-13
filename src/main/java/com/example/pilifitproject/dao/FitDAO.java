@@ -8,13 +8,15 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.pilifitproject.dao.DBConnection.getConnection;
+
 public class FitDAO {
 
     //ADD FIT METHOD
     public void addFit(Fit fit)throws SQLException {
         String sql = "INSERT INTO fit (name, top_id, bottom_id, shoes_id, is_favorite)" + "VALUES (?, ?, ?, ?, ?)";
 
-        try (Connection conn = DBConnection.getConnection();
+        try (Connection conn = getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
 
              pstmt.setString (1, fit.getName());
@@ -37,7 +39,7 @@ public class FitDAO {
     public void deleteFit(int FitID)throws SQLException {
         String sql = "DELETE FROM fit WHERE id = ?";
 
-        try (Connection conn = DBConnection.getConnection();
+        try (Connection conn = getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
 
@@ -52,7 +54,7 @@ public class FitDAO {
     public void updateFit(Fit fit) throws SQLException {
         String sql = "UPDATE fit SET name = ?, top_id = ?, bottom_id = ?, shoes_id = ?, is_favorite = ? WHERE id = ?";
 
-        try (Connection conn = DBConnection.getConnection();
+        try (Connection conn = getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setString(1, fit.getName());
@@ -66,31 +68,54 @@ public class FitDAO {
         }
     }
 
-    public List<Fit> getAllFits()throws SQLException{
+//    public List<Fit> getAllFits()throws SQLException{
+//        List<Fit> fits = new ArrayList<>();
+//        String sql = "SELECT * FROM fit";
+//
+//
+//        try (Connection conn = DBConnection.getConnection();
+//             Statement stmt = conn.createStatement();
+//             ResultSet rs = stmt.executeQuery(sql)){
+//
+//            while (rs.next()){
+//                Fit fit = new Fit(
+//                        rs.getInt("id"),
+//                        rs.getString("name"),
+//                        rs.getInt("top_id"),
+//                        rs.getInt("bottom_id"),
+//                        rs.getInt("shoes_id"),
+//                        rs.getInt("is_favorite")
+//                );
+//                        fits.add(fit);
+//            }
+//        }
+//
+//
+//        return fits;
+//    }
+
+    public List<Fit> getAllFits() throws SQLException {
         List<Fit> fits = new ArrayList<>();
         String sql = "SELECT * FROM fit";
 
-
-        try (Connection conn = DBConnection.getConnection();
+        try (Connection conn = getConnection();
              Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery(sql)){
+             ResultSet rs = stmt.executeQuery(sql)) {
 
-            while (rs.next()){
-                Fit fit = new Fit(
+            while (rs.next()) {
+                fits.add(new Fit(
                         rs.getInt("id"),
                         rs.getString("name"),
                         rs.getInt("top_id"),
                         rs.getInt("bottom_id"),
                         rs.getInt("shoes_id"),
                         rs.getInt("is_favorite")
-                );
-                        fits.add(fit);
+                ));
             }
         }
-
-
         return fits;
     }
+
 
 
     //add and remove fit from favorites
@@ -98,7 +123,7 @@ public class FitDAO {
     public void addFitToFavorite(int FitID)throws SQLException {
         String sql = "UPDATE fit SET is_favorite = ? WHERE id = ?";
 
-        try (Connection conn = DBConnection.getConnection();
+        try (Connection conn = getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setInt(1, Constants.FAVORITE);
@@ -113,7 +138,7 @@ public class FitDAO {
     public void removeFitFromFavorite(int FitID)throws SQLException {
         String sql = "UPDATE fit SET is_favorite = ? WHERE id = ?";
 
-        try (Connection conn = DBConnection.getConnection();
+        try (Connection conn = getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setInt(1, Constants.NOT_FAVORITE);

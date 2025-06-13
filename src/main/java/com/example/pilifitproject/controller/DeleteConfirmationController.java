@@ -65,11 +65,23 @@ public class DeleteConfirmationController {
             isDeleted = true;
 
 
-            if (homeController != null || dialogStage != null) {
+//            if (homeController != null || dialogStage != null) {
+//                homeController.refreshClothingItems();
+//                homeController.refreshFavorites();
+//                //dialogStage.close();
+//            }else {
+//                ((Stage) CancelDeleteItemConfirmation.getScene().getWindow()).close();
+//            }
+
+            if (homeController != null) {
                 homeController.refreshClothingItems();
                 homeController.refreshFavorites();
+            }
+
+            // Keep original closing behavior
+            if (dialogStage != null) {
                 dialogStage.close();
-            }else {
+            } else {
                 ((Stage) CancelDeleteItemConfirmation.getScene().getWindow()).close();
             }
 

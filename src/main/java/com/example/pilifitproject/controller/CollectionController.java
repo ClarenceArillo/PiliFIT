@@ -5,21 +5,28 @@ import com.example.pilifitproject.SceneSwitcher;
 import com.example.pilifitproject.dao.ClothingItemDAO;
 import com.example.pilifitproject.dao.FitDAO;
 import com.example.pilifitproject.model.Fit;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
+import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 public class CollectionController implements RefreshableController {
     @FXML private GridPane fitItemGrid;
     private FitDAO fitDAO = new FitDAO();
     private ClothingItemDAO clothingItemDAO = new ClothingItemDAO();
+    private RefreshableController parentController;
 
     @FXML
     public void initialize() {
@@ -57,27 +64,65 @@ public class CollectionController implements RefreshableController {
 
     @Override
     public void refreshClothingItems() {
-        try {
-            System.out.println("Refreshing clothing items..."); // DEBUG
-            fitItemGrid.getChildren().clear();
+//        try {
+//            System.out.println("Refreshing clothing items..."); // DEBUG
+//            fitItemGrid.getChildren().clear();
+//
+//            List<Fit> fits = fitDAO.getAllFits();
+//            int col = 0;
+//            int row = 0;
+//
+//            for (Fit fit : fits) {
+//                addFitToGrid(fit, col, row);
+//
+//                col++;
+//                if (col >= 4) { // 4 columns based on your GridPane
+//                    col = 0;
+//                    row++;
+//                }
+//            }
+//        } catch (Exception e) {
+//            System.err.println("Error refreshing items:");
+//            e.printStackTrace();
+//        }
 
-            List<Fit> fits = fitDAO.getAllFits();
-            int col = 0;
-            int row = 0;
+            Platform.runLater(() -> { // Ensure UI updates happen on JavaFX thread
+                try {
+                    fitItemGrid.getChildren().clear();
+                    List<Fit> fits = fitDAO.getAllFits();
 
-            for (Fit fit : fits) {
-                addFitToGrid(fit, col, row);
+                    // Clear existing constraints
+                    fitItemGrid.getColumnConstraints().clear();
+                    fitItemGrid.getRowConstraints().clear();
 
-                col++;
-                if (col >= 4) { // 4 columns based on your GridPane
-                    col = 0;
-                    row++;
+                    // Add 4 equal columns
+                    for (int i = 0; i < 4; i++) {
+                        fitItemGrid.getColumnConstraints().add(new ColumnConstraints(261));
+                    }
+
+                    int col = 0;
+                    int row = 0;
+
+                    for (Fit fit : fits) {
+                        addFitToGrid(fit, col, row);
+                        col++;
+                        if (col >= 4) {
+                            col = 0;
+                            row++;
+                            fitItemGrid.getRowConstraints().add(new RowConstraints(305));
+                        }
+                    }
+                } catch (Exception e) {
+                    new Alert(Alert.AlertType.ERROR, "Error loading fits: " + e.getMessage()).show();
                 }
-            }
-        } catch (Exception e) {
-            System.err.println("Error refreshing items:");
-            e.printStackTrace();
+            });
         }
+
+
+
+
+    public void setCollectionController(RefreshableController controller) {
+        this.parentController = controller;
     }
 
     @Override
@@ -94,14 +139,15 @@ public class CollectionController implements RefreshableController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/pilifitproject/view/FitDialog.fxml"));
         AnchorPane fitDialog = loader.load();
 
-        // Set fixed size to match grid cells
-        //fitDialog.setPrefSize(261, 305); // Matches your column constraints
+        FitDialogController controller = loader.getController();
+        controller.setFit(fit);
+        controller.setCollectionController(this);
 
-        fitDialog.setMaxSize(261, 305);
-        fitDialog.setMinSize(261, 305);
+//        fitDialog.setMaxSize(261, 305);
+//        fitDialog.setMinSize(261, 305);
 
-//        FitDialogController controller = loader.getController();
-//        controller.setFit(fit);
+        fitDialog.setPrefSize(205, 255);
+        fitDialog.setMaxSize(205, 255);
 
         // Explicitly add column/row constraints
         if (fitItemGrid.getColumnConstraints().size() <= col) {
@@ -113,6 +159,25 @@ public class CollectionController implements RefreshableController {
 
         GridPane.setConstraints(fitDialog, col, row);
         fitItemGrid.getChildren().add(fitDialog);
+    }
+
+    private void showFitDialog(Fit fit) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/pilifitproject/view/FitDialog.fxml"));
+            Parent root = loader.load();
+
+            FitDialogController fitController = loader.getController();
+            fitController.setFit(fit);
+            fitController.setCollectionController(this); // Pass the parent controller
+
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException | SQLException e) { // Add SQLException here
+            e.printStackTrace();
+            // Add error handling:
+            new Alert(Alert.AlertType.ERROR, "Failed to load fit: " + e.getMessage()).show();
+        }
     }
 
 

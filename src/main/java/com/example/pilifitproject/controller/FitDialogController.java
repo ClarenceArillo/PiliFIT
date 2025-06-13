@@ -40,25 +40,38 @@ public class FitDialogController {
     }
 
     public void setFit(Fit fit) throws SQLException {
-        System.out.println("Setting fit: " + fit.getName()); // DEBUG
-        ClothingItem top = new ClothingItemDAO().getClothingItemById(fit.getTopId());
-        ClothingItem bottom = new ClothingItemDAO().getClothingItemById(fit.getBottomId());
-        ClothingItem shoes = new ClothingItemDAO().getClothingItemById(fit.getShoesId());
+        this.currentFit = fit;
 
-        System.out.println("Top item: " + (top != null ? top.getName() : "null")); // DEBUG
-        System.out.println("Image data sizes - " +
-                "Top: " + (top != null ? top.getImageData().length : 0) + " bytes, " +
-                "Bottom: " + (bottom != null ? bottom.getImageData().length : 0) + " bytes, " +
-                "Shoes: " + (shoes != null ? shoes.getImageData().length : 0) + " bytes"); // DEBUG
+        // Load items with null checks
+        ClothingItemDAO dao = new ClothingItemDAO();
+        try {
+            ClothingItem top = dao.getClothingItemById(fit.getTopId());
+            ClothingItem bottom = dao.getClothingItemById(fit.getBottomId());
+            ClothingItem shoes = dao.getClothingItemById(fit.getShoesId());
 
-        topImage.setImage(ImageUtil.bytesToImage(top.getImageData()));
-        bottomImage.setImage(ImageUtil.bytesToImage(bottom.getImageData()));
-        shoesImage.setImage(ImageUtil.bytesToImage(shoes.getImageData()));
+            if (top != null && top.getImageData() != null) {
+                topImage.setImage(ImageUtil.bytesToImage(top.getImageData()));
+            }
+            if (bottom != null && bottom.getImageData() != null) {
+                bottomImage.setImage(ImageUtil.bytesToImage(bottom.getImageData()));
+            }
+            if (shoes != null && shoes.getImageData() != null) {
+                shoesImage.setImage(ImageUtil.bytesToImage(shoes.getImageData()));
+            }
 
+            fitNameField.setText(fit.getName());
+
+        } catch (Exception e) {
+            System.err.println("Error loading fit images:");
+            e.printStackTrace();
+            showAlert("Error", "Could not load outfit images");
+        }
+
+        // Set text and UI properties
         fitNameField.setText(fit.getName());
-        fitNameField.setEditable(false); // Disable editing in grid view
+        fitNameField.setEditable(false);
 
-        // Scale down delete button for grid view
+        // Position delete button
         deleteButton.setPrefSize(30, 30);
         deleteButton.setLayoutX(220);
         deleteButton.setLayoutY(5);
@@ -81,8 +94,12 @@ public class FitDialogController {
             stage.setScene(new Scene(root));
             stage.showAndWait();
 
-            if (controller.isDeleted() && collectionController != null) {
-                collectionController.refreshClothingItems();
+
+            if (controller.isDeleted()) {
+                if (collectionController != null) {
+                    collectionController.refreshClothingItems();
+                }
+                closeDialog();
             }
 
         } catch (IOException e) {
