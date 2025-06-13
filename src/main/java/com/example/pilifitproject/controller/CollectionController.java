@@ -74,8 +74,8 @@ public class CollectionController implements RefreshableController {
                     fitItemGrid.getRowConstraints().clear();
 
                     // Add 4 equal columns
-                    for (int i = 0; i < 4; i++) {
-                        fitItemGrid.getColumnConstraints().add(new ColumnConstraints(261));
+                    for (int i = 0; i < 5; i++) {
+                        fitItemGrid.getColumnConstraints().add(new ColumnConstraints(205));
                     }
 
                     int col = 0;
@@ -84,10 +84,10 @@ public class CollectionController implements RefreshableController {
                     for (Fit fit : fits) {
                         addFitToGrid(fit, col, row);
                         col++;
-                        if (col >= 4) {
+                        if (col >= 5) {
                             col = 0;
                             row++;
-                            fitItemGrid.getRowConstraints().add(new RowConstraints(305));
+                            fitItemGrid.getRowConstraints().add(new RowConstraints(255));
                         }
                     }
                 } catch (Exception e) {
@@ -119,18 +119,15 @@ public class CollectionController implements RefreshableController {
         controller.setFit(fit);
         controller.setCollectionController(this);
 
-//        fitDialog.setMaxSize(261, 305);
-//        fitDialog.setMinSize(261, 305);
-
         fitDialog.setPrefSize(205, 255);
         fitDialog.setMaxSize(205, 255);
 
         // Explicitly add column/row constraints
         if (fitItemGrid.getColumnConstraints().size() <= col) {
-            fitItemGrid.getColumnConstraints().add(new ColumnConstraints(261));
+            fitItemGrid.getColumnConstraints().add(new ColumnConstraints(205));
         }
         if (fitItemGrid.getRowConstraints().size() <= row) {
-            fitItemGrid.getRowConstraints().add(new RowConstraints(305));
+            fitItemGrid.getRowConstraints().add(new RowConstraints(255));
         }
 
         GridPane.setConstraints(fitDialog, col, row);

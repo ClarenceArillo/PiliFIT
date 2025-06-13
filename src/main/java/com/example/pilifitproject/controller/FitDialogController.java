@@ -73,8 +73,8 @@ public class FitDialogController {
 
         // Position delete button
         deleteButton.setPrefSize(44, 44);
-        deleteButton.setLayoutX(220);
-        deleteButton.setLayoutY(5);
+       // deleteButton.setLayoutX(220);
+       // deleteButton.setLayoutY(5);
     }
 
     private void handleDeleteFit() {
