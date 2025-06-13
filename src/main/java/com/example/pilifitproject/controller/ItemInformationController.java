@@ -90,7 +90,7 @@ public class ItemInformationController {
             favoriteBtn.setText("❤️"); // Filled heart
             favoriteBtn.setStyle("-fx-text-fill: red;");
         } else {
-            favoriteBtn.setText("♡"); // Empty heart
+            favoriteBtn.setText("❤"); // Empty heart
             favoriteBtn.setStyle("-fx-text-fill: gray;");
         }
     }
