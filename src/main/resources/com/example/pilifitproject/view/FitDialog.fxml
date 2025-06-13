@@ -6,28 +6,28 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="255.0" prefWidth="203.0" style="-fx-border-radius: 20;" styleClass="tab-border" stylesheets="@../styles/FitDialog.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="fitDialog" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="255.0" prefWidth="205.0" style="-fx-border-radius: 20;" styleClass="tab-border" stylesheets="@../styles/FitDialog.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-          <Button id="DeleteButton" fx:id="deleteButton" layoutX="147.0" layoutY="198.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="53.0" styleClass="icon-button" stylesheets="@../styles/FitDialog.css" text="🗑" />
-        <Pane layoutX="8.0" layoutY="9.0" prefHeight="192.0" prefWidth="187.0" style="-fx-background-color: #CCCCCC;" styleClass="image-view">
+        <Pane layoutX="8.0" layoutY="9.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="197.0" prefWidth="189.0" style="-fx-background-color: #CCCCCC;" styleClass="image-view">
             <children>
-            <Pane layoutX="8.0" layoutY="10.0" prefHeight="83.0" prefWidth="82.0">
-               <children>
-                  <ImageView id="TopItems" fx:id="topImage" fitHeight="83.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true" />
-               </children>
-            </Pane>
-            <Pane layoutX="8.0" layoutY="99.0" prefHeight="83.0" prefWidth="82.0">
-               <children>
-                  <ImageView id="BottomItems" fx:id="bottomImage" fitHeight="83.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true" />
-               </children>
-            </Pane>
-            <Pane layoutX="97.0" layoutY="58.0" prefHeight="83.0" prefWidth="82.0">
-               <children>
-                  <ImageView id="ShoesItems" fx:id="shoesImage" fitHeight="83.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true" />
-               </children>
-            </Pane>
+                <Pane layoutX="8.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="83.0" prefWidth="82.0">
+                    <children>
+                        <ImageView id="TopItems" fx:id="topImage" fitHeight="83.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </Pane>
+                <Pane layoutX="8.0" layoutY="103.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="83.0" prefWidth="82.0">
+                    <children>
+                        <ImageView id="BottomItems" fx:id="bottomImage" fitHeight="83.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </Pane>
+                <Pane layoutX="100.0" layoutY="62.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="83.0" prefWidth="82.0">
+                    <children>
+                        <ImageView id="ShoesItems" fx:id="shoesImage" fitHeight="83.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </Pane>
             </children>
         </Pane>
-          <TextField id="TitleOfTheOutfit" fx:id="fitNameField" layoutX="8.0" layoutY="207.0" prefHeight="38.0" prefWidth="149.0" promptText="Fit Name" styleClass="nameFD-button" stylesheets="@../styles/FitDialog.css" />
+        <TextField id="TitleOfTheOutfit" fx:id="fitNameField" layoutX="10.0" layoutY="209.0" prefHeight="40.0" prefWidth="151.0" promptText="Fit Name" styleClass="nameFD-button" stylesheets="@../styles/FitDialog.css" />
+        <Button id="DeleteButton" fx:id="deleteButton" layoutX="155.0" layoutY="206.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="48.0" styleClass="view-button" stylesheets="@../styles/FitDialog.css" text="🗑" />
     </children>
 </AnchorPane>
