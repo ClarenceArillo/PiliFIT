@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
@@ -10,24 +11,31 @@
     <children>
         <Pane layoutX="8.0" layoutY="9.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="197.0" prefWidth="189.0" style="-fx-background-color: #CCCCCC;" styleClass="image-view">
             <children>
-                <Pane layoutX="8.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="83.0" prefWidth="82.0">
+                <Pane layoutX="14.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="83.0" prefWidth="82.0">
                     <children>
                         <ImageView id="TopItems" fx:id="topImage" fitHeight="83.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true" />
                     </children>
                 </Pane>
-                <Pane layoutX="8.0" layoutY="103.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="83.0" prefWidth="82.0">
+                <Pane layoutX="14.0" layoutY="97.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="83.0" prefWidth="82.0">
                     <children>
                         <ImageView id="BottomItems" fx:id="bottomImage" fitHeight="83.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true" />
                     </children>
                 </Pane>
-                <Pane layoutX="100.0" layoutY="62.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="83.0" prefWidth="82.0">
+                <Pane layoutX="95.0" layoutY="62.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="83.0" prefWidth="82.0">
                     <children>
                         <ImageView id="ShoesItems" fx:id="shoesImage" fitHeight="83.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true" />
                     </children>
                 </Pane>
             </children>
         </Pane>
-        <TextField id="TitleOfTheOutfit" fx:id="fitNameField" layoutX="10.0" layoutY="209.0" prefHeight="40.0" prefWidth="151.0" promptText="Fit Name" styleClass="nameFD-button" stylesheets="@../styles/FitDialog.css" />
-        <Button id="DeleteButton" fx:id="deleteButton" layoutX="156.0" layoutY="205.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="48.0" styleClass="view-button" stylesheets="@../styles/FitDialog.css" text="🗑" />
+        <TextField id="TitleOfTheOutfit" fx:id="fitNameField" layoutX="14.0" layoutY="209.0" prefHeight="40.0" prefWidth="143.0" promptText="Fit Name" styleClass="nameFD-button" stylesheets="@../styles/FitDialog.css" />
+        <Button id="DeleteButton" fx:id="deleteButton" layoutX="157.0" layoutY="209.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="35.0" styleClass="view-button" stylesheets="@../styles/FitDialog.css">
+         <graphic>
+            <ImageView fitHeight="33.0" fitWidth="33.0" opacity="0.65" pickOnBounds="true" preserveRatio="true" styleClass="view-button">
+               <image>
+                  <Image url="@../images/deleteButtonImage.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
     </children>
 </AnchorPane>

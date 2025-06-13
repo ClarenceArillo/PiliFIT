@@ -80,7 +80,7 @@
     <right>
         <AnchorPane prefHeight="442.0" prefWidth="1580.0" BorderPane.alignment="CENTER">
             <children>
-                <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="99.0" layoutY="67.0" prefHeight="480.0" prefWidth="854.0">
+                <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="99.0" layoutY="67.0" prefHeight="480.0" prefWidth="854.0" styleClass="slider">
                     <content>
                         <GridPane id="upload/itemsgridpane" fx:id="itemsGridPane" gridLinesVisible="true" hgap="15.0" prefHeight="462.0" prefWidth="851.0" styleClass="grid-cell" vgap="10.0">
                             <columnConstraints>
