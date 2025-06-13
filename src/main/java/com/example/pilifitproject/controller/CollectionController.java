@@ -69,7 +69,7 @@ public class CollectionController implements RefreshableController {
                 addFitToGrid(fit, col, row);
 
                 col++;
-                if (col >= 4) { // 4 columns based on your GridPane
+                if (col >= 5) { // 4 columns based on your GridPane
                     col = 0;
                     row++;
                 }
@@ -97,8 +97,8 @@ public class CollectionController implements RefreshableController {
         // Set fixed size to match grid cells
         //fitDialog.setPrefSize(261, 305); // Matches your column constraints
 
-        fitDialog.setMaxSize(261, 305);
-        fitDialog.setMinSize(261, 305);
+        fitDialog.setMaxSize(205, 255);
+        fitDialog.setMinSize(205, 255);
 
 //        FitDialogController controller = loader.getController();
 //        controller.setFit(fit);
