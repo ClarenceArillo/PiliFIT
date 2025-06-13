@@ -64,29 +64,7 @@ public class CollectionController implements RefreshableController {
 
     @Override
     public void refreshClothingItems() {
-//        try {
-//            System.out.println("Refreshing clothing items..."); // DEBUG
-//            fitItemGrid.getChildren().clear();
-//
-//            List<Fit> fits = fitDAO.getAllFits();
-//            int col = 0;
-//            int row = 0;
-//
-//            for (Fit fit : fits) {
-//                addFitToGrid(fit, col, row);
-//
-//                col++;
-//                if (col >= 4) { // 4 columns based on your GridPane
-//                    col = 0;
-//                    row++;
-//                }
-//            }
-//        } catch (Exception e) {
-//            System.err.println("Error refreshing items:");
-//            e.printStackTrace();
-//        }
-
-            Platform.runLater(() -> { // Ensure UI updates happen on JavaFX thread
+           // Platform.runLater(() -> { // Ensure UI updates happen on JavaFX thread
                 try {
                     fitItemGrid.getChildren().clear();
                     List<Fit> fits = fitDAO.getAllFits();
@@ -115,10 +93,8 @@ public class CollectionController implements RefreshableController {
                 } catch (Exception e) {
                     new Alert(Alert.AlertType.ERROR, "Error loading fits: " + e.getMessage()).show();
                 }
-            });
+
         }
-
-
 
 
     public void setCollectionController(RefreshableController controller) {

@@ -64,25 +64,17 @@ public class DeleteConfirmationController {
             }
             isDeleted = true;
 
-
-//            if (homeController != null || dialogStage != null) {
-//                homeController.refreshClothingItems();
-//                homeController.refreshFavorites();
-//                //dialogStage.close();
-//            }else {
-//                ((Stage) CancelDeleteItemConfirmation.getScene().getWindow()).close();
-//            }
-
-            if (homeController != null) {
-                homeController.refreshClothingItems();
-                homeController.refreshFavorites();
-            }
-
-            // Keep original closing behavior
+            // First close the confirmation dialog
             if (dialogStage != null) {
                 dialogStage.close();
             } else {
-                ((Stage) CancelDeleteItemConfirmation.getScene().getWindow()).close();
+                ((Stage) DeleteItemConfirmation.getScene().getWindow()).close();
+            }
+
+            // Then trigger refresh
+            if (homeController != null) {
+                homeController.refreshClothingItems();
+                homeController.refreshFavorites();
             }
 
 

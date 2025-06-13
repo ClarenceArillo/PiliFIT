@@ -117,7 +117,6 @@ public class FitDAO {
     }
 
 
-
     //add and remove fit from favorites
     //ADD TO FAVORITES METHOD
     public void addFitToFavorite(int FitID)throws SQLException {
@@ -148,8 +147,6 @@ public class FitDAO {
         }
 
     }
-
-
 
 
 }

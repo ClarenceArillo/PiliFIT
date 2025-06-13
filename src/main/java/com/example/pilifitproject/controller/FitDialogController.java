@@ -87,19 +87,15 @@ public class FitDialogController {
             controller.setItemId(currentFit.getId());
             controller.setItemType(false); // This indicates it's a Fit deletion
             controller.setHomeController(collectionController);
-            controller.setOnCancelCallback(this::closeDialog);
+
 
             Stage stage = new Stage();
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.setScene(new Scene(root));
             stage.showAndWait();
 
-
-            if (controller.isDeleted()) {
-                if (collectionController != null) {
-                    collectionController.refreshClothingItems();
-                }
-                closeDialog();
+            if (controller.isDeleted() && collectionController != null) {
+                collectionController.refreshClothingItems();
             }
 
         } catch (IOException e) {
