@@ -72,7 +72,7 @@ public class FitDialogController {
         fitNameField.setEditable(false);
 
         // Position delete button
-        deleteButton.setPrefSize(30, 30);
+        deleteButton.setPrefSize(44, 44);
         deleteButton.setLayoutX(220);
         deleteButton.setLayoutY(5);
     }
