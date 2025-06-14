@@ -1,83 +1,33 @@
-.icon-button {
+
+.scene-switch {
     -fx-background-color: transparent;
-    -fx-border-color: white;
-    -fx-border-radius: 8;
-    -fx-border-width: 2px;
-    -fx-background-radius: 8;
-    -fx-padding: 5 10;
-    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill:black;
     -fx-cursor: hand;
-    -fx-font-size: 14px;
-    -fx-font-weight: bold;
 }
 
-.icon-button:hover {
-    -fx-background-color: darkgray;
-}
-
-.title-text {
-    -fx-font-size: 35px;
-    -fx-font-weight: bold;
-}
-
-.text-field, .menu-button {
-    -fx-background-radius: 12;
-    -fx-border-color: transparent;
-    -fx-border-width: 2px;
-    -fx-border-radius: 12;
+.scene-switch:hover {
+     -fx-text-fill: #ffffff55;
 
 }
-
-.text-area, .menu-button  {
-      -fx-background-color: white;
-      -fx-background-radius: 12;
-      -fx-border-radius: 7px;
-      -fx-border: 1px solid #ccc;
-      -fx-border-width: 1;
-}
-
-.text-area:focused, .text-field:focused {
-    -fx-border-color: #00aaff;
-    -fx-border-width: 1.5;
-    -fx-effect: dropshadow(gaussian, #00aaff, 8, 0.3, 0, 0);
-    -fx-background-insets: 0;
-}
-
-.border-pad {
+.tab-border {
     -fx-background-color: white;
-    -fx-border-width: 2px;
-    -fx-background-radius: 12;
-    -fx-border-radius: 8    ;
-    -fx-border-color: black;
-    -fx-padding: 4;
-
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: transparent;
+    -fx-border-width: 1px;
+    -fx-padding: 5;
 }
 
 .text-filter {
-    -fx-font-size: 14px;
-    -fx-font-weight: bold;
+    -fx-text-filter : black;
 }
 
-.text-filter2 {
-    -fx-font-size: 14px;
-    -fx-font-weight: light;
+.imag-layout {
+    -fx-background-radius: 20px;
 }
 
-
-.image-holder {
-    -fx-background-color:  white;
-    -fx-background-radius: 15;
-    -fx-border-color: black;
-    -fx-border-radius: 10;
-}
-
-.tab-border {
+.back-tab {
     -fx-background-color: white;
-    -fx-background-radius: 15;
-    -fx-border-radius: 15;
-    -fx-border-color: transparent;
-    -fx-border-width: 2px;
-    -fx-padding: 10;
+    -fx-background-radius: 15px;
 }
-
-

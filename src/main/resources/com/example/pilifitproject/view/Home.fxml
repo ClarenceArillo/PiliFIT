@@ -6,6 +6,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.MotionBlur?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -29,6 +31,9 @@
                     <image>
                         <Image url="@../images/background/bg.png" />
                     </image>
+               <effect>
+                  <MotionBlur angle="30.28" radius="14.71" />
+               </effect>
                 </ImageView>
                 <GridPane layoutX="40.0" layoutY="17.0" prefHeight="30.0" prefWidth="233.0">
                     <columnConstraints>
@@ -199,4 +204,7 @@
             </children>
         </AnchorPane>
     </right>
+   <effect>
+      <InnerShadow height="0.0" radius="10.5975" width="44.39" />
+   </effect>
 </BorderPane>
