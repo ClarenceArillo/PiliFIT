@@ -52,47 +52,16 @@ public class FitDAO {
 
     //UPDATE FIT
     public void updateFit(Fit fit) throws SQLException {
-        String sql = "UPDATE fit SET name = ?, top_id = ?, bottom_id = ?, shoes_id = ?, is_favorite = ? WHERE id = ?";
+        String sql = "UPDATE fit SET name = ? WHERE id = ?";
 
         try (Connection conn = getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setString(1, fit.getName());
-            pstmt.setInt(2, fit.getTopId());
-            pstmt.setInt(3, fit.getBottomId());
-            pstmt.setInt(4, fit.getShoesId());
-            pstmt.setInt(5, fit.getIs_Favorite());
-            pstmt.setInt(6, fit.getId());
-
+            pstmt.setInt(2, fit.getId());
             pstmt.executeUpdate();
         }
     }
-
-//    public List<Fit> getAllFits()throws SQLException{
-//        List<Fit> fits = new ArrayList<>();
-//        String sql = "SELECT * FROM fit";
-//
-//
-//        try (Connection conn = DBConnection.getConnection();
-//             Statement stmt = conn.createStatement();
-//             ResultSet rs = stmt.executeQuery(sql)){
-//
-//            while (rs.next()){
-//                Fit fit = new Fit(
-//                        rs.getInt("id"),
-//                        rs.getString("name"),
-//                        rs.getInt("top_id"),
-//                        rs.getInt("bottom_id"),
-//                        rs.getInt("shoes_id"),
-//                        rs.getInt("is_favorite")
-//                );
-//                        fits.add(fit);
-//            }
-//        }
-//
-//
-//        return fits;
-//    }
 
     public List<Fit> getAllFits() throws SQLException {
         List<Fit> fits = new ArrayList<>();
@@ -116,37 +85,6 @@ public class FitDAO {
         return fits;
     }
 
-
-    //add and remove fit from favorites
-    //ADD TO FAVORITES METHOD
-    public void addFitToFavorite(int FitID)throws SQLException {
-        String sql = "UPDATE fit SET is_favorite = ? WHERE id = ?";
-
-        try (Connection conn = getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-
-            pstmt.setInt(1, Constants.FAVORITE);
-            pstmt.setInt(2,FitID);
-            pstmt.executeUpdate();
-
-        }
-
-    }
-
-    //REMOVE FIT FROM FAVORITES
-    public void removeFitFromFavorite(int FitID)throws SQLException {
-        String sql = "UPDATE fit SET is_favorite = ? WHERE id = ?";
-
-        try (Connection conn = getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-
-            pstmt.setInt(1, Constants.NOT_FAVORITE);
-            pstmt.setInt(2,FitID);
-            pstmt.executeUpdate();
-
-        }
-
-    }
 
 
 }

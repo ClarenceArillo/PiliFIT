@@ -1,8 +1,6 @@
 package com.example.pilifitproject.dao;
 
 import com.example.pilifitproject.model.ClothingItem;
-import com.example.pilifitproject.utils.Constants;
-import org.sqlite.core.DB;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -97,20 +95,6 @@ public class ClothingItemDAO {
 
     }
 
-    //remove from favorite fit
-    public void removeClothingItemFromFavorite(int FitID)throws SQLException {
-        String sql = "UPDATE fit SET is_favorite = ? WHERE id = ?";
-
-        try (Connection conn = DBConnection.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-
-            pstmt.setInt(1, Constants.NOT_FAVORITE);
-            pstmt.setInt(2,FitID);
-            pstmt.executeUpdate();
-
-        }
-
-    }
 
     //this method returns category id
     public ClothingItem getClothingItemById(int id) throws SQLException {
@@ -166,94 +150,9 @@ public class ClothingItemDAO {
 
             return items;
         }
-
-
-    }
-
-    //    Colors:
-//    Red
-//    Orange
-//    Yellow
-//    Green
-//    Violet
-//    Blue
-//    White
-//    Black
-//    Others
-
-    //Color Filter
-    public static List<ClothingItem> getAllClothingItemsByColor(int colorId) throws SQLException {
-        List<ClothingItem> items = new ArrayList<>();
-        String sql = "SELECT * FROM clothing_item WHERE color_id = ?";
-
-        try (Connection conn = DBConnection.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-
-            pstmt.setInt(1, colorId);
-            try (ResultSet rs = pstmt.executeQuery()) {
-                while (rs.next()) {
-
-                    ClothingItem item = new ClothingItem(
-                            rs.getInt("id"),
-                            rs.getString("name"),
-                            rs.getBytes("image_data"),
-                            rs.getInt("category_id"),
-                            rs.getInt("color_id"),
-                            rs.getInt("style_id"),
-                            rs.getString("size"),
-                            rs.getInt("is_Favorite")
-                    );
-                    items.add(item);
-                }
-            }
-
-            return items;
-        }
-
-
-    }
-
-
-//Style
-//    Formal
-//    Casual
-//    Semi-Formal
-//    Others
-
-    //Style Filter
-    public static List<ClothingItem> getAllClothingItemsByStyleId(int styleId) throws SQLException {
-        List<ClothingItem> items = new ArrayList<>();
-        String sql = "SELECT * FROM clothing_item WHERE style_id = ?";
-
-        try (Connection conn = DBConnection.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-
-            pstmt.setInt(1, styleId);
-            try (ResultSet rs = pstmt.executeQuery()) {
-                while (rs.next()) {
-
-                    ClothingItem item = new ClothingItem(
-                            rs.getInt("id"),
-                            rs.getString("name"),
-                            rs.getBytes("image_data"),
-                            rs.getInt("category_id"),
-                            rs.getInt("color_id"),
-                            rs.getInt("style_id"),
-                            rs.getString("size"),
-                            rs.getInt("is_Favorite")
-                    );
-                    items.add(item);
-                }
-            }
-
-            return items;
-        }
-
-
     }
 
     // favorite filter
-
     public static List<ClothingItem> getAllClothingItemsByIsFavorite(int is_favorite) throws SQLException {
         List<ClothingItem> items = new ArrayList<>();
         String sql = "SELECT * FROM clothing_item WHERE is_favorite = ?";
@@ -281,8 +180,6 @@ public class ClothingItemDAO {
 
             return items;
         }
-
-
     }
 
     public List<ClothingItem> getFilteredClothingItems(
@@ -335,32 +232,5 @@ public class ClothingItemDAO {
 
         return items;
     }
-
-
-
-    public ClothingItem getRandomClothingItemByCategory(int categoryId) throws SQLException {
-        String sql = "SELECT * FROM clothing_item WHERE category_id = ? ORDER BY RANDOM() LIMIT 1";
-        try (Connection conn = DBConnection.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-
-            pstmt.setInt(1, categoryId);
-            ResultSet rs = pstmt.executeQuery();
-
-            if (rs.next()) {
-                return new ClothingItem(
-                        rs.getInt("id"),
-                        rs.getString("name"),
-                        rs.getBytes("image_data"),
-                        rs.getInt("category_id"),
-                        rs.getInt("color_id"),
-                        rs.getInt("style_id"),
-                        rs.getString("size"),
-                        rs.getInt("is_favorite")
-                );
-            }
-        }
-        return null;
-    }
-
 
 }

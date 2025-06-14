@@ -21,8 +21,6 @@ import java.nio.file.*;
         }
 
         public static byte[] imageToBytes(Image image) throws IOException {
-            // Note: This is more complex for JavaFX Images - you might want to keep track of original file bytes
-            // For simplicity, we'll assume you're working with Files directly
             throw new UnsupportedOperationException("Convert File to bytes first");
         }
     }

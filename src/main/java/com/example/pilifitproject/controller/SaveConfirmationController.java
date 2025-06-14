@@ -21,6 +21,12 @@ public class SaveConfirmationController {
     @FXML
     private Button SaveEditsBtn;
 
+    private Runnable onSaveCallback;
+
+    public void setOnSaveCallback(Runnable callback) {
+        this.onSaveCallback = callback;
+    }
+
     public void setDialogStage(Stage stage) {
         this.dialogStage = stage;
     }
@@ -51,6 +57,9 @@ public class SaveConfirmationController {
         System.out.println("UploadDialogController is null? " + (uploadDialogController == null)); // Debug 2
         System.out.println("Selected file is null? " + (selectedFile == null)); // Debug 3
 
+        if (onSaveCallback != null) {
+            onSaveCallback.run();
+        }
 
         if (uploadDialogController != null && selectedFile != null) {
             System.out.println("Calling handleSave on uploadDialogController"); // Debug 4
@@ -62,7 +71,6 @@ public class SaveConfirmationController {
         Stage stage = (Stage) SaveEditsBtn.getScene().getWindow();
         stage.close();
         uploadDialogController.closeDialog();
-
     }
 
     @FXML

@@ -1,18 +1,18 @@
 .icon-button {
-    -fx-background-color: linear-gradient(from 5% 0% to 99% 100%, white, black);
+    -fx-background-color:  #ffffff55);
     -fx-border-color: black;
     -fx-border-radius: 20px;
     -fx-border-width: 2px;
     -fx-background-radius: 20px;
     -fx-padding: 5 10px;
-    -fx-pref-height: 45px;
+    -fx-pref-height: 40px;
     -fx-cursor: hand;
-    -fx-font-size:18px;
+    -fx-font-size:15px;
     -fx-font-weight: bold;
-    -fx-text-fill: white;
+    -fx-text-fill: black;
 }
 .icon-button: hover {
-    -fx-background-color: #ffffff55;
+    -fx-background-color: linear-gradient(from 5% 0% to 100% 100%, white, grey);
 }
 
 .scene-switch {
@@ -138,4 +138,34 @@
 
 .slider {
     -fx-background-color: transparent;
+}
+
+.view-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-radius: 8;
+    -fx-border-width: 2px;
+    -fx-background-radius: 8;
+    -fx-padding: 1 7;
+    -fx-font-size: 30px;
+    -fx-cursor: hand;
+    -fx-opacity: 0.70;
+}
+
+.save-button {
+    -fx-background-color: transparent;
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+    -fx-text-fill: black;
+    -fx-font-size: 10px;
+    //-fx-font-family: "Berlin Sans FB Bold";
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-padding: 5 20;
+    -fx-cursor: hand;
+
+}
+.save-button: hover {
+    -fx-background-color: #90EE90;
+
 }

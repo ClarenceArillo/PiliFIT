@@ -5,28 +5,21 @@ import com.example.pilifitproject.SceneSwitcher;
 import com.example.pilifitproject.dao.ClothingItemDAO;
 import com.example.pilifitproject.dao.FitDAO;
 import com.example.pilifitproject.model.Fit;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
-import javafx.stage.Stage;
-
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.List;
 
 public class CollectionController implements RefreshableController {
     @FXML private GridPane fitItemGrid;
     private FitDAO fitDAO = new FitDAO();
     private ClothingItemDAO clothingItemDAO = new ClothingItemDAO();
-    private RefreshableController parentController;
 
     @FXML
     public void initialize() {
@@ -64,7 +57,6 @@ public class CollectionController implements RefreshableController {
 
     @Override
     public void refreshClothingItems() {
-           // Platform.runLater(() -> { // Ensure UI updates happen on JavaFX thread
                 try {
                     fitItemGrid.getChildren().clear();
                     List<Fit> fits = fitDAO.getAllFits();
@@ -93,13 +85,7 @@ public class CollectionController implements RefreshableController {
                 } catch (Exception e) {
                     new Alert(Alert.AlertType.ERROR, "Error loading fits: " + e.getMessage()).show();
                 }
-
         }
-
-
-    public void setCollectionController(RefreshableController controller) {
-        this.parentController = controller;
-    }
 
     @Override
     public void refreshFavorites() {
@@ -133,25 +119,5 @@ public class CollectionController implements RefreshableController {
         GridPane.setConstraints(fitDialog, col, row);
         fitItemGrid.getChildren().add(fitDialog);
     }
-
-    private void showFitDialog(Fit fit) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/pilifitproject/view/FitDialog.fxml"));
-            Parent root = loader.load();
-
-            FitDialogController fitController = loader.getController();
-            fitController.setFit(fit);
-            fitController.setCollectionController(this); // Pass the parent controller
-
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (IOException | SQLException e) { // Add SQLException here
-            e.printStackTrace();
-            // Add error handling:
-            new Alert(Alert.AlertType.ERROR, "Failed to load fit: " + e.getMessage()).show();
-        }
-    }
-
 
 }

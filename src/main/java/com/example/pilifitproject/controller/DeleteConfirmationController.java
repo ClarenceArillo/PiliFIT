@@ -2,11 +2,8 @@ package com.example.pilifitproject.controller;
 
 import com.example.pilifitproject.RefreshableController;
 import com.example.pilifitproject.dao.ClothingItemDAO;
-import com.example.pilifitproject.controller.HomeController;
 import com.example.pilifitproject.dao.FitDAO;
 import javafx.fxml.FXML;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 

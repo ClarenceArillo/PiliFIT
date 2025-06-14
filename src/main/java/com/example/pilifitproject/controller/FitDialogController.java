@@ -2,6 +2,7 @@ package com.example.pilifitproject.controller;
 
 import com.example.pilifitproject.RefreshableController;
 import com.example.pilifitproject.dao.ClothingItemDAO;
+import com.example.pilifitproject.dao.FitDAO;
 import com.example.pilifitproject.model.ClothingItem;
 import com.example.pilifitproject.model.Fit;
 import com.example.pilifitproject.utils.ImageUtil;
@@ -33,6 +34,12 @@ public class FitDialogController {
     @FXML
     public void initialize() {
         deleteButton.setOnAction(event -> handleDeleteFit());
+        // Add Enter key handler for fit name editing
+        fitNameField.setOnAction(event -> {
+            if (!fitNameField.getText().equals(currentFit.getName())) {
+                showSaveConfirmation();
+            }
+        });
     }
 
     public void setCollectionController(RefreshableController controller) {
@@ -69,12 +76,11 @@ public class FitDialogController {
 
         // Set text and UI properties
         fitNameField.setText(fit.getName());
-        fitNameField.setEditable(false);
+        //fitNameField.setEditable(false);
 
         // Position delete button
         deleteButton.setPrefSize(44, 44);
-       // deleteButton.setLayoutX(220);
-       // deleteButton.setLayoutY(5);
+
     }
 
     private void handleDeleteFit() {
@@ -103,10 +109,45 @@ public class FitDialogController {
         }
     }
 
-    private void closeDialog() {
-        Stage stage = (Stage) deleteButton.getScene().getWindow();
-        stage.close();
+    private void showSaveConfirmation() {
+        try {
+            System.out.println("Current fit name: " + currentFit.getName()); // Debug
+            System.out.println("New fit name: " + fitNameField.getText()); // Debug
+
+            FXMLLoader loader = new FXMLLoader(
+                    getClass().getResource("/com/example/pilifitproject/view/SaveConfirmation.fxml"));
+            Parent root = loader.load();
+
+            SaveConfirmationController controller = loader.getController();
+            controller.setDialogStage(new Stage());
+            controller.setOnSaveCallback(() -> {
+                try {
+                    System.out.println("Updating fit name to: " + fitNameField.getText()); // Debug
+                    currentFit.setName(fitNameField.getText());
+                    new FitDAO().updateFit(currentFit);
+
+                    System.out.println("Fit name after update: " + currentFit.getName()); // Debug
+
+                    if (collectionController != null) {
+                        collectionController.refreshClothingItems();
+                    }
+                } catch (SQLException e) {
+                    System.err.println("Error updating fit name:");
+                    e.printStackTrace();
+                    showAlert("Error", "Failed to save fit name");
+                }
+            });
+
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+
+        } catch (IOException e) {
+            showAlert("Error", "Failed to open save confirmation");
+        }
     }
+
 
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
