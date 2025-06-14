@@ -453,8 +453,6 @@ public class HomeController implements RefreshableController {
 
                 // Calculate new index with wrap-around
 
-                //int newIndex = (currentIndex + direction + categoryItems.size()) % categoryItems.size();
-
                 int newIndex = (currentIndex + direction + categoryItems.size()) % categoryItems.size();
                 ClothingItem newItem = categoryItems.get(newIndex);
 

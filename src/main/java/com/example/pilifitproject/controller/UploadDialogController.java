@@ -141,13 +141,6 @@ public class UploadDialogController {
         }
         System.out.println("Close Tab");
     }
-    public Button getCloseButton() {
-        return CloseButton;
-    }
-
-    public void setCloseButton(Button closeButton) {
-        CloseButton = closeButton;
-    }
 
 
 }

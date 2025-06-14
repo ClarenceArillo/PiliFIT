@@ -24,7 +24,6 @@ public class ItemDisplayController {
 
     @FXML private ImageView ImageViewContainer;
     @FXML private TextField ClothingItemNameDisplay;
-    @FXML private Button ViewItemEdit;
     @FXML private Button favoriteBtn;
 
     private ClothingItem clothingItem;
@@ -72,17 +71,6 @@ public class ItemDisplayController {
             e.printStackTrace();
             showAlert("Error", "Failed to open edit dialog");
         }
-    }
-
-    @FXML
-    private void handleFavoriteToggle() {
-        if (clothingItem.getIsFavorite() == Constants.FAVORITE) {
-            clothingItem.setIsFavorite(Constants.NOT_FAVORITE);
-        } else {
-            clothingItem.setIsFavorite(Constants.FAVORITE);
-        }
-        updateFavoriteButton();
-        refreshParentController();
     }
 
     @FXML

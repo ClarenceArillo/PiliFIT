@@ -9,8 +9,6 @@ import com.example.pilifitproject.utils.ImageUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.CheckMenuItem;
 import javafx.scene.control.Label;
@@ -20,10 +18,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-
-import javax.naming.Referenceable;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -139,9 +133,6 @@ public class FavoritesController implements RefreshableController {
         }
     }
 
-    public void setHomeController(RefreshableController controller) {
-        this.homeController = controller;
-    }
 
     private VBox createSimpleItemBox(ClothingItem item) {
         VBox box = new VBox(5);
@@ -181,21 +172,12 @@ public class FavoritesController implements RefreshableController {
         // Can be empty if not needed
     }
 
-//    private void refreshAfterEdit() {
-//        if (homeController instanceof FavoritesController) {
-//            ((FavoritesController) homeController).refreshFavorites();
-//        } else if (homeController instanceof HomeController) {
-//            ((HomeController) homeController).refreshClothingItems();
-//        }
-//    }
-
     private void refreshAfterEdit() {
         if (homeController != null) {
             homeController.refreshClothingItems();
             homeController.refreshFavorites();
         }
     }
-
 
     private void setupCategoryDropdown() {
         CheckMenuItem top = new CheckMenuItem("Top");
@@ -208,7 +190,6 @@ public class FavoritesController implements RefreshableController {
         top.setOnAction(e -> handleExclusiveSelection(top));
         bottom.setOnAction(e -> handleExclusiveSelection(bottom));
         shoes.setOnAction(e -> handleExclusiveSelection(shoes));;
-
     }
 
     private void setupStyleDropdown() {
@@ -250,34 +231,6 @@ public class FavoritesController implements RefreshableController {
         white.setOnAction(e -> handleExclusiveSelection(white));
         black.setOnAction(e -> handleExclusiveSelection(black));
         others.setOnAction(e -> handleExclusiveSelection(others));
-    }
-
-    private void handleCategoryFilter(CheckMenuItem item) {
-        System.out.println("CATEGORY: " + item.getText() + (item.isSelected() ? " selected" : " deselected"));
-    }
-
-    private void handleStyleFilter(CheckMenuItem item) {
-        System.out.println("STYLE: " + item.getText() + (item.isSelected() ? " selected" : " deselected"));
-    }
-
-    private void handleColorFilter(CheckMenuItem item) {
-        System.out.println("COLOR: " + item.getText() + (item.isSelected() ? " selected" : " deselected"));
-    }
-
-    @FXML
-    private void openUploadDialog(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/pilifitproject/view/UploadDialog.fxml"));
-            Parent root = loader.load();
-
-            Stage dialogStage = new Stage();
-            dialogStage.setTitle("Add New Piece");
-            dialogStage.initModality(Modality.APPLICATION_MODAL);
-            dialogStage.setScene(new Scene(root));
-            dialogStage.showAndWait();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     private void handleExclusiveSelection(CheckMenuItem selectedItem) {

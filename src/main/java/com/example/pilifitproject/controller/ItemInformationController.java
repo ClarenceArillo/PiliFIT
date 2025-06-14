@@ -32,8 +32,6 @@ public class ItemInformationController {
         @FXML private Button deleteBtn;
         @FXML private Button favoriteBtn;
 
-        @FXML private Button closeButton;
-
         private ClothingItem clothingItem;
         private RefreshableController homeController;
         private Stage dialogStage;
@@ -95,7 +93,6 @@ public class ItemInformationController {
         }
     }
 
-
     public void setClothingItem(ClothingItem item) {
 
         if (item == null) {
@@ -109,10 +106,6 @@ public class ItemInformationController {
 
     public void setHomeController(RefreshableController controller) {
         this.homeController = controller;
-    }
-
-    public void setDialogStage(Stage stage) {
-        this.dialogStage = stage;
     }
 
     private void loadItemData() {
@@ -224,11 +217,7 @@ public class ItemInformationController {
         }
     }
 
-
     private void closeDialog() {
-//        if (dialogStage != null) {
-//            dialogStage.close();
-//        }
         Stage stage = (Stage) nameInput.getScene().getWindow();
         stage.close();
     }
@@ -240,28 +229,5 @@ public class ItemInformationController {
         alert.setContentText(message);
         alert.showAndWait();
     }
-
-    private final List<CheckMenuItem> allFilterItems = new ArrayList<>();
-
-    private void handleExclusiveSelection(CheckMenuItem selectedItem) {
-        for (CheckMenuItem item : allFilterItems) {
-            if (item != selectedItem) {
-                item.setSelected(false);
-            }
-        }
-
-        // Optional: Print selected item for testing
-        System.out.println("Selected: " + selectedItem.getText());
-    }
-    public Button getCloseButton() {
-        return closeButton;
-    }
-
-    public void setCloseButton(Button closeButton) {
-        Button CloseButton = closeButton;
-    }
-
-
-    // In your ClosetController or similar
 
 }
