@@ -134,24 +134,6 @@ public class CollectionController implements RefreshableController {
         fitItemGrid.getChildren().add(fitDialog);
     }
 
-    private void showFitDialog(Fit fit) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/pilifitproject/view/FitDialog.fxml"));
-            Parent root = loader.load();
-
-            FitDialogController fitController = loader.getController();
-            fitController.setFit(fit);
-            fitController.setCollectionController(this); // Pass the parent controller
-
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (IOException | SQLException e) { // Add SQLException here
-            e.printStackTrace();
-            // Add error handling:
-            new Alert(Alert.AlertType.ERROR, "Failed to load fit: " + e.getMessage()).show();
-        }
-    }
 
 
 }
