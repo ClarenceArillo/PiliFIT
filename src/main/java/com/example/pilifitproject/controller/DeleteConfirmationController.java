@@ -3,6 +3,7 @@ package com.example.pilifitproject.controller;
 import com.example.pilifitproject.RefreshableController;
 import com.example.pilifitproject.dao.ClothingItemDAO;
 import com.example.pilifitproject.controller.HomeController;
+import com.example.pilifitproject.dao.FitDAO;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -18,6 +19,7 @@ public class DeleteConfirmationController {
     private int itemId;
     private RefreshableController homeController;
     private boolean isDeleted = false;
+    private boolean isClothingItem = true;
     private Stage dialogStage;
     private Runnable onCancelCallback;  // New callback function
 
@@ -41,6 +43,10 @@ public class DeleteConfirmationController {
         this.onCancelCallback = callback;
     }
 
+    public void setItemType(boolean isClothingItem) {
+        this.isClothingItem = isClothingItem;
+    }
+
     @FXML
     public void initialize() {
         DeleteItemConfirmation.setOnAction(event -> confirmDelete());
@@ -49,16 +55,26 @@ public class DeleteConfirmationController {
 
     private void confirmDelete() {
         try {
-            new ClothingItemDAO().deleteClothingItem(itemId);
+            if (isClothingItem) {
+                // Existing clothing item deletion
+                new ClothingItemDAO().deleteClothingItem(itemId);
+            } else {
+                // New fit deletion
+                new FitDAO().deleteFit(itemId);
+            }
             isDeleted = true;
 
+            // First close the confirmation dialog
+            if (dialogStage != null) {
+                dialogStage.close();
+            } else {
+                ((Stage) DeleteItemConfirmation.getScene().getWindow()).close();
+            }
 
-            if (homeController != null || dialogStage != null) {
+            // Then trigger refresh
+            if (homeController != null) {
                 homeController.refreshClothingItems();
                 homeController.refreshFavorites();
-                dialogStage.close();
-            }else {
-                ((Stage) CancelDeleteItemConfirmation.getScene().getWindow()).close();
             }
 
 
