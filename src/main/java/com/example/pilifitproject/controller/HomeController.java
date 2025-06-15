@@ -1,7 +1,6 @@
 package com.example.pilifitproject.controller;
 
 import com.example.pilifitproject.RefreshableController;
-import com.example.pilifitproject.SceneSwitcher;
 import com.example.pilifitproject.dao.ClothingItemDAO;
 import com.example.pilifitproject.model.ClothingItem;
 import com.example.pilifitproject.utils.FitService;
@@ -29,9 +28,7 @@ import java.util.List;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class HomeController implements RefreshableController {
-
-    private final List<CheckMenuItem> allFilterItems = new ArrayList<>();
+public class HomeController extends BaseController implements RefreshableController {
 
     @FXML private GridPane itemsGridPane;
     @FXML private Button Addnew;
@@ -82,31 +79,31 @@ public class HomeController implements RefreshableController {
 
     @FXML
     private void goHome(ActionEvent event) throws IOException {
-        SceneSwitcher.switchTo(event, "Home.fxml");
+        switchScene(event, "Home.fxml");
     }
 
     @FXML
     private void goAbout(ActionEvent event) throws IOException {
-        SceneSwitcher.switchTo(event, "AboutUs.fxml");
+        switchScene(event, "AboutUs.fxml");
     }
 
     @FXML
     private void goContact(ActionEvent event) throws IOException {
-        SceneSwitcher.switchTo(event, "ContactUs.fxml");
+        switchScene(event, "ContactUs.fxml");
     }
 
     @FXML
     private void goCollection(ActionEvent event) throws IOException {
-        SceneSwitcher.switchTo(event, "Collection.fxml");
+        switchScene(event, "Collection.fxml");
     }
 
     @FXML
     private void goCloset(ActionEvent event) throws IOException {
-        SceneSwitcher.switchTo(event, "Home.fxml");
+        switchScene(event, "Home.fxml");
     }
     @FXML
     private void goFavorites(ActionEvent event) throws IOException {
-        SceneSwitcher.switchTo(event, "Favorites.fxml");
+        switchScene(event, "Favorites.fxml");
         System.out.println("Fav Page");
     }
 
@@ -171,11 +168,18 @@ public class HomeController implements RefreshableController {
     }
 
     @Override
+    public void refreshAll() {
+        // Custom implementation if needed, or omit to use default
+        refreshClothingItems();
+        refreshFavorites();
+        // Any additional Home-specific refreshes
+    }
+
     public void applyFilters(Integer categoryId, Integer colorId, Integer styleId) {
         this.currentCategoryFilter = categoryId;
         this.currentColorFilter = colorId;
         this.currentStyleFilter = styleId;
-        refreshClothingItems();
+        refreshAll();
     }
 
     @Override
@@ -512,16 +516,6 @@ public class HomeController implements RefreshableController {
                 showAlert("Error", "Failed to save fit");
             }
         }
-    }
-
-
-
-    private void showAlert(String title, String message) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
     }
 
     //===GENERATE btn end

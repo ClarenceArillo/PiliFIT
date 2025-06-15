@@ -2,17 +2,13 @@ package com.example.pilifitproject.controller;
 
 import javafx.fxml.FXML;
 import javafx.stage.Stage;
-
-import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.stage.Stage;
 
 import java.io.File;
 
-public class SaveConfirmationController {
+public class SaveConfirmationController extends BaseController{
     private UploadDialogController uploadDialogController;
     private File selectedFile;
-    private Stage dialogStage;
 
     @FXML
     private Button DiscardChangesBtn;
@@ -27,10 +23,6 @@ public class SaveConfirmationController {
         this.onSaveCallback = callback;
     }
 
-    public void setDialogStage(Stage stage) {
-        this.dialogStage = stage;
-    }
-
     public void setUploadDialogController(UploadDialogController controller, File file) {
         this.uploadDialogController = controller;
         this.selectedFile = file;
@@ -38,15 +30,16 @@ public class SaveConfirmationController {
 
     @FXML
     private void handleDiscardChanges() {
-//        Close both dialogs
+        //Close both dialogs
         Stage stage = (Stage) DiscardChangesBtn.getScene().getWindow();
         stage.close();
 
-//        // Also close the upload dialog if needed
+        // Also close the upload dialog if needed
         uploadDialogController.closeDialog();
 
         // Close the upload dialog through its controller
         if (uploadDialogController != null) {
+
             uploadDialogController.forceCloseDialog();
         }
     }
@@ -66,7 +59,6 @@ public class SaveConfirmationController {
             uploadDialogController.handleSave(selectedFile);
         }
 
-
         // Close confirmation dialog
         Stage stage = (Stage) SaveEditsBtn.getScene().getWindow();
         stage.close();
@@ -78,7 +70,8 @@ public class SaveConfirmationController {
         closeDialog();
     }
 
-    private void closeDialog() {
+    @Override
+    public void closeDialog() {
         if (dialogStage != null) {
             dialogStage.close();
         } else {

@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -16,9 +13,10 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.RadialGradient?>
 <?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="700.0" prefWidth="1280.0" stylesheets="@../styles/Home.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pilifitproject.controller.FavoritesController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1580.0" stylesheets="@../styles/Home.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pilifitproject.controller.FavoritesController">
     <top>
         <AnchorPane BorderPane.alignment="CENTER">
             <children>
@@ -27,63 +25,85 @@
                         <Image url="@../images/background/bg.png" />
                     </image>
                 </ImageView>
-                <GridPane layoutX="40.0" layoutY="17.0" prefHeight="30.0" prefWidth="233.0">
+                <GridPane id="homeabtcontGrid" layoutX="40.0" layoutY="17.0" opacity="0.9" prefHeight="45.0" prefWidth="379.0">
                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="105.5999755859375" minWidth="10.0" prefWidth="87.4666748046875" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="136.5333251953125" minWidth="10.0" prefWidth="100.53335266113282" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="144.39999389648438" minWidth="10.0" prefWidth="142.2666473388672" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="108.0" prefWidth="111.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="109.5" prefWidth="117.5" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="206.33331298828125" minWidth="149.33334350585938" prefWidth="152.5" />
                     </columnConstraints>
                     <rowConstraints>
                         <RowConstraints />
                     </rowConstraints>
                     <children>
-                        <Button fx:id="HomeController" mnemonicParsing="false" onAction="#goHome" prefHeight="26.0" prefWidth="116.0" styleClass="scene-switch" text="HOME" />
-                        <Button mnemonicParsing="false" onAction="#goContact" prefHeight="26.0" prefWidth="90.0" styleClass="scene-switch" text="CONTACT" GridPane.columnIndex="2" />
-                        <Button fx:id="AboutController" mnemonicParsing="false" onAction="#goAbout" prefHeight="26.0" prefWidth="126.0" styleClass="scene-switch" text="ABOUT" GridPane.columnIndex="1" />
+                        <Button fx:id="HomeController" mnemonicParsing="false" onAction="#goHome" prefHeight="26.0" prefWidth="112.0" styleClass="scene-switch" text="HOME" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="BOTTOM" GridPane.vgrow="ALWAYS" />
+                        <Button fx:id="ContactController" mnemonicParsing="false" onAction="#goContact" prefHeight="26.0" prefWidth="188.0" styleClass="scene-switch" text="CONTACT" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="BOTTOM" GridPane.vgrow="ALWAYS" />
+                        <Button fx:id="AboutController" mnemonicParsing="false" onAction="#goAbout" prefHeight="28.0" prefWidth="200.0" styleClass="scene-switch" text="ABOUT" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="BOTTOM" GridPane.vgrow="ALWAYS" />
                     </children>
                 </GridPane>
-                <Button fx:id="closetButton" alignment="CENTER" layoutX="629.0" layoutY="196.0" mnemonicParsing="false" onAction="#goCloset" text="CLOSET">
-                    <font>
-                        <Font name="System Bold" size="20.0" />
-                    </font>
-                    <textFill>
-                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
-                            <stops>
-                                <Stop>
-                                    <color>
-                                        <Color />
-                                    </color>
-                                </Stop>
-                                <Stop offset="1.0">
-                                    <color>
-                                        <Color red="1.0" green="1.0" blue="1.0" />
-                                    </color>
-                                </Stop>
-                            </stops>
-                        </RadialGradient>
-                    </textFill>
-               <styleClass>
-                  <String fx:value="add-item" />
-                  <String fx:value="closet-collections" />
-               </styleClass></Button>
-                <Label layoutX="674.0" layoutY="44.0" prefHeight="73.0" prefWidth="287.0" text="PILIFIT" textFill="WHITE">
-                    <font>
-                        <Font name="MS UI Gothic" size="79.0" />
-                    </font></Label>
-                <Button fx:id="collectionsButton" alignment="CENTER" layoutX="824.0" layoutY="194.0" mnemonicParsing="false" onAction="#goCollection" styleClass="closet-collections" text="COLLECTIONS" textFill="WHITE">
-                    <font>
-                        <Font name="System Bold" size="20.0" />
-                    </font>
-                </Button>
+                <GridPane layoutY="216.0" prefHeight="30.0" prefWidth="1586.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Button ellipsisString="" mnemonicParsing="false" onAction="#goFavorites" prefHeight="34.0" prefWidth="149.0" styleClass="closet-collections" text="FAVORITES" textFill="WHITE" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                            <font>
+                                <Font name="System Bold" size="23.0" />
+                            </font></Button>
+                        <Button fx:id="closetButton" alignment="CENTER" ellipsisString="CLOSET" mnemonicParsing="false" onAction="#goCloset" styleClass="closet-collections" stylesheets="@../styles/Home.css" text="CLOSET" GridPane.columnIndex="3">
+                            <font>
+                                <Font name="System Bold" size="23.0" />
+                            </font>
+                            <textFill>
+                                <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                    <stops>
+                                        <Stop>
+                                            <color>
+                                                <Color />
+                                            </color>
+                                        </Stop>
+                                        <Stop offset="1.0">
+                                            <color>
+                                                <Color red="1.0" green="1.0" blue="1.0" />
+                                            </color>
+                                        </Stop>
+                                    </stops>
+                                </RadialGradient>
+                            </textFill>
+                        </Button>
+                        <Button fx:id="collectionsButton" alignment="CENTER" ellipsisString="COLLECTION" mnemonicParsing="false" onAction="#goCollection" style="-fx-background-color: rgba(0, 0, 0, 0, 0.1);" styleClass="closet-collections" text="COLLECTION" textFill="WHITE" GridPane.columnIndex="5">
+                            <font>
+                                <Font name="System Bold" size="23.0" />
+                            </font>
+                        </Button>
+                  <Line endX="100.0" startX="-100.0" stroke="WHITE" strokeLineJoin="ROUND" strokeMiterLimit="5.0" strokeWidth="2.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                    </children>
+                </GridPane>
+                <ImageView fitHeight="110.0" fitWidth="390.0" layoutX="603.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/others/PILIFITS-PRJTITLE.png" />
+                    </image>
+                </ImageView>
             </children>
         </AnchorPane>
     </top>
     <right>
         <AnchorPane prefHeight="442.0" prefWidth="1580.0" BorderPane.alignment="CENTER">
             <children>
-                <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="352.0" layoutY="75.0" prefHeight="480.0" prefWidth="854.0">
+                <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="362.0" layoutY="21.0" prefHeight="480.0" prefWidth="854.0">
                     <content>
-                        <GridPane id="upload/itemsgridpane" fx:id="favItemsDisplay" gridLinesVisible="true" hgap="15.0" prefHeight="462.0" prefWidth="851.0" vgap="10.0">
+                        <GridPane id="upload/itemsgridpane" fx:id="favItemsDisplay" gridLinesVisible="true" hgap="15.0" prefHeight="480.0" prefWidth="849.0" vgap="10.0">
                             <columnConstraints>
                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="124.0" minWidth="124.0" percentWidth="0.0" prefWidth="124.0" />
                                 <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="124.0" minWidth="124.0" percentWidth="0.0" prefWidth="124.0" />
@@ -98,34 +118,11 @@
                                 <RowConstraints maxHeight="150.0" minHeight="150.0" percentHeight="0.0" prefHeight="150.0" vgrow="SOMETIMES" />
                             </rowConstraints>
                             <padding>
-                                <Insets bottom="5.0" left="10.0" right="20.0" top="5.0" />
+                                <Insets bottom="5.0" left="15.0" right="20.0" top="5.0" />
                             </padding>
                         </GridPane>
                     </content>
                 </ScrollPane>
-                <GridPane id="filtergridpane" layoutX="-6.0" layoutY="10.0" prefHeight="30.0" prefWidth="1587.0">
-                    <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                    <children>
-                        <MenuButton fx:id="styleDropdown" accessibleRole="COMBO_BOX" alignment="CENTER" mnemonicParsing="false" prefHeight="34.0" prefWidth="150.0" styleClass="drop-select" text="STYLE" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-                        <MenuButton fx:id="categoryDropdown" accessibleRole="COMBO_BOX" alignment="CENTER" mnemonicParsing="false" prefHeight="34.0" prefWidth="150.0" styleClass="drop-select" text="CATEGORY" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-                        <MenuButton fx:id="colorDropdown" accessibleRole="COMBO_BOX" alignment="CENTER" mnemonicParsing="false" prefHeight="34.0" prefWidth="150.0" styleClass="drop-select" text="COLOR" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-                        <Button mnemonicParsing="false" onAction="#goFavorites" prefHeight="34.0" prefWidth="149.0" styleClass="drop-select" text="FAVORITES" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-                    </children>
-                </GridPane>
             </children>
         </AnchorPane>
     </right>

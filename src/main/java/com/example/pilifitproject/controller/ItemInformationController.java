@@ -15,86 +15,90 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
-public class ItemInformationController {
-        @FXML private ImageView ItemInformationImg;
-        @FXML private TextField nameInput;
-        @FXML private ComboBox<String> categoryDropdown;
-        @FXML private ComboBox<String> styleDropdown;
-        @FXML private ComboBox<String> colorDropdown;
-        @FXML private TextField sizeInput;
-        @FXML private Button SaveItemInfoBtn;
-        @FXML private Button deleteBtn;
-        @FXML private Button favoriteBtn;
+public class ItemInformationController extends BaseController {
 
-        @FXML private Button closeButton;
+    @FXML
+    private ImageView ItemInformationImg;
+    @FXML
+    private TextField nameInput;
+    @FXML
+    private ComboBox<String> categoryDropdown;
+    @FXML
+    private ComboBox<String> styleDropdown;
+    @FXML
+    private ComboBox<String> colorDropdown;
+    @FXML
+    private TextField sizeInput;
+    @FXML
+    private Button SaveItemInfoBtn;
+    @FXML
+    private Button deleteBtn;
+    @FXML
+    private Button favoriteBtn;
 
-        private ClothingItem clothingItem;
-        private RefreshableController homeController;
-        private Stage dialogStage;
+    private ClothingItem clothingItem;
+    private RefreshableController homeController;
+    private Stage dialogStage;
 
-        @FXML
-        public void initialize() {
-            categoryDropdown.getItems().addAll("Top", "Bottom", "Shoes");
-            colorDropdown.getItems().addAll("Red", "Orange", "Yellow", "Green", "Blue",
-                    "Violet", "White", "Black", "Others");
-            styleDropdown.getItems().addAll("Formal", "Casual", "Semi-Formal", "Others");
+    @FXML
+    public void initialize() {
+        categoryDropdown.getItems().addAll("Top", "Bottom", "Shoes");
+        colorDropdown.getItems().addAll("Red", "Orange", "Yellow", "Green", "Blue",
+                "Violet", "White", "Black", "Others");
+        styleDropdown.getItems().addAll("Formal", "Casual", "Semi-Formal", "Others");
 
-            // Debug: Test CategoryMapper
-            System.out.println("CategoryMapper Test:");
-            System.out.println("Top → " + CategoryMapper.getCategoryId("Top")); // Should be 1
-            System.out.println("1 → " + CategoryMapper.getCategoryName(1));     // Should be "Top"
+        // Debug: Test CategoryMapper
+        System.out.println("CategoryMapper Test:");
+        System.out.println("Top → " + CategoryMapper.getCategoryId("Top")); // Should be 1
+        System.out.println("1 → " + CategoryMapper.getCategoryName(1));     // Should be "Top"
 
-            SaveItemInfoBtn.setOnAction(event -> handleSave());
-            deleteBtn.setOnAction(event -> handleDeleteButton());
-            favoriteBtn.setOnAction(event -> handleAddToFavorites());
+        SaveItemInfoBtn.setOnAction(event -> handleSave());
+        deleteBtn.setOnAction(event -> handleDeleteButton());
+        favoriteBtn.setOnAction(event -> handleAddToFavorites());
+    }
 
-        }
-        @FXML
-        private void handleAddToFavorites() {
-            if (clothingItem == null) return;
+    @FXML
+    private void handleAddToFavorites() {
+        if (clothingItem == null) return;
 
-            try {
-                // Toggle favorite status
-                int newFavoriteStatus = clothingItem.getIsFavorite() == Constants.FAVORITE
-                        ? Constants.NOT_FAVORITE
-                        : Constants.FAVORITE;
+        try {
+            // Toggle favorite status
+            int newFavoriteStatus = clothingItem.getIsFavorite() == Constants.FAVORITE
+                    ? Constants.NOT_FAVORITE
+                    : Constants.FAVORITE;
 
-                // Update in database
-                new ClothingItemDAO().addClothingItemToFavorite(clothingItem.getId(), newFavoriteStatus);
+            // Update in database
+            new ClothingItemDAO().addClothingItemToFavorite(clothingItem.getId(), newFavoriteStatus);
 
-                // Update local model
-                clothingItem.setIsFavorite(newFavoriteStatus);
+            // Update local model
+            clothingItem.setIsFavorite(newFavoriteStatus);
 
-                // Update button appearance
-                updateFavoriteButton();
+            // Update button appearance
+            updateFavoriteButton();
 
-                // Refresh parent view if needed
-                if (homeController != null) {
-                    homeController.refreshClothingItems();
-                }
-
-            } catch (SQLException e) {
-                e.printStackTrace();
-                showAlert("Database Error", "Failed to update favorite status");
+            // Refresh parent view if needed
+            if (homeController != null) {
+                homeController.refreshClothingItems();
             }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            showAlert("Database Error", "Failed to update favorite status");
         }
+    }
 
     private void updateFavoriteButton() {
         if (clothingItem.getIsFavorite() == Constants.FAVORITE) {
             favoriteBtn.setText("❤️"); // Filled heart
             favoriteBtn.setStyle("-fx-text-fill: red;");
         } else {
-            favoriteBtn.setText("❤"); // Empty heart
+            favoriteBtn.setText("❤"); // Changes -Empty heart to Filled heart
             favoriteBtn.setStyle("-fx-text-fill: gray;");
         }
     }
-
 
     public void setClothingItem(ClothingItem item) {
 
@@ -109,10 +113,6 @@ public class ItemInformationController {
 
     public void setHomeController(RefreshableController controller) {
         this.homeController = controller;
-    }
-
-    public void setDialogStage(Stage stage) {
-        this.dialogStage = stage;
     }
 
     private void loadItemData() {
@@ -224,44 +224,10 @@ public class ItemInformationController {
         }
     }
 
-
-    private void closeDialog() {
-//        if (dialogStage != null) {
-//            dialogStage.close();
-//        }
+    @Override
+    public void closeDialog() {
         Stage stage = (Stage) nameInput.getScene().getWindow();
         stage.close();
     }
-
-    private void showAlert(String title, String message) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
-    }
-
-    private final List<CheckMenuItem> allFilterItems = new ArrayList<>();
-
-    private void handleExclusiveSelection(CheckMenuItem selectedItem) {
-        for (CheckMenuItem item : allFilterItems) {
-            if (item != selectedItem) {
-                item.setSelected(false);
-            }
-        }
-
-        // Optional: Print selected item for testing
-        System.out.println("Selected: " + selectedItem.getText());
-    }
-    public Button getCloseButton() {
-        return closeButton;
-    }
-
-    public void setCloseButton(Button closeButton) {
-        Button CloseButton = closeButton;
-    }
-
-
-    // In your ClosetController or similar
 
 }

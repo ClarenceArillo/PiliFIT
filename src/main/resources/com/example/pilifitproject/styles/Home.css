@@ -7,7 +7,8 @@
     -fx-padding: 5 10px;
     -fx-pref-height: 40px;
     -fx-cursor: hand;
-    -fx-font-size:15px;
+    -fx-font-size: 15px;
+    -fx-font-family: "Arial";
     -fx-font-weight: bold;
     -fx-text-fill: black;
 }
@@ -20,6 +21,8 @@
     -fx-font-weight: bold;
     -fx-text-fill:white;
     -fx-cursor: hand;
+    -fx-font-family: "Calibri";
+    -fx-font-size: 27px;
 }
 
 .scene-switch:hover {
@@ -33,53 +36,68 @@
     -fx-background-color: grey;
 }
 .drop-select {
-    -fx-background-color: transparent;
-    -fx-border-color: black;
+    -fx-background-color: radial-gradient(
+            focus-angle 0deg, focus-distance 0%, center 50% 50%, radius 100%,
+            rgba(255, 255, 255, 0.15) 5%,   /* small soft white center */
+            rgba(0, 0, 0, 1.0) 100%         /* solid black edges */
+        );
+
+    -fx-border-color: transparent;
     -fx-border-radius: 15;
     -fx-border-width: 2px;
     -fx-background-radius: 15;
     -fx-padding: 5 10;
     -fx-font-size: 11px;
     -fx-cursor: hand;
+    -fx-text-fill: white;
     -fx-box-shadow: 5px 10px;
+    -fx-font-family: "Verdana";
+    -fx-font-style: italic;
 }
 
 .drop-select:hover {
-    -fx-background-color: lightgray;
+    -fx-background-color: light grey;
 
 }
 
-.black-slider {
-    -fx-padding: 0.5em;
+.transparent-scrollpane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
 }
 
-.black-slider .track {
-    -fx-background-color: linear-gradient(to right, black, black);
-    -fx-background-insets: 0;
-    -fx-background-radius: 2em;
-    -fx-pref-height: 3px;
+.elegant-scrollpane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
 }
 
-.black-slider .thumb {
-    -fx-background-color: black;
-    -fx-background-radius: 50%;
+.elegant-scrollpane .viewport {
+    -fx-background-color: transparent;
+}
+
+/* ScrollBar Track (shadow-like bar) */
+.scroll-bar:vertical {
     -fx-pref-width: 12px;
-    -fx-pref-height: 12px;
-    -fx-effect: dropshadow(gaussian, #ffffff55, 4, 0.5, 0, 0);
+    -fx-background-color: rgba(0, 0, 0, 0.1); /* soft black shadow */
+}
+
+.scroll-bar:vertical .track {
+    -fx-background-color: rgba(0, 0, 0, 0.12); /* slightly visible background */
+    -fx-background-radius: 4px;
+}
+
+/* Slider Thumb (short and rounded) */
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #555; /* subtle gray */
+    -fx-background-radius: 6px;
+    -fx-min-height: 30px; /* half size appearance */
+    -fx-max-height: 50px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 4, 0.2, 0, 0);
     -fx-cursor: hand;
-    -fx-scale-x: 1;
-    -fx-scale-y: 1;
-    -fx-transition: all 0.2s ease-in-out;
 }
 
-.black-slider .thumb:hover {
-    -fx-scale-x: 1.3;
-    -fx-scale-y: 1.3;
-}
-
-.black-slider .axis {
-    -fx-tick-label-fill: white;
-    -fx-tick-mark-fill: white;
+/* On hover: more visible */
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #666;
 }
 
 .add-item {
@@ -107,6 +125,9 @@
     -fx-background-radius: 15px;
     -fx-pref-width: 165px;
     -fx-pref-height: 60px;
+    -fx-font-family: "Georgia";
+    -fx-font-weight: bold;
+    -fx-font-size: 21px;
 }
 
 .closet-collections:hover {
@@ -158,7 +179,7 @@
     -fx-border-width: 2px;
     -fx-text-fill: black;
     -fx-font-size: 10px;
-    //-fx-font-family: "Berlin Sans FB Bold";
+    -fx-font-family: "Arial";
     -fx-background-radius: 20;
     -fx-border-radius: 20;
     -fx-padding: 5 20;

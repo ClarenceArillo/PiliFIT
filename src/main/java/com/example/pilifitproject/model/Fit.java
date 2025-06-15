@@ -1,16 +1,13 @@
 package com.example.pilifitproject.model;
 
-public class Fit {
-    private int id;
-    private String name;
+public class Fit extends Entity{
     private int topId;
     private int bottomId;
     private int shoesId;
     private int is_Favorite;
 
     public Fit (int id, String name, int topId, int bottomId, int shoesId, int is_Favorite){
-        this.id = id;
-        this.name = name;
+        super(id, name);
         this.topId = topId;
         this.bottomId = bottomId;
         this.shoesId = shoesId;
