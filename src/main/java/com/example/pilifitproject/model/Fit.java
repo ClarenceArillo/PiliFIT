@@ -28,9 +28,5 @@ public class Fit extends Entity{
     public void setShoes(int shoesId){this.shoesId = shoesId;}
     public void setIs_Favorite(int is_Favorite){this.is_Favorite = is_Favorite;}
 
-
-
-
-
 }
 

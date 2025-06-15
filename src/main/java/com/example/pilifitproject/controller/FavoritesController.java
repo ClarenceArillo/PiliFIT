@@ -26,13 +26,6 @@ public class FavoritesController extends BaseController implements RefreshableCo
 
     private final List<CheckMenuItem> allFilterItems = new ArrayList<>();
 
-    @FXML
-    private MenuButton categoryDropdown;     // CATEGORY
-    @FXML
-    private MenuButton styleDropdown;    // STYLE
-    @FXML
-    private MenuButton colorDropdown;   // COLOR
-
     @FXML private GridPane favItemsDisplay;
 
 

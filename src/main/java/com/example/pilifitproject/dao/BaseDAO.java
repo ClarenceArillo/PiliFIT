@@ -13,14 +13,4 @@ public abstract class BaseDAO<T> {
         return DBConnection.getConnection();
     }
 
-    // Shared helper method
-    protected void closeResources(AutoCloseable... resources) {
-        for (AutoCloseable res : resources) {
-            try {
-                if (res != null) res.close();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }
 }
