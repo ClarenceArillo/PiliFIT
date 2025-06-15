@@ -10,7 +10,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -20,7 +19,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class FitDialogController {
+public class FitDialogController extends BaseController{
     @FXML
     public ImageView topImage;
     @FXML public ImageView bottomImage;
@@ -76,7 +75,6 @@ public class FitDialogController {
 
         // Set text and UI properties
         fitNameField.setText(fit.getName());
-        //fitNameField.setEditable(false);
 
         // Position delete button
         deleteButton.setPrefSize(44, 44);
@@ -148,12 +146,4 @@ public class FitDialogController {
         }
     }
 
-
-    private void showAlert(String title, String message) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
-    }
 }

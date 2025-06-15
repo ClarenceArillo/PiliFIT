@@ -1,7 +1,6 @@
 package com.example.pilifitproject.controller;
 
 import com.example.pilifitproject.RefreshableController;
-import com.example.pilifitproject.SceneSwitcher;
 import com.example.pilifitproject.dao.ClothingItemDAO;
 import com.example.pilifitproject.model.ClothingItem;
 import com.example.pilifitproject.utils.Constants;
@@ -9,7 +8,6 @@ import com.example.pilifitproject.utils.ImageUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Alert;
 import javafx.scene.control.CheckMenuItem;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
@@ -24,7 +22,7 @@ import java.util.List;
 
 import java.io.IOException;
 
-public class FavoritesController implements RefreshableController {
+public class FavoritesController extends BaseController implements RefreshableController {
 
     private final List<CheckMenuItem> allFilterItems = new ArrayList<>();
 
@@ -47,31 +45,31 @@ public class FavoritesController implements RefreshableController {
 
     @FXML
     private void goHome(ActionEvent event) throws IOException {
-        SceneSwitcher.switchTo(event, "Home.fxml");
+        switchScene(event, "Home.fxml");
     }
 
     @FXML
     private void goAbout(ActionEvent event) throws IOException {
-        SceneSwitcher.switchTo(event, "AboutUs.fxml");
+        switchScene(event, "AboutUs.fxml");
     }
 
     @FXML
     private void goContact(ActionEvent event) throws IOException {
-        SceneSwitcher.switchTo(event, "ContactUs.fxml");
+        switchScene(event, "ContactUs.fxml");
     }
 
     @FXML
     private void goCollection(ActionEvent event) throws IOException {
-        SceneSwitcher.switchTo(event, "Collection.fxml");
+        switchScene(event, "Collection.fxml");
     }
 
     @FXML
     private void goCloset(ActionEvent event) throws IOException {
-        SceneSwitcher.switchTo(event, "Home.fxml");
+        switchScene(event, "Home.fxml");
     }
     @FXML
     private void goFavorites(ActionEvent event) throws IOException {
-        SceneSwitcher.switchTo(event, "Favorites.fxml");
+        switchScene(event, "Favorites.fxml");
     }
 
     @FXML
@@ -239,13 +237,6 @@ public class FavoritesController implements RefreshableController {
                 item.setSelected(false);
             }
         }System.out.println("Selected: " + selectedItem.getText());
-    }
-    private void showAlert(String title, String message) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
     }
 
 }

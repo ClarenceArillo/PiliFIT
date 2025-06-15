@@ -1,7 +1,6 @@
 package com.example.pilifitproject.controller;
 
 import com.example.pilifitproject.RefreshableController;
-import com.example.pilifitproject.SceneSwitcher;
 import com.example.pilifitproject.dao.ClothingItemDAO;
 import com.example.pilifitproject.dao.FitDAO;
 import com.example.pilifitproject.model.Fit;
@@ -16,7 +15,7 @@ import javafx.scene.layout.RowConstraints;
 import java.io.IOException;
 import java.util.List;
 
-public class CollectionController implements RefreshableController {
+public class CollectionController extends BaseController implements RefreshableController {
     @FXML private GridPane fitItemGrid;
     private FitDAO fitDAO = new FitDAO();
     private ClothingItemDAO clothingItemDAO = new ClothingItemDAO();
@@ -28,31 +27,31 @@ public class CollectionController implements RefreshableController {
 
     @FXML
     private void goHome(ActionEvent event) throws IOException {
-        SceneSwitcher.switchTo(event, "Home.fxml");
+        switchScene(event, "Home.fxml");
     }
 
     @FXML
     private void goAbout(ActionEvent event) throws IOException {
-        SceneSwitcher.switchTo(event, "AboutUs.fxml");
+        switchScene(event, "AboutUs.fxml");
     }
 
     @FXML
     private void goContact(ActionEvent event) throws IOException {
-        SceneSwitcher.switchTo(event, "ContactUs.fxml");
+        switchScene(event, "ContactUs.fxml");
     }
 
     @FXML
     private void goFavorites(ActionEvent event) throws IOException {
-        SceneSwitcher.switchTo(event, "Favorites.fxml");
+        switchScene(event, "Favorites.fxml");
     }
 
     @FXML
     private void goCollection(ActionEvent event) throws IOException {
-        SceneSwitcher.switchTo(event, "Collection.fxml");
+        switchScene(event, "Collection.fxml");
     }
     @FXML
     private void goCloset(ActionEvent event) throws IOException {
-        SceneSwitcher.switchTo(event, "Home.fxml");
+        switchScene(event, "Home.fxml");
     }
 
     @Override
