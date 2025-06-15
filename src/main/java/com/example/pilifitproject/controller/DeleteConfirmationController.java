@@ -49,10 +49,10 @@ public class DeleteConfirmationController extends BaseController {
         try {
             if (isClothingItem) {
                 // Existing clothing item deletion
-                new ClothingItemDAO().deleteClothingItem(itemId);
+                new ClothingItemDAO().delete(itemId);
             } else {
                 // New fit deletion
-                new FitDAO().deleteFit(itemId);
+                new FitDAO().delete(itemId);
             }
             isDeleted = true;
 

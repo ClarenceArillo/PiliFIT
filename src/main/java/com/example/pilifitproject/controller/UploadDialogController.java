@@ -80,7 +80,7 @@ public class UploadDialogController {
             );
 
             System.out.println("Created new ClothingItem: " + newItem);
-            new ClothingItemDAO().addClothingItem(newItem);
+            new ClothingItemDAO().add(newItem);
 
             if (homeController != null) {
                 homeController.refreshClothingItems();
