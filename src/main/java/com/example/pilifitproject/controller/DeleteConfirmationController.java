@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 import java.sql.SQLException;
 
-public class DeleteConfirmationController {
+public class DeleteConfirmationController extends BaseController {
     @FXML private Button DeleteItemConfirmation;
     @FXML private Button CancelDeleteItemConfirmation;
 
@@ -17,7 +17,6 @@ public class DeleteConfirmationController {
     private RefreshableController homeController;
     private boolean isDeleted = false;
     private boolean isClothingItem = true;
-    private Stage dialogStage;
     private Runnable onCancelCallback;  // New callback function
 
     public void setItemId(int id) {
@@ -30,10 +29,6 @@ public class DeleteConfirmationController {
 
     public boolean isDeleted() {
         return isDeleted;
-    }
-
-    public void setDialogStage(Stage stage) {
-        this.dialogStage = stage;
     }
 
     public void setOnCancelCallback(Runnable callback) {
@@ -54,24 +49,19 @@ public class DeleteConfirmationController {
         try {
             if (isClothingItem) {
                 // Existing clothing item deletion
-                new ClothingItemDAO().deleteClothingItem(itemId);
+                new ClothingItemDAO().delete(itemId);
             } else {
                 // New fit deletion
-                new FitDAO().deleteFit(itemId);
+                new FitDAO().delete(itemId);
             }
             isDeleted = true;
 
-            // First close the confirmation dialog
-            if (dialogStage != null) {
-                dialogStage.close();
-            } else {
-                ((Stage) DeleteItemConfirmation.getScene().getWindow()).close();
-            }
+            //method for calling closing dialog
+            closeDialog();
 
             // Then trigger refresh
             if (homeController != null) {
-                homeController.refreshClothingItems();
-                homeController.refreshFavorites();
+                notifyRefresh(homeController);
             }
 
 
@@ -85,8 +75,27 @@ public class DeleteConfirmationController {
         }
     }
 
+    public void notifyRefresh(RefreshableController controller) {
+        // Can call any implementation
+        controller.refreshAll(); // Polymorphic call
+        // OR still call individual methods:
+        controller.refreshClothingItems();
+    }
+
+    @Override
+    public void closeDialog() {
+        // First close the confirmation dialog
+        if (dialogStage != null) {
+            dialogStage.close();
+        } else {
+            ((Stage) DeleteItemConfirmation.getScene().getWindow()).close();
+        }
+        System.out.println("Close Tab");
+    }
+
     private void cancelDelete() {
         // Just close the dialog without deleting
         ((Stage) CancelDeleteItemConfirmation.getScene().getWindow()).close();
+
     }
 }

@@ -21,7 +21,7 @@ public class FitService {
                     preview.getShoes().getId(),
                     0 // not favorite by default
             );
-            fitDAO.addFit(fit);
+            fitDAO.add(fit);
         }
     }
 

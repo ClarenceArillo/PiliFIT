@@ -1,26 +1,25 @@
 package com.example.pilifitproject.controller;
 
-import com.example.pilifitproject.SceneSwitcher;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 import java.io.IOException;
 
-public class AboutController {
+public class AboutController extends BaseController{
 
     @FXML
     private void goHome(ActionEvent event) throws IOException {
-        SceneSwitcher.switchTo(event, "Home.fxml");
+        switchScene(event, "Home.fxml");
     }
 
     @FXML
     private void goAbout(ActionEvent event) throws IOException {
-        SceneSwitcher.switchTo(event, "AboutUs.fxml");
+        switchScene(event, "AboutUs.fxml");
     }
 
     @FXML
     private void goContact(ActionEvent event) throws IOException {
-        SceneSwitcher.switchTo(event, "ContactUs.fxml");
+        switchScene(event, "ContactUs.fxml");
         System.out.println("Contact Page");
     }
 }
