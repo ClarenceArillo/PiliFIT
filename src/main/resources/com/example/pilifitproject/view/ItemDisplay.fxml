@@ -20,8 +20,8 @@
                </children></Pane>
          </children>
       </Pane>
-      <TextField fx:id="ClothingItemNameDisplay" layoutX="7.0" layoutY="115.0" prefHeight="21.0" prefWidth="74.0" promptText="Item Name" styleClass="name-button" stylesheets="@../styles/ItemDisplay.css" />
-      <Button fx:id="favoriteBtn" ellipsisString="❤" layoutX="83.0" layoutY="113.0" onAction="#handleAddToFavorites" prefHeight="27.0" prefWidth="27.0" styleClass="view-button" stylesheets="@../styles/ItemDisplay.css" text="❤" />
+      <Button fx:id="favoriteBtn" ellipsisString="❤" layoutX="85.0" layoutY="115.0" onAction="#handleAddToFavorites" prefHeight="27.0" prefWidth="27.0" styleClass="view-button" stylesheets="@../styles/ItemDisplay.css" text="❤" />
+      <TextField fx:id="ClothingItemNameDisplay" layoutX="9.0" layoutY="118.0" prefHeight="21.0" prefWidth="76.0" promptText="Item Name" styleClass="name-button" stylesheets="@../styles/ItemDisplay.css" />
    </children>
    <effect>
       <DropShadow height="11.6" offsetX="5.0" offsetY="4.0" radius="5.3075" width="11.63">

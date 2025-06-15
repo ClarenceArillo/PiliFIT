@@ -16,7 +16,7 @@
     -fx-background-color: linear-gradient(from 5% 0% to 100% 100%, white, grey);
 }
 
-.scene-switch {
+.scene-switch { //(HOME, ABOUT, CONTACTS)
     -fx-background-color: transparent;
     -fx-font-weight: bold;
     -fx-text-fill:white;
@@ -35,7 +35,7 @@
     -fx-stroke-type: inside;
     -fx-background-color: grey;
 }
-.drop-select {
+.drop-select { //(FILTERS)
     -fx-background-color: radial-gradient(
             focus-angle 0deg, focus-distance 0%, center 50% 50%, radius 100%,
             rgba(255, 255, 255, 0.15) 5%,   /* small soft white center */
@@ -60,7 +60,7 @@
 
 }
 
-.transparent-scrollpane {
+.transparent-scrollpane { //(ITEM GRID/SCROLL BAR AND SLIDER)
     -fx-background-color: transparent;
     -fx-border-color: transparent;
 }
@@ -116,7 +116,7 @@
     -fx-text-fill: #ffffff55;
 }
 
-.closet-collections {
+.closet-collections { //(CLOSET, COLLECTIONS, FAVORITES)
     -fx-background-color:  rgba(0, 0, 0, 0, 0.1)    ;
     -fx-text-fill: white;
     -fx-cursor: hand;
@@ -173,7 +173,7 @@
     -fx-opacity: 0.70;
 }
 
-.save-button {
+.save-button { (CONFIRMATIONS)
     -fx-background-color: transparent;
     -fx-border-color: black;
     -fx-border-width: 2px;

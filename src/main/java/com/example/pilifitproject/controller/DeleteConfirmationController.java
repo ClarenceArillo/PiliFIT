@@ -12,6 +12,7 @@ import java.sql.SQLException;
 public class DeleteConfirmationController {
     @FXML private Button DeleteItemConfirmation;
     @FXML private Button CancelDeleteItemConfirmation;
+    @FXML private Button CloseButton;
 
     private int itemId;
     private RefreshableController homeController;
@@ -88,5 +89,18 @@ public class DeleteConfirmationController {
     private void cancelDelete() {
         // Just close the dialog without deleting
         ((Stage) CancelDeleteItemConfirmation.getScene().getWindow()).close();
+    }
+    @FXML
+    private void handleCancel() {
+        closeDialog();
+    }
+
+    public void closeDialog() {
+        if (dialogStage != null) {
+            dialogStage.close();
+        } else {
+            ((Stage) CloseButton.getScene().getWindow()).close();
+        }
+        System.out.println("Close Tab");
     }
 }

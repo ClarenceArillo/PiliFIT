@@ -20,6 +20,8 @@
     -fx-background-color: transparent;
     -fx-font-size: 14px;
     -fx-cursor: hand;
+    -fx-font-family: "Times New Roman";
+    -fx-font-style: bold;
 }
 .details-button {
      -fx-background-color: transparent;

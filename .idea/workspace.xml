@@ -4,21 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="635ec7d8-d374-4bf4-977d-6b60cb30ac35" name="Changes" comment="home layout placements updated, fitdialog - deleteimagewerking">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/images/icons/deleteButtonImage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/images/icons/generateicon1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/images/icons/generateicon2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/images/others/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/images/others/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/images/others/PILIFITS-PRJTITLE.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="635ec7d8-d374-4bf4-977d-6b60cb30ac35" name="Changes" comment="finalizing home,fave,collect">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/images/others/GUIDE SS1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/images/others/GUIDE SS2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/images/others/GUIDE SS3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/images/others/GUIDE SS4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/images/others/blckofficiallogo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/pilifit.db" beforeDir="false" afterPath="$PROJECT_DIR$/database/pilifit.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/DeleteConfirmationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/DeleteConfirmationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/styles/Closet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/styles/Closet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/styles/Confirmation.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/styles/Confirmation.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/styles/FitDialog.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/styles/FitDialog.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/styles/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/styles/Home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/styles/ItemDisplay.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/styles/ItemDisplay.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/styles/UploadDialog.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/styles/UploadDialog.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/Collection.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/Collection.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/DeleteConfirmation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/DeleteConfirmation.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/Favorites.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/Favorites.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/FitDialog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/FitDialog.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/Home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/ItemDisplay.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/ItemDisplay.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/ItemInformation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/ItemInformation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/SaveConfirmation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/SaveConfirmation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/UploadDialog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/UploadDialog.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,9 +110,9 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\KAP JUN LAKAY\IdeaProjects\ProjectPiliFit\src\main\resources\com\example\pilifitproject\images\others" />
       <recent name="C:\Users\KAP JUN LAKAY\IdeaProjects\ProjectPiliFit\src\main\resources\com\example\pilifitproject\images\icons" />
       <recent name="C:\Users\KAP JUN LAKAY\IdeaProjects\ProjectPiliFit\src\main\resources\com\example\pilifitproject\fonts" />
-      <recent name="C:\Users\KAP JUN LAKAY\IdeaProjects\ProjectPiliFit\src\main\resources\com\example\pilifitproject\images\others" />
       <recent name="C:\Users\CLARENCE\IdeaProjects\OOP Class\PiliFItProjectJDK24\src\main\resources\com\example\pilifitproject\images" />
       <recent name="C:\Users\cyy\IdeaProjects\kkkk - Copy\src\main\resources\com\example\pilifitproject\images\background" />
     </key>
@@ -349,7 +358,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749897702884</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="finalizing home,fave,collect">
+      <option name="closed" value="true" />
+      <created>1749979909005</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1749979909006</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -376,7 +393,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="closet and about in HomeCloUpDia branch" />
     <MESSAGE value="merge iml changes" />
     <MESSAGE value="Clean CRUD testing on Main" />
     <MESSAGE value="deleted txt." />
@@ -401,6 +417,7 @@
     <MESSAGE value="fixed delete resource path" />
     <MESSAGE value="Change Fit Name Feature" />
     <MESSAGE value="home layout placements updated, fitdialog - deleteimagewerking" />
-    <option name="LAST_COMMIT_MESSAGE" value="home layout placements updated, fitdialog - deleteimagewerking" />
+    <MESSAGE value="finalizing home,fave,collect" />
+    <option name="LAST_COMMIT_MESSAGE" value="finalizing home,fave,collect" />
   </component>
 </project>
