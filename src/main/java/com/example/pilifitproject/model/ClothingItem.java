@@ -2,9 +2,7 @@ package com.example.pilifitproject.model;
 
 import java.util.Objects;
 
-public class ClothingItem {
-    private int id;
-    private String name;
+public class ClothingItem extends Entity{
     private byte[] imageData;
     private int categoryId;
     private int colorId;
@@ -13,8 +11,7 @@ public class ClothingItem {
     private int isFavorite;
 
     public ClothingItem(int id, String name, byte[] imageData, int categoryId, int colorId, int styleId, String size, int isFavorite){
-        this.id = id;
-        this.name = name;
+        super(id, name);
         this.imageData = imageData;
         this.categoryId = categoryId;
         this.colorId = colorId;

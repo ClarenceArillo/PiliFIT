@@ -90,11 +90,8 @@ public class ClothingItemDAO {
             pstmt.setInt(1, favoriteStatus);
             pstmt.setInt(2,itemID);
             pstmt.executeUpdate();
-
         }
-
     }
-
 
     //this method returns category id
     public ClothingItem getClothingItemById(int id) throws SQLException {
