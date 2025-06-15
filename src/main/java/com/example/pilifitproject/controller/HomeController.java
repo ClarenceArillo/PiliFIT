@@ -184,7 +184,6 @@ public class HomeController extends BaseController implements RefreshableControl
 
     @Override
     public void refreshFavorites() {
-        refreshFavorites();
         // Can be empty if not needed
     }
 
