@@ -25,10 +25,12 @@
 
 .name-button {
     -fx-background-color: transparent;
-    -fx-font-size: 10px;
+    -fx-font-size: 10.5px;
     -fx-cursor: hand;
-
+    -fx-font-family: "Times New Roman";
+    -fx-font-style: bold;
 }
+
 .details-button {
      -fx-background-color: transparent;
      -fx-font-size: 13px;
