@@ -175,6 +175,7 @@
 
 .save-button {
     -fx-background-color: transparent;
+    -fx-font-weight: bold;
     -fx-border-color: black;
     -fx-border-width: 2px;
     -fx-text-fill: black;

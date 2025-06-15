@@ -72,9 +72,6 @@ public class FavoritesController extends BaseController implements RefreshableCo
 
     @FXML
     public void initialize() {
-        setupCategoryDropdown();
-        setupStyleDropdown();
-        setupColorDropdown();
         loadFavoriteItems();
     }
 
@@ -155,67 +152,11 @@ public class FavoritesController extends BaseController implements RefreshableCo
     }
     @Override
     public void refreshFavorites() {
-        loadFavoriteItems();
     }
 
     @Override
     public void refreshClothingItems() {
         // Can be empty if not needed
-    }
-
-
-    private void setupCategoryDropdown() {
-        CheckMenuItem top = new CheckMenuItem("Top");
-        CheckMenuItem bottom = new CheckMenuItem("Bottom");
-        CheckMenuItem shoes = new CheckMenuItem("Shoes");
-
-        categoryDropdown.getItems().addAll(top, bottom, shoes );
-        allFilterItems.addAll(List.of(top, bottom, shoes));
-
-        top.setOnAction(e -> handleExclusiveSelection(top));
-        bottom.setOnAction(e -> handleExclusiveSelection(bottom));
-        shoes.setOnAction(e -> handleExclusiveSelection(shoes));;
-    }
-
-    private void setupStyleDropdown() {
-        CheckMenuItem formal = new CheckMenuItem("Formal");
-        CheckMenuItem casual = new CheckMenuItem("Casual");
-        CheckMenuItem semi = new CheckMenuItem("Semi-Formal");
-        CheckMenuItem others = new CheckMenuItem("Others");
-
-
-        styleDropdown.getItems().addAll(formal, casual, semi, others);
-        allFilterItems.addAll(List.of(formal, casual, semi, others));
-
-        formal.setOnAction(e -> handleExclusiveSelection(formal));
-        casual.setOnAction(e -> handleExclusiveSelection(casual));
-        semi.setOnAction(e -> handleExclusiveSelection(semi));
-        others.setOnAction(e -> handleExclusiveSelection(others));
-    }
-
-    private void setupColorDropdown() {
-        CheckMenuItem red = new CheckMenuItem("Red");
-        CheckMenuItem orange = new CheckMenuItem("Orange");
-        CheckMenuItem yellow = new CheckMenuItem("Yellow");
-        CheckMenuItem green = new CheckMenuItem("Green");
-        CheckMenuItem blue = new CheckMenuItem("Blue");
-        CheckMenuItem violet = new CheckMenuItem("Violet");
-        CheckMenuItem white = new CheckMenuItem("White");
-        CheckMenuItem black = new CheckMenuItem("Black");
-        CheckMenuItem others = new CheckMenuItem("Others");
-
-        colorDropdown.getItems().addAll(red, orange, yellow, green, blue, violet, white, black, others);
-        allFilterItems.addAll(List.of(red, orange, yellow, green, blue, violet, white, black, others));
-
-        red.setOnAction(e -> handleExclusiveSelection(red));
-        orange.setOnAction(e -> handleExclusiveSelection(orange));
-        yellow.setOnAction(e -> handleExclusiveSelection(yellow));
-        green.setOnAction(e -> handleExclusiveSelection(green));
-        blue.setOnAction(e -> handleExclusiveSelection(blue));
-        violet.setOnAction(e -> handleExclusiveSelection(violet));
-        white.setOnAction(e -> handleExclusiveSelection(white));
-        black.setOnAction(e -> handleExclusiveSelection(black));
-        others.setOnAction(e -> handleExclusiveSelection(others));
     }
 
     private void handleExclusiveSelection(CheckMenuItem selectedItem) {

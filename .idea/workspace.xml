@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="635ec7d8-d374-4bf4-977d-6b60cb30ac35" name="Changes" comment="delete bug - fixed">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="635ec7d8-d374-4bf4-977d-6b60cb30ac35" name="Changes" comment="delete button closbtn">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/images/others/yssa.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/pilifit.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/styles/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/styles/Home.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +41,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="working-branch" />
+        <entry key="$PROJECT_DIR$" value="generate-bug" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -53,7 +54,7 @@
   }
 }</component>
   <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="fcffe777-0ad5-4147-b62c-10c7f71ae64f" />
+    <option name="defaultAccountId" value="004dbcd4-a7d4-41be-aef2-95116c987b73" />
   </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
@@ -68,7 +69,6 @@
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2xderoEwte8Sd4oMrx7Qd4P7r8x" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -94,6 +94,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\CLARENCE\IdeaProjects\OOP Class\PiliFItProjectJDK24\src\main\resources\com\example\pilifitproject\images" />
       <recent name="C:\Users\cyy\IdeaProjects\kkkk - Copy\src\main\resources\com\example\pilifitproject\images\background" />
       <recent name="C:\Users\cyy\IdeaProjects\kkkk\src\main\resources\com\example\pilifitproject\images\others" />
     </key>
@@ -315,7 +316,23 @@
       <option name="project" value="LOCAL" />
       <updated>1749814792221</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="fixed delete resource path">
+      <option name="closed" value="true" />
+      <created>1749875247394</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1749875247394</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Change Fit Name Feature">
+      <option name="closed" value="true" />
+      <created>1749884554308</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1749884554308</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -329,7 +346,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="generate-bug" />
+                        <option value="working-branch" />
                       </list>
                     </value>
                   </entry>
@@ -342,8 +359,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="deleted" />
-    <MESSAGE value="try lang" />
     <MESSAGE value="Closet, item information viewer Layout. Upload Dialog, direction info Layout" />
     <MESSAGE value="closet and about in HomeCloUpDia branch" />
     <MESSAGE value="merge iml changes" />
@@ -367,6 +382,8 @@
     <MESSAGE value="ewan dito" />
     <MESSAGE value="collection fit working" />
     <MESSAGE value="delete working - bug appeared" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete working - bug appeared" />
+    <MESSAGE value="fixed delete resource path" />
+    <MESSAGE value="Change Fit Name Feature" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change Fit Name Feature" />
   </component>
 </project>
