@@ -61,8 +61,7 @@ public class DeleteConfirmationController extends BaseController {
 
             // Then trigger refresh
             if (homeController != null) {
-                homeController.refreshClothingItems();
-                homeController.refreshFavorites();
+                notifyRefresh(homeController);
             }
 
 
@@ -74,6 +73,13 @@ public class DeleteConfirmationController extends BaseController {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public void notifyRefresh(RefreshableController controller) {
+        // Can call any implementation
+        controller.refreshAll(); // Polymorphic call
+        // OR still call individual methods:
+        controller.refreshClothingItems();
     }
 
     @Override

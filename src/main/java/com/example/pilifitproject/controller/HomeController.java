@@ -168,11 +168,18 @@ public class HomeController extends BaseController implements RefreshableControl
     }
 
     @Override
+    public void refreshAll() {
+        // Custom implementation if needed, or omit to use default
+        refreshClothingItems();
+        refreshFavorites();
+        // Any additional Home-specific refreshes
+    }
+
     public void applyFilters(Integer categoryId, Integer colorId, Integer styleId) {
         this.currentCategoryFilter = categoryId;
         this.currentColorFilter = colorId;
         this.currentStyleFilter = styleId;
-        refreshClothingItems();
+        refreshAll();
     }
 
     @Override
@@ -510,10 +517,6 @@ public class HomeController extends BaseController implements RefreshableControl
             }
         }
     }
-
-
-
-
 
     //===GENERATE btn end
 

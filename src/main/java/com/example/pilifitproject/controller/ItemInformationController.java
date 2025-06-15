@@ -18,67 +18,77 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class ItemInformationController {
-        @FXML private ImageView ItemInformationImg;
-        @FXML private TextField nameInput;
-        @FXML private ComboBox<String> categoryDropdown;
-        @FXML private ComboBox<String> styleDropdown;
-        @FXML private ComboBox<String> colorDropdown;
-        @FXML private TextField sizeInput;
-        @FXML private Button SaveItemInfoBtn;
-        @FXML private Button deleteBtn;
-        @FXML private Button favoriteBtn;
+public class ItemInformationController extends BaseController {
 
-        private ClothingItem clothingItem;
-        private RefreshableController homeController;
-        private Stage dialogStage;
+    @FXML
+    private ImageView ItemInformationImg;
+    @FXML
+    private TextField nameInput;
+    @FXML
+    private ComboBox<String> categoryDropdown;
+    @FXML
+    private ComboBox<String> styleDropdown;
+    @FXML
+    private ComboBox<String> colorDropdown;
+    @FXML
+    private TextField sizeInput;
+    @FXML
+    private Button SaveItemInfoBtn;
+    @FXML
+    private Button deleteBtn;
+    @FXML
+    private Button favoriteBtn;
 
-        @FXML
-        public void initialize() {
-            categoryDropdown.getItems().addAll("Top", "Bottom", "Shoes");
-            colorDropdown.getItems().addAll("Red", "Orange", "Yellow", "Green", "Blue",
-                    "Violet", "White", "Black", "Others");
-            styleDropdown.getItems().addAll("Formal", "Casual", "Semi-Formal", "Others");
+    private ClothingItem clothingItem;
+    private RefreshableController homeController;
+    private Stage dialogStage;
 
-            // Debug: Test CategoryMapper
-            System.out.println("CategoryMapper Test:");
-            System.out.println("Top → " + CategoryMapper.getCategoryId("Top")); // Should be 1
-            System.out.println("1 → " + CategoryMapper.getCategoryName(1));     // Should be "Top"
+    @FXML
+    public void initialize() {
+        categoryDropdown.getItems().addAll("Top", "Bottom", "Shoes");
+        colorDropdown.getItems().addAll("Red", "Orange", "Yellow", "Green", "Blue",
+                "Violet", "White", "Black", "Others");
+        styleDropdown.getItems().addAll("Formal", "Casual", "Semi-Formal", "Others");
 
-            SaveItemInfoBtn.setOnAction(event -> handleSave());
-            deleteBtn.setOnAction(event -> handleDeleteButton());
-            favoriteBtn.setOnAction(event -> handleAddToFavorites());
+        // Debug: Test CategoryMapper
+        System.out.println("CategoryMapper Test:");
+        System.out.println("Top → " + CategoryMapper.getCategoryId("Top")); // Should be 1
+        System.out.println("1 → " + CategoryMapper.getCategoryName(1));     // Should be "Top"
 
-        }
-        @FXML
-        private void handleAddToFavorites() {
-            if (clothingItem == null) return;
+        SaveItemInfoBtn.setOnAction(event -> handleSave());
+        deleteBtn.setOnAction(event -> handleDeleteButton());
+        favoriteBtn.setOnAction(event -> handleAddToFavorites());
+    }
 
-            try {
-                // Toggle favorite status
-                int newFavoriteStatus = clothingItem.getIsFavorite() == Constants.FAVORITE
-                        ? Constants.NOT_FAVORITE
-                        : Constants.FAVORITE;
+    @FXML
+    private void handleAddToFavorites() {
+        if (clothingItem == null) return;
 
-                // Update in database
-                new ClothingItemDAO().addClothingItemToFavorite(clothingItem.getId(), newFavoriteStatus);
+        try {
+            // Toggle favorite status
+            int newFavoriteStatus = clothingItem.getIsFavorite() == Constants.FAVORITE
+                    ? Constants.NOT_FAVORITE
+                    : Constants.FAVORITE;
 
-                // Update local model
-                clothingItem.setIsFavorite(newFavoriteStatus);
+            // Update in database
+            new ClothingItemDAO().addClothingItemToFavorite(clothingItem.getId(), newFavoriteStatus);
 
-                // Update button appearance
-                updateFavoriteButton();
+            // Update local model
+            clothingItem.setIsFavorite(newFavoriteStatus);
 
-                // Refresh parent view if needed
-                if (homeController != null) {
-                    homeController.refreshClothingItems();
-                }
+            // Update button appearance
+            updateFavoriteButton();
 
-            } catch (SQLException e) {
-                e.printStackTrace();
-                showAlert("Database Error", "Failed to update favorite status");
+            // Refresh parent view if needed
+            if (homeController != null) {
+                homeController.refreshClothingItems();
             }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            showAlert("Database Error", "Failed to update favorite status");
         }
+    }
 
     private void updateFavoriteButton() {
         if (clothingItem.getIsFavorite() == Constants.FAVORITE) {
@@ -214,17 +224,10 @@ public class ItemInformationController {
         }
     }
 
-    private void closeDialog() {
+    @Override
+    public void closeDialog() {
         Stage stage = (Stage) nameInput.getScene().getWindow();
         stage.close();
-    }
-
-    private void showAlert(String title, String message) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
     }
 
 }

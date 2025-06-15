@@ -2,7 +2,6 @@ package com.example.pilifitproject.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-
 import java.io.IOException;
 
 public class ContactController extends BaseController {

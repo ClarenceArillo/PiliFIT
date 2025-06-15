@@ -4,15 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="635ec7d8-d374-4bf4-977d-6b60cb30ac35" name="Changes" comment="enhance inheritance for alert and SwitchScenes">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/dao/BaseDAO.java" afterDir="false" />
+    <list default="true" id="635ec7d8-d374-4bf4-977d-6b60cb30ac35" name="Changes" comment="abstraction implemented">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/pilifit.db" beforeDir="false" afterPath="$PROJECT_DIR$/database/pilifit.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/RefreshableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/RefreshableController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/CollectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/CollectionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/ContactController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/ContactController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/DeleteConfirmationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/DeleteConfirmationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/UploadDialogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/UploadDialogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/dao/ClothingItemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/dao/ClothingItemDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/dao/FitDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/dao/FitDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/utils/FitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/utils/FitService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/FavoritesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/FavoritesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/ItemInformationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/ItemInformationController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -361,7 +362,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749970770981</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="abstraction implemented">
+      <option name="closed" value="true" />
+      <created>1749975151842</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1749975151842</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -388,7 +397,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Clean CRUD testing on Main" />
     <MESSAGE value="deleted txt." />
     <MESSAGE value="Filters Category, Color, Style, isFavorites test done!" />
     <MESSAGE value="Connect Home and UploadDialog. With file explorer viewer" />
@@ -413,6 +421,7 @@
     <MESSAGE value="first inheritance" />
     <MESSAGE value="enhance inheritance" />
     <MESSAGE value="enhance inheritance for alert and SwitchScenes" />
-    <option name="LAST_COMMIT_MESSAGE" value="enhance inheritance for alert and SwitchScenes" />
+    <MESSAGE value="abstraction implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="abstraction implemented" />
   </component>
 </project>

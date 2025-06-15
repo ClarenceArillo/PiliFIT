@@ -36,8 +36,6 @@ public class FavoritesController extends BaseController implements RefreshableCo
     @FXML private GridPane favItemsDisplay;
 
 
-    private RefreshableController homeController;
-
     // Add these constants
     private static final int COLUMNS = 6;
     private static final int ITEM_WIDTH = 120;
@@ -131,7 +129,6 @@ public class FavoritesController extends BaseController implements RefreshableCo
         }
     }
 
-
     private VBox createSimpleItemBox(ClothingItem item) {
         VBox box = new VBox(5);
         box.setPrefSize(ITEM_WIDTH, ITEM_HEIGHT);
@@ -165,17 +162,7 @@ public class FavoritesController extends BaseController implements RefreshableCo
     public void refreshClothingItems() {
         // Can be empty if not needed
     }
-    @Override
-    public void applyFilters(Integer categoryId, Integer colorId, Integer styleId) {
-        // Can be empty if not needed
-    }
 
-    private void refreshAfterEdit() {
-        if (homeController != null) {
-            homeController.refreshClothingItems();
-            homeController.refreshFavorites();
-        }
-    }
 
     private void setupCategoryDropdown() {
         CheckMenuItem top = new CheckMenuItem("Top");
@@ -236,7 +223,9 @@ public class FavoritesController extends BaseController implements RefreshableCo
             if (item != selectedItem) {
                 item.setSelected(false);
             }
-        }System.out.println("Selected: " + selectedItem.getText());
+        }
+
+        System.out.println("Selected: " + selectedItem.getText());
     }
 
 }

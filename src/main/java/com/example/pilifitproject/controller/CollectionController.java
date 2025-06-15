@@ -87,14 +87,7 @@ public class CollectionController extends BaseController implements RefreshableC
         }
 
     @Override
-    public void refreshFavorites() {
-
-    }
-
-    @Override
-    public void applyFilters(Integer categoryId, Integer colorId, Integer styleId) {
-
-    }
+    public void refreshFavorites() {}
 
     private void addFitToGrid(Fit fit, int col, int row) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/pilifitproject/view/FitDialog.fxml"));
