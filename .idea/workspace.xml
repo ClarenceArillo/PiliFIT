@@ -4,19 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="635ec7d8-d374-4bf4-977d-6b60cb30ac35" name="Changes" comment="Change Fit Name Feature">
+    <list default="true" id="635ec7d8-d374-4bf4-977d-6b60cb30ac35" name="Changes" comment="home layout placements updated, fitdialog - deleteimagewerking">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/images/icons/deleteButtonImage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/images/icons/generateicon1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/images/icons/generateicon2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/images/others/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/images/others/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/images/others/PILIFITS-PRJTITLE.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/pilifit.db" beforeDir="false" afterPath="$PROJECT_DIR$/database/pilifit.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/CollectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/CollectionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/DeleteConfirmationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/DeleteConfirmationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/FavoritesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/FavoritesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/ItemDisplayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/ItemDisplayController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/ItemInformationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/ItemInformationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/UploadDialogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/controller/UploadDialogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/dao/ClothingItemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/dao/ClothingItemDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/dao/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/dao/DBConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/FitDialog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/FitDialog.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/styles/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/styles/Home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/Collection.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/Collection.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/Favorites.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/Favorites.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pilifitproject/view/Home.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,9 +63,6 @@
     &quot;assignee&quot;: &quot;cyraulo&quot;
   }
 }</component>
-  <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="fcffe777-0ad5-4147-b62c-10c7f71ae64f" />
-  </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/ClarenceArillo/PiliFIT.git&quot;,
@@ -77,7 +76,6 @@
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2xderoEwte8Sd4oMrx7Qd4P7r8x" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -90,7 +88,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;working-branch&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;sanga&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_directory_selection&quot;: &quot;C:/Users/cyy/IdeaProjects/kkkk/src/main/java/com&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/CLARENCE/IdeaProjects/OOP Class/PiliFItProjectJDK24&quot;,
@@ -103,9 +101,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\KAP JUN LAKAY\IdeaProjects\ProjectPiliFit\src\main\resources\com\example\pilifitproject\images\icons" />
+      <recent name="C:\Users\KAP JUN LAKAY\IdeaProjects\ProjectPiliFit\src\main\resources\com\example\pilifitproject\fonts" />
+      <recent name="C:\Users\KAP JUN LAKAY\IdeaProjects\ProjectPiliFit\src\main\resources\com\example\pilifitproject\images\others" />
       <recent name="C:\Users\CLARENCE\IdeaProjects\OOP Class\PiliFItProjectJDK24\src\main\resources\com\example\pilifitproject\images" />
       <recent name="C:\Users\cyy\IdeaProjects\kkkk - Copy\src\main\resources\com\example\pilifitproject\images\background" />
-      <recent name="C:\Users\cyy\IdeaProjects\kkkk\src\main\resources\com\example\pilifitproject\images\others" />
     </key>
   </component>
   <component name="RunManager">
@@ -341,7 +341,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749884554308</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="home layout placements updated, fitdialog - deleteimagewerking">
+      <option name="closed" value="true" />
+      <created>1749897702882</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1749897702884</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -368,7 +376,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Closet, item information viewer Layout. Upload Dialog, direction info Layout" />
     <MESSAGE value="closet and about in HomeCloUpDia branch" />
     <MESSAGE value="merge iml changes" />
     <MESSAGE value="Clean CRUD testing on Main" />
@@ -393,6 +400,7 @@
     <MESSAGE value="delete working - bug appeared" />
     <MESSAGE value="fixed delete resource path" />
     <MESSAGE value="Change Fit Name Feature" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change Fit Name Feature" />
+    <MESSAGE value="home layout placements updated, fitdialog - deleteimagewerking" />
+    <option name="LAST_COMMIT_MESSAGE" value="home layout placements updated, fitdialog - deleteimagewerking" />
   </component>
 </project>
