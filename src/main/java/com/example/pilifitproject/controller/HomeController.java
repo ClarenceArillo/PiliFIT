@@ -29,9 +29,9 @@ import java.util.List;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class HomeController implements RefreshableController {
+public class HomeController extends BaseController  implements RefreshableController {
 
-    private final List<CheckMenuItem> allFilterItems = new ArrayList<>();
+    //private final List<CheckMenuItem> allFilterItems = new ArrayList<>();
 
     @FXML private GridPane itemsGridPane;
     @FXML private Button Addnew;
@@ -87,7 +87,7 @@ public class HomeController implements RefreshableController {
 
     @FXML
     private void goAbout(ActionEvent event) throws IOException {
-        SceneSwitcher.switchTo(event, "AboutUs.fxml");
+        switchScene(event, "AboutUs.fxml");
     }
 
     @FXML
