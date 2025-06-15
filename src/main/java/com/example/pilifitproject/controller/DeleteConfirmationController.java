@@ -104,12 +104,4 @@ public class DeleteConfirmationController extends BaseController {
         closeDialog();
     }
 
-    public void closeDialog() {
-        if (dialogStage != null) {
-            dialogStage.close();
-        } else {
-            ((Stage) CloseButton.getScene().getWindow()).close();
-        }
-        System.out.println("Close Tab");
-    }
 }
