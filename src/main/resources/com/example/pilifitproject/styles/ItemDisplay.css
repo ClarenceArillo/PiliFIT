@@ -1,0 +1,46 @@
+.tab-border {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: transparent;
+    -fx-border-width: 1px;
+    -fx-padding: 5;
+}
+
+.view-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-radius: 8;
+    -fx-border-width: 2px;
+    -fx-background-radius: 8;
+    -fx-padding: 1 1;
+    -fx-font-size: 15px;
+    -fx-cursor: hand;
+}
+
+.view-button:hover {
+    -fx-background-color: #e0e0e0; /* light gray */
+    -fx-border-color: transparent;
+}
+
+.name-button {
+    -fx-background-color: transparent;
+    -fx-font-size: 10.5px;
+    -fx-cursor: hand;
+    -fx-font-family: "Times New Roman";
+    -fx-font-style: bold;
+}
+
+.details-button {
+     -fx-background-color: transparent;
+     -fx-font-size: 13px;
+     -fx-cursor: hand;
+}
+.image-view {
+    -fx-background-color: white;
+        -fx-background-radius: 15;
+        -fx-border-radius: 15;
+        -fx-border-color: white;
+        -fx-border-width: 2px;
+        -fx-padding: 10;
+}

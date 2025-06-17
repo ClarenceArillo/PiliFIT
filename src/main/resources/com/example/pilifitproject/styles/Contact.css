@@ -1,0 +1,17 @@
+.back-tab {
+    -fx-background-color: white;
+    -fx-background-radius: 15px;
+}
+.scene-switch {
+    -fx-background-color: transparent;
+    -fx-background-radius: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill:white;
+    -fx-cursor: hand;
+}
+
+.scene-switch:hover {
+     -fx-text-fill:
+}
+
+

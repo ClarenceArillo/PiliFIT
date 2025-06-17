@@ -1,0 +1,193 @@
+.icon-button {
+    -fx-background-color:  #ffffff55);
+    -fx-border-color: black;
+    -fx-border-radius: 20px;
+    -fx-border-width: 2px;
+    -fx-background-radius: 20px;
+    -fx-padding: 5 10px;
+    -fx-pref-height: 40px;
+    -fx-cursor: hand;
+    -fx-font-size: 15px;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-text-fill: black;
+}
+.icon-button: hover {
+    -fx-background-color: linear-gradient(from 5% 0% to 100% 100%, white, grey);
+}
+
+.scene-switch { //(HOME, ABOUT, CONTACTS)
+    -fx-background-color: transparent;
+    -fx-font-weight: bold;
+    -fx-text-fill:white;
+    -fx-cursor: hand;
+    -fx-font-family: "Calibri";
+    -fx-font-size: 27px;
+}
+
+.scene-switch:hover {
+     -fx-text-fill: #ffffff55;
+
+}
+.preview-border {
+    -fx-fill: #c3c9cf;
+    -fx-stroke: black;
+    -fx-stroke-type: inside;
+    -fx-background-color: grey;
+}
+.drop-select { //(FILTERS)
+    -fx-background-color: radial-gradient(
+            focus-angle 0deg, focus-distance 0%, center 50% 50%, radius 100%,
+            rgba(255, 255, 255, 0.15) 5%,   /* small soft white center */
+            rgba(0, 0, 0, 1.0) 100%         /* solid black edges */
+        );
+
+    -fx-border-color: transparent;
+    -fx-border-radius: 15;
+    -fx-border-width: 2px;
+    -fx-background-radius: 15;
+    -fx-padding: 5 10;
+    -fx-font-size: 11px;
+    -fx-cursor: hand;
+    -fx-text-fill: white;
+    -fx-box-shadow: 5px 10px;
+    -fx-font-family: "Verdana";
+    -fx-font-style: italic;
+}
+
+.drop-select:hover {
+    -fx-background-color: light grey;
+
+}
+
+.transparent-scrollpane { //(ITEM GRID/SCROLL BAR AND SLIDER)
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.elegant-scrollpane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.elegant-scrollpane .viewport {
+    -fx-background-color: transparent;
+}
+
+/* ScrollBar Track (shadow-like bar) */
+.scroll-bar:vertical {
+    -fx-pref-width: 12px;
+    -fx-background-color: rgba(0, 0, 0, 0.1); /* soft black shadow */
+}
+
+.scroll-bar:vertical .track {
+    -fx-background-color: rgba(0, 0, 0, 0.12); /* slightly visible background */
+    -fx-background-radius: 4px;
+}
+
+/* Slider Thumb (short and rounded) */
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #555; /* subtle gray */
+    -fx-background-radius: 6px;
+    -fx-min-height: 30px; /* half size appearance */
+    -fx-max-height: 50px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 4, 0.2, 0, 0);
+    -fx-cursor: hand;
+}
+
+/* On hover: more visible */
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #666;
+}
+
+.add-item {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+    -fx-background-color: #161718;
+    -fx-text-fill: white;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-pref-width: 124px;
+    -fx-pref-height: 130px;
+}
+
+.add-item:hover {
+    -fx-text-fill: #ffffff55;
+}
+
+.closet-collections { //(CLOSET, COLLECTIONS, FAVORITES)
+    -fx-background-color:  rgba(0, 0, 0, 0, 0.1)    ;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+    -fx-text-fill: white;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-pref-width: 165px;
+    -fx-pref-height: 60px;
+    -fx-font-family: "Georgia";
+    -fx-font-weight: bold;
+    -fx-font-size: 21px;
+}
+
+.closet-collections:hover {
+    -fx-text-fill: #ffffff55;
+}
+
+.grid-cell {
+    -fx-pref-width: 124.0;
+    -fx-pref-height: 150.0;
+    -fx-background-color: #f8f8f8;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 1;
+}
+
+.nav-label {
+    -fx-underline: false;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, white, 8, 0.5, 0, 0);
+}
+
+.nav-label:hover {
+    -fx-underline: true;
+}
+
+.nav-label.active {
+    -fx-underline: true;
+    -fx-effect: dropshadow(gaussian, white, 15, 0.8, 0, 0);
+}
+
+.slider {
+    -fx-background-color: transparent;
+}
+
+.view-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-radius: 8;
+    -fx-border-width: 2px;
+    -fx-background-radius: 8;
+    -fx-padding: 1 7;
+    -fx-font-size: 30px;
+    -fx-cursor: hand;
+    -fx-opacity: 0.70;
+}
+
+.save-button { (CONFIRMATIONS)
+    -fx-background-color: transparent;
+    -fx-font-weight: bold;
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+    -fx-text-fill: black;
+    -fx-font-size: 10px;
+    -fx-font-family: "Arial";
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-padding: 5 20;
+    -fx-cursor: hand;
+
+}
+.save-button: hover {
+    -fx-background-color: #90EE90;
+
+}

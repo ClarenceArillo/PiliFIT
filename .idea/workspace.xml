@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="635ec7d8-d374-4bf4-977d-6b60cb30ac35" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pilifitproject/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="635ec7d8-d374-4bf4-977d-6b60cb30ac35" name="Changes" comment="delete button closbtn" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +13,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
         <option value="FxmlFile" />
       </list>
@@ -35,12 +33,14 @@
         </map>
       </branch-storage>
     </favorite-branches>
+    <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="AboutUsFeature2" />
+        <entry key="$PROJECT_DIR$" value="working-branch" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -49,7 +49,7 @@
   }
 }</component>
   <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="fcffe777-0ad5-4147-b62c-10c7f71ae64f" />
+    <option name="defaultAccountId" value="83d71b3b-b778-44f4-a1a4-330aca8a8ed4" />
   </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
@@ -77,7 +77,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;#3 on HomeCloUpDia&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;working-branch&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_directory_selection&quot;: &quot;C:/Users/cyy/IdeaProjects/kkkk/src/main/java/com&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/CLARENCE/IdeaProjects/OOP Class/PiliFItProjectJDK24&quot;,
@@ -85,9 +85,16 @@
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\CLARENCE\IdeaProjects\OOP Class\PiliFItProjectJDK24\src\main\resources\com\example\pilifitproject\images" />
+      <recent name="C:\Users\cyy\IdeaProjects\kkkk - Copy\src\main\resources\com\example\pilifitproject\images\background" />
+      <recent name="C:\Users\cyy\IdeaProjects\kkkk\src\main\resources\com\example\pilifitproject\images\others" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.pilifitproject.Main" />
@@ -102,15 +109,6 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2" />
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -178,7 +176,167 @@
       <option name="project" value="LOCAL" />
       <updated>1748596878140</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="deleted txt.">
+      <option name="closed" value="true" />
+      <created>1748663452981</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1748663452981</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Connect Home and UploadDialog. With file explorer viewer">
+      <option name="closed" value="true" />
+      <created>1749032718175</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1749032718175</updated>
+    </task>
+    <task id="LOCAL-00010" summary="deleteconfirmation fxml and css">
+      <option name="closed" value="true" />
+      <created>1749033745704</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1749033745704</updated>
+    </task>
+    <task id="LOCAL-00011" summary="deleteconfirmation polished">
+      <option name="closed" value="true" />
+      <created>1749035080890</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1749035080890</updated>
+    </task>
+    <task id="LOCAL-00012" summary="save confirmation and filters exclusiveness">
+      <option name="closed" value="true" />
+      <created>1749105462065</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1749105462065</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Closet fxml&amp;css polished">
+      <option name="closed" value="true" />
+      <created>1749110645145</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1749110645145</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Closet and Upload Dialog fxml&amp;css polished">
+      <option name="closed" value="true" />
+      <created>1749117166507</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1749117166507</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Closet controller for dropdown and save button for save confirmation">
+      <option name="closed" value="true" />
+      <created>1749118880595</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1749118880595</updated>
+    </task>
+    <task id="LOCAL-00016" summary="delete btn and delete confirmation. bug on closing uploadDialog">
+      <option name="closed" value="true" />
+      <created>1749291000497</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1749291000497</updated>
+    </task>
+    <task id="LOCAL-00017" summary="navigate, contact and about layout">
+      <option name="closed" value="true" />
+      <created>1749450221755</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1749450221755</updated>
+    </task>
+    <task id="LOCAL-00018" summary="fixed contact and about viewing layout">
+      <option name="closed" value="true" />
+      <created>1749465439912</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1749465439912</updated>
+    </task>
+    <task id="LOCAL-00019" summary="works but then bug">
+      <option name="closed" value="true" />
+      <created>1749557016174</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1749557016174</updated>
+    </task>
+    <task id="LOCAL-00020" summary="generate bug-fixed">
+      <option name="closed" value="true" />
+      <created>1749570467402</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1749570467402</updated>
+    </task>
+    <task id="LOCAL-00021" summary="FitDialogController added">
+      <option name="closed" value="true" />
+      <created>1749711942056</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1749711942056</updated>
+    </task>
+    <task id="LOCAL-00022" summary="just db">
+      <option name="closed" value="true" />
+      <created>1749721550944</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1749721550944</updated>
+    </task>
+    <task id="LOCAL-00023" summary="collection fit working">
+      <option name="closed" value="true" />
+      <created>1749814536824</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1749814536824</updated>
+    </task>
+    <task id="LOCAL-00024" summary="delete working - bug appeared">
+      <option name="closed" value="true" />
+      <created>1749814792221</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1749814792221</updated>
+    </task>
+    <task id="LOCAL-00025" summary="fixed delete resource path">
+      <option name="closed" value="true" />
+      <created>1749875247394</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1749875247394</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Change Fit Name Feature">
+      <option name="closed" value="true" />
+      <created>1749884554308</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1749884554308</updated>
+    </task>
+    <task id="LOCAL-00027" summary="cleaning">
+      <option name="closed" value="true" />
+      <created>1750004566226</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1750004566226</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -192,7 +350,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="HomeCloUpDia" />
+                        <option value="origin/push-to-main-branch" />
                       </list>
                     </value>
                   </entry>
@@ -205,13 +363,31 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="okok yan" />
-    <MESSAGE value="deleted" />
-    <MESSAGE value="try lang" />
-    <MESSAGE value="Closet, item information viewer Layout. Upload Dialog, direction info Layout" />
     <MESSAGE value="closet and about in HomeCloUpDia branch" />
     <MESSAGE value="merge iml changes" />
     <MESSAGE value="Clean CRUD testing on Main" />
-    <option name="LAST_COMMIT_MESSAGE" value="Clean CRUD testing on Main" />
+    <MESSAGE value="deleted txt." />
+    <MESSAGE value="Filters Category, Color, Style, isFavorites test done!" />
+    <MESSAGE value="Connect Home and UploadDialog. With file explorer viewer" />
+    <MESSAGE value="deleteconfirmation fxml and css" />
+    <MESSAGE value="deleteconfirmation polished" />
+    <MESSAGE value="save confirmation and filters exclusiveness" />
+    <MESSAGE value="Closet fxml&amp;css polished" />
+    <MESSAGE value="Closet and Upload Dialog fxml&amp;css polished" />
+    <MESSAGE value="Closet controller for dropdown and save button for save confirmation" />
+    <MESSAGE value="delete btn and delete confirmation. bug on closing uploadDialog" />
+    <MESSAGE value="navigate, contact and about layout" />
+    <MESSAGE value="fixed contact and about viewing layout" />
+    <MESSAGE value="works but then bug" />
+    <MESSAGE value="generate bug-fixed" />
+    <MESSAGE value="FitDialogController added" />
+    <MESSAGE value="just db" />
+    <MESSAGE value="ewan dito" />
+    <MESSAGE value="collection fit working" />
+    <MESSAGE value="delete working - bug appeared" />
+    <MESSAGE value="fixed delete resource path" />
+    <MESSAGE value="Change Fit Name Feature" />
+    <MESSAGE value="cleaning" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleaning" />
   </component>
 </project>

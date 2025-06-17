@@ -1,0 +1,33 @@
+
+.scene-switch {
+    -fx-background-color: transparent;
+    -fx-font-weight: bold;
+    -fx-text-fill:black;
+    -fx-cursor: hand;
+}
+
+.scene-switch:hover {
+     -fx-text-fill: #ffffff55;
+
+}
+.tab-border {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: transparent;
+    -fx-border-width: 1px;
+    -fx-padding: 5;
+}
+
+.text-filter {
+    -fx-text-filter : black;
+}
+
+.imag-layout {
+    -fx-background-radius: 20px;
+}
+
+.back-tab {
+    -fx-background-color: white;
+    -fx-background-radius: 15px;
+}
