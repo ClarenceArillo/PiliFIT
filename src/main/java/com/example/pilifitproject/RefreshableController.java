@@ -1,11 +1,11 @@
-package com.example.pilifitproject;
+    package com.example.pilifitproject;
 
-public interface RefreshableController {
-    void refreshClothingItems();
-    void refreshFavorites();
+    public interface RefreshableController {
+        void refreshClothingItems();
+        void refreshFavorites();
 
-    default void refreshAll() {
-        refreshClothingItems();
-        refreshFavorites();
+        default void refreshAll() {
+            refreshClothingItems();
+            refreshFavorites();
+        }
     }
-}

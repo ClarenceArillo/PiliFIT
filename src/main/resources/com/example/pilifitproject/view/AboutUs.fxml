@@ -20,7 +20,7 @@
    <center>
         <AnchorPane prefHeight="785.0" prefWidth="1445.0" BorderPane.alignment="CENTER">
             <children>
-            <ImageView fitHeight="845.0" fitWidth="1554.0" layoutX="-8.0" pickOnBounds="true" preserveRatio="true" rotate="1.0">
+            <ImageView fitHeight="859.0" fitWidth="1534.0" layoutY="-14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/background/Aboutbg.png" />
                </image>
@@ -64,9 +64,9 @@
                   <InnerShadow />
                </effect>
             </ImageView>
-            <ImageView fitHeight="470.0" fitWidth="443.0" layoutX="91.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="470.0" fitWidth="443.0" layoutX="97.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/others/jean.png" />
+                  <Image url="@../images/others/clar.png" />
                </image>
                <effect>
                   <InnerShadow />
@@ -74,15 +74,15 @@
             </ImageView>
             <ImageView fitHeight="440.0" fitWidth="448.0" layoutX="246.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/others/jean.png" />
+                  <Image url="@../images/others/mich.png" />
                </image>
                <effect>
                   <InnerShadow />
                </effect>
             </ImageView>
-            <ImageView fitHeight="460.0" fitWidth="444.0" layoutX="397.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="460.0" fitWidth="444.0" layoutX="400.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/others/jean.png" />
+                  <Image url="@../images/others/yssa.png" />
                </image>
                <effect>
                   <InnerShadow />
@@ -101,6 +101,30 @@
                   <InnerShadow />
                </effect>
             </ImageView>
+            <ImageView fitHeight="149.0" fitWidth="94.0" layoutX="1265.0" layoutY="588.0" opacity="0.39" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/others/D17.jpg" />
+               </image>
+               <effect>
+                  <InnerShadow height="33.87" radius="15.557499999999997" width="30.36" />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="120.0" fitWidth="191.0" layoutX="1078.0" layoutY="625.0" opacity="0.36" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/others/D9.jpg" />
+               </image>
+               <effect>
+                  <InnerShadow height="33.87" radius="15.557499999999997" width="30.36" />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="190.0" fitWidth="137.0" layoutX="1161.0" layoutY="496.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/others/D17.jpg" />
+               </image>
+               <effect>
+                  <InnerShadow height="33.87" radius="15.557499999999997" width="30.36" />
+               </effect>
+            </ImageView>
             <ImageView fitHeight="157.0" fitWidth="142.0" layoutX="1074.0" layoutY="169.0" opacity="0.39" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/others/us.jpg" />
@@ -117,20 +141,20 @@
                   <InnerShadow />
                </effect>
             </ImageView>
+            <ImageView fitHeight="174.0" fitWidth="150.0" layoutX="736.0" layoutY="485.0" opacity="0.46" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/others/D13.jpg" />
+               </image>
+               <effect>
+                  <InnerShadow height="33.87" radius="15.557499999999997" width="30.36" />
+               </effect>
+            </ImageView>
             <ImageView fitHeight="260.0" fitWidth="376.0" layoutX="1026.0" layoutY="228.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/others/us.jpg" />
                </image>
                <effect>
                   <InnerShadow />
-               </effect>
-            </ImageView>
-            <ImageView fitHeight="190.0" fitWidth="137.0" layoutX="1161.0" layoutY="496.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/others/D17.jpg" />
-               </image>
-               <effect>
-                  <InnerShadow height="33.87" radius="15.557499999999997" width="30.36" />
                </effect>
             </ImageView>
             <ImageView fitHeight="150.0" fitWidth="192.0" layoutX="1011.0" layoutY="472.0" pickOnBounds="true" preserveRatio="true">
